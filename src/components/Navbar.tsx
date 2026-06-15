@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X, FileText, Mail, CheckCircle2, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { PERSONAL_INFO } from "../data";
@@ -29,7 +29,7 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
     { name: "Services", href: "#services" },
     { name: "Value Add", href: "#value-add" },
     { name: "Selected Experience", href: "#experience" },
-    { name: "Tech Matrix", href: "#tech-matrix" },
+    { name: "Tech Focus", href: "#tech-focus" },
     { name: "Contact", href: "#contact" },
   ];
 

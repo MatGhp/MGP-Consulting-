@@ -15,22 +15,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-b border-slate-800 pb-8 mb-8">
           
           {/* Brand Intro Column */}
-          <div className="md:col-span-5 space-y-4">
+          <div className="md:col-span-12 lg:col-span-5 space-y-4">
             <div className="flex items-center space-x-2">
               <span className="font-mono text-lg font-bold bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 MGP
               </span>
               <span className="font-sans text-md font-semibold text-white tracking-tight">
-                Consulting MGP
+                MGP Consulting
               </span>
             </div>
             <p className="text-2xs text-slate-400 font-sans leading-relaxed max-w-sm">
-              Operational freelancing entity for Mojtaba Ghanaat-Pisheh, delivering high-performance Distributed Integration Services, passwordless Entra configurations and cross-platform backend modernization solutions for European enterprise clients.
+              Operational freelancing entity for Mojtaba Ghanaat Pisheh, delivering high-performance Distributed Integration Services, passwordless Entra configurations and cross-platform backend modernization solutions for European enterprise clients.
             </p>
           </div>
 
           {/* Quick Shortcuts */}
-          <div className="md:col-span-3 space-y-3">
+          <div className="md:col-span-6 lg:col-span-3 space-y-3">
             <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
               PORTFOLIO INDEX
             </span>
@@ -51,24 +51,24 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#tech-matrix" className="hover:text-white transition-colors">
-                  Core Tech Stack
+                <a href="#tech-focus" className="hover:text-white transition-colors">
+                  Tech Focus
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Compliance & Admin Terms */}
-          <div className="md:col-span-4 space-y-3">
+          <div className="md:col-span-6 lg:col-span-4 space-y-3">
             <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
-              COMPLIANCE STATEMENTS
+              COMPLIANCE & LEGAL
             </span>
             <div className="text-3xs text-slate-450 leading-relaxed space-y-2">
               <p>
-                <strong>Imprint / Impressum placeholder:</strong> This website is hosted and managed in Frankfurt am Main, Germany, as an executive landing page for Mojtaba Ghanaat-Pisheh. Final registered corporate entity details will be stated upon final contract agreements.
+                <strong>Impressum (Imprint):</strong> Mojtaba Ghanaat Pisheh, Freelance Senior .NET / Azure Integration Developer. Based in Frankfurt am Main, Germany. Contact: mojtaba@mgp-consulting.de. Final registered corporate entity details can be provided upon final agreement.
               </p>
               <p>
-                <strong>Privacy Statement:</strong> This page complies with GDPR policies. No personal tracking, cookie injections, or analytical session recorders are deployed without explicit authorization.
+                <strong>Datenschutzerklärung (Privacy Policy):</strong> This website complies with European GDPR policies. No tracking cookies are used. Any data submitted via the contact form is processed strictly to manage project inquiries.
               </p>
             </div>
           </div>

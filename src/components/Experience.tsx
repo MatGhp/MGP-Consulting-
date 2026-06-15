@@ -18,8 +18,7 @@ export default function Experience() {
     if (filterTech === "All") return true;
     if (filterTech === "DevOps Pipelines") {
       return (
-        project.techStack.includes("Azure DevOps Pipelines") ||
-        project.techStack.includes("GitHub Actions")
+        project.techStack.some((tech) => tech.includes("DevOps") || tech.includes("GitHub"))
       );
     }
     return project.techStack.some((tech) => tech.includes(filterTech));

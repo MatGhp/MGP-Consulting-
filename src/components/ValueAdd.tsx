@@ -27,13 +27,13 @@ export default function ValueAdd() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
-            Where I Add Value
+            Solving Practical Enterprise Software Challenges
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Resolving Real Enterprise Challenges
+            Solving Practical Enterprise Software Challenges
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            Many developers can write boilerplate code. I bridge the gap between abstract business problems and bullet-proof technical implementations.
+            Many developers can write basic boilerplate code. I bridge the gap between complex software design problems and stable, production-ready technical implementations.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function ValueAdd() {
                 </div>
                 <div className="pt-4 text-xs font-mono text-rose-600 flex items-center space-x-1 font-semibold select-none">
                   <span>⚠</span>
-                  <span>Results in high operations maintenance & developer exhaustion</span>
+                  <span>Results in high operations maintenance & increased software complexity</span>
                 </div>
               </div>
 
@@ -113,10 +113,10 @@ export default function ValueAdd() {
         <div className="mt-20 border-t border-slate-200/60 pt-16">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
-              HOW I COLLABORATE
+              How I Work
             </span>
             <h3 className="text-2xl font-bold text-slate-950">
-              The Professional Mindset of a Senior Consultant
+              How I Work
             </h3>
             <p className="mt-3 text-sm text-slate-600 max-w-xl mx-auto">
               Hiring a senior developer is an investment. These are the principles that guarantee our collaboration will be efficient, low-overhead, and high-impact.

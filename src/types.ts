@@ -38,7 +38,7 @@ export interface ProjectExperience {
 export interface TechSkill {
   name: string;
   description?: string;
-  level: "Expert" | "Advanced" | "Core";
+  level: string;
   badge?: string;
 }
 

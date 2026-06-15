@@ -6,92 +6,88 @@
 import { ServiceItem, ValueAddScenario, ProjectExperience, TechCategory } from "./types";
 
 export const PERSONAL_INFO = {
-  name: "Mojtaba Ghanaat-Pisheh",
+  name: "Mojtaba Ghanaat Pisheh",
   role: "Freelance Senior .NET / Azure Integration Developer",
-  tagline: "Enterprise Integration | Cloud-Native Systems | Stable Digital Modernization",
+  tagline: "Enterprise Integration | .NET Modernization | Cloud & Enterprise Delivery",
   headline: "Senior .NET / Azure Integration Developer",
   subheadline: "I help companies modernize, integrate, and stabilize enterprise software systems with .NET, Azure, APIs, Service Bus, Functions, CI/CD, and Angular.",
   location: "Frankfurt am Main, Germany (Remote-First across Germany & Europe)",
   locationShort: "Frankfurt am Main, Germany",
   email: "mojtaba@mgp-consulting.de",
-  linkedin: "https://www.linkedin.com/in/your-profile", // Placeholder that user can customize
-  github: "https://github.com/#", // Professional design
+  linkedin: "https://www.linkedin.com/in/mojtaba-ghanaat-pisheh",
+  github: "https://github.com/mojtabagp",
   languages: [
-    { name: "German", level: "Professional / Fluent" },
-    { name: "English", level: "Fluent / Business English" }
+    { name: "German", level: "C1 (Fluent Project Communication)" },
+    { name: "English", level: "C1 (Fluent Project Communication)" },
+    { name: "Persian", level: "Native" }
   ],
   availability: {
-    status: "Available", // "Available" or "Partially Booked" or "Selected Capacity"
-    dateText: "Immediately (Q3 2026)",
-    remotePreference: "Up to 100% Remote, optional occasional travel to Frankfurt/Main & DE-wide hubs",
-    euEligible: "Fully eligible for EU-wide assignments & contracts"
-  }
+    status: "Available",
+    dateText: "From July 2026",
+    remotePreference: "Remote-first freelance projects (optional occasional travel)",
+    euEligible: "Fully eligible for European / German assignments"
+  },
+  trustFacts: [
+    "15+ years software development experience",
+    "Based in Frankfurt am Main, Germany",
+    "Remote-first freelance projects",
+    "German and English project communication",
+    "Available from July 2026",
+    "Enterprise software, Azure integration, and Angular business applications"
+  ]
 };
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: "enterprise-integration",
-    title: "1. Enterprise API & Message-Driven Integration",
-    description: "Designing and implementing highly decoupled, fault-tolerant message topologies for distributed enterprise networks.",
+    id: "enterprise-api",
+    title: "1. Enterprise API & Integration Development",
+    description: "Designing and implementing maintainable APIs, backend services, and integration components for enterprise environments.",
     iconName: "Cable",
-    businessBenefit: "Eliminates hard dependencies, guarantees message delivery under peak loads, and connects legacy components with modern cloud stacks.",
+    businessBenefit: "Ensures reliable, decoupled client-backend APIs and seamless communication between heterogeneous business programs.",
     keyOfferings: [
-      "Azure Service Bus implementation (Topics, Queues, Sessions, Dead Lettering)",
-      "RESTful API & gRPC architecture using ASP.NET Core Web API",
-      "Event-driven integration via Azure Event Hubs and Event Grid",
-      "Migration of legacy queueing mechanics (e.g. MSMQ, activeMQ) to Azure Cloud native"
+      ".NET & ASP.NET Core Web API, REST",
+      "Azure Service Bus messaging (Topics, Queues)",
+      "Azure Functions serverless background worker triggers",
+      "API Management policies, secure authentication & identity integration"
     ]
   },
   {
-    id: "cloud-native-serverless",
-    title: "2. Cloud-Native & Serverless Backends",
-    description: "Building auto-scaling cloud microservices that run efficiently and minimize infrastructure cost overheads.",
+    id: "azure-integration",
+    title: "2. Azure Integration & Cloud-Native Backend Services",
+    description: "Building Azure-based backend and integration components that support reliable communication, automation, and operational visibility.",
     iconName: "Cloud",
-    businessBenefit: "Drastically reduces server costs, ensures sub-second reaction times under heavy scale, and simplifies deployment models.",
+    businessBenefit: "Guarantees reliable message routing, secure configuration storage, and comprehensive backend monitoring insights.",
     keyOfferings: [
-      "Serverless pipelines with Azure Functions (.NET Isolated Worker Model)",
-      "Containerized microservices via Azure Container Apps & Azure Kubernetes Service (AKS)",
-      "Database schema tuning & secure persistence on Azure SQL, Cosmos DB, and Firestore",
-      "Enterprise security integration via Azure Key Vault, Managed Identities, and OAuth2/OIDC"
+      "Azure Functions, Azure Service Bus, and Logic Apps",
+      "Azure Key Vault keys, secrets, and credential storage security",
+      "Application Insights & Azure Monitor integration telemetry",
+      "Azure SQL Server setups and database schema integration"
     ]
   },
   {
-    id: "software-modernization",
-    title: "3. Enterprise .NET Modernization",
-    description: "Refactoring obsolete, fragile monolithic code projects into modular, testable, and future-proof software architectures.",
+    id: "dotnet-modernization",
+    title: "3. .NET Modernization & Production Readiness",
+    description: "Modernizing existing .NET applications step by step, improving maintainability, deployment reliability, and operational stability.",
     iconName: "History",
-    businessBenefit: "Lowers continuous maintenance costs, empowers teams to release features faster, and solves the 'unmaintainable legacy legacy' problem.",
+    businessBenefit: "Significantly decreases continuous maintenance liabilities and structural code complexity overheads.",
     keyOfferings: [
-      "Migration strategies from old .NET Framework 4.x to modern cross-platform .NET 8 / 9",
-      "Domain-Driven Design (DDD) & Clean Architecture structural refactorings",
-      "Comprehensive test automation layers (Unit, Integration, and Architectural assertions with xUnit)",
-      "Optimizing performance critical queries and resolving asynchronous resource locks"
+      "Modernizing obsolete systems to cross-platform .NET 6/7/8/9",
+      "Clean Architecture & Domain-Driven Design (DDD) refactorings",
+      "Entity Framework Core query fine-tuning and performance indexing",
+      "Test automation suites and local containerization with Docker"
     ]
   },
   {
     id: "angular-business-apps",
-    title: "4. Business Application Development",
-    description: "Creating responsive, secure, and clean Angular-based web interfaces to control and monitor backend systems.",
+    title: "4. Angular Business Applications",
+    description: "Building and modernizing Angular-based enterprise applications with a focus on maintainability, performance, secure API integration, and user workflows.",
     iconName: "Layout",
-    businessBenefit: "Provides intuitive UI/UX for internal business operations, customer profiles, or data dashboard analytics.",
+    businessBenefit: "Delivers highly responsive frontend interfaces that match backend APIs flawlessly.",
     keyOfferings: [
-      "Responsive Single-Page Applications (SPA) with Angular (Core, RxJS, NgRx)",
-      "Secure Azure AD / MSAL API authorization layers on client-side SPA",
-      "Consistent UI/UX styling with Tailwind CSS or component libraries",
-      "Smooth integration with modular backend API contracts"
-    ]
-  },
-  {
-    id: "automated-devops",
-    title: "5. Production-Ready CI/CD & Security Automation",
-    description: "Setting up robust pipeline topologies that guarantee zero-downtime, fully audited, reproducible cloud releases.",
-    iconName: "GitMerge",
-    businessBenefit: "Removes manual deployment risks, enables safe deployments several times a day, and assures robust code quality checks.",
-    keyOfferings: [
-      "Infrastructure as Code (IaC) via Azure Bicep & Terraform",
-      "Comprehensive Azure DevOps Pipelines and GitHub Actions setup",
-      "Automated static analysis, code coverage thresholds, and credential hunting",
-      "Multi-stage release configurations with blue/green deployment paths"
+      "Angular framework, client TypeScript, & asynchronous RxJS streams",
+      "Nx workspace structuring & modular layout design standards",
+      "Angular Material or Kendo UI customized widgets",
+      "Cypress or Jest browser automated testing setups"
     ]
   }
 ];
@@ -99,173 +95,252 @@ export const SERVICES: ServiceItem[] = [
 export const VALUE_ADD_SCENARIOS: ValueAddScenario[] = [
   {
     id: "val-1",
-    title: "Unstable Integration & Missing Resiliency",
-    situation: "Distributed subsystems fail cascadingly. Requests are randomly lost, resulting in inconsistent state database records and business friction.",
-    solution: "Introduce Azure Service Bus with exponential back-off retries, dead-letter routing rules, Peek-Lock transaction mechanics, and outbox patterns.",
-    technicalDepth: ".NET Background Services, Outbox design patterns, Azure Service Bus SDK with automatic retries and dead-lettering alerts.",
-    businessImpact: "99.99% transactional reliability. Disrupted peripheral endpoints no longer bring down the central billing or shipping workflows."
+    title: "Unstable or tightly coupled integrations",
+    situation: "Distributed peripheral endpoints fail cascadingly, resulting in missing requests, broken communications, or missing transactions.",
+    solution: "Introduce clearer API boundaries, asynchronous communication using robust message passing, resilient retry / exception handling, and deep monitoring tracing.",
+    technicalDepth: ".NET core handlers, Azure Service Bus queues and topics, Application Insights",
+    businessImpact: "Improves overall system maintainability, lowers direct operational risk, and makes connected solutions significantly easier to support."
   },
   {
     id: "val-2",
-    title: "Slow, Prevalent Technical Debt in Monoliths",
-    situation: "A 10-year-old on-premise registry. A single minor update breaks unrelated services, developers are afraid to make structural extensions.",
-    solution: "Isolate high-impact domains into containerized Azure Container Apps, migrate to modern .NET cross-platform on Linux, set up automated pipelines.",
-    technicalDepth: ".NET 8, Linux Containers, Dockerfile multi-stage builds, Azure DevOps secure pipelines.",
-    businessImpact: "Release cycle speeds up from once per quarter to several times a day. Hosting costs drop by 45% due to flexible Linux nodes."
+    title: "Legacy .NET applications that are difficult to change",
+    situation: "Monolith software systems have gathered major technical debt, turning trivial feature additions into risky releases with frequent regression bugs.",
+    solution: "Modernize existing codebases step by step, isolate high-impact product domains, introduce clean abstractions, and build automated regression testing boundaries.",
+    technicalDepth: ".NET modernization, modular monorepos, EF Core, Unit & integration tests",
+    businessImpact: "Empowers enterprise software development teams to deliver core feature changes securely without implementing massive risky rewrites."
   },
   {
     id: "val-3",
-    title: "Security and Secret Management Compliancy",
-    situation: "Vulnerable hardcoded database passwords and Azure API variables stored inside VCS repositories or plain config text fields.",
-    solution: "Eliminate static passwords entirely. Provision Passwordless Azure Managed Identities, bind strictly using Azure Key Vault with RBAC permissions.",
-    technicalDepth: "Azure Active Directory/Entra ID, Managed Identities, Key Vault SDK access, RBAC IAM assignments.",
-    businessImpact: "Full compliance with enterprise security requirements and ISO/IEC 27001 checklists, removing credentials from dev access scopes."
+    title: "Manual or unreliable deployments",
+    situation: "Releases depend on manual file copying or manual configuration steps, which creates variations across staging and production systems.",
+    solution: "Create structured multi-tier CI/CD build and release pipelines, clean separation of configuration variables, and infrastructure definition.",
+    technicalDepth: "Azure DevOps, GitHub Actions, Docker containers, Bicep / Terraform",
+    businessImpact: "Ensures highly predictable, transparent release cycles and reduces critical manual deployment efforts and human errors."
+  },
+  {
+    id: "val-4",
+    title: "Frontend applications with growing complexity",
+    situation: "Scalability issues on complex client applications create slow load frames, difficult UI state cycles, or circular data subscriptions.",
+    solution: "Revise structure of Angular components, standardize clean state flows, secure API interaction points, and structure clear architectural lines.",
+    technicalDepth: "Angular UI modularity, RxJS subscription patterns, state handling, Nx monorepro design",
+    businessImpact: "Guarantees robust, maintainable business utilities and supports stable developer velocity over years of roadmap updates."
   }
 ];
 
 export const PROJECTS: ProjectExperience[] = [
   {
     id: "proj-1",
-    title: "Fault-Tolerant IoT Storage & Integration Engine",
-    clientType: "German Renewable Energy Leader",
-    sector: "Energy & Smart Utilities",
-    role: "Freelance Senior Lead Azure Integration Developer",
-    period: "09/2024 - Present",
-    duration: "Ongoing",
-    scope: "Rearchitected telemetry collection that aggregates millions of event packets daily from remote localized wind/solar park installations.",
+    title: "Enterprise Supplier Portal & Onboarding Platform",
+    clientType: "Mechanical Engineering Corporation",
+    sector: "Enterprise / Mechanical Engineering",
+    role: "Freelance Senior Full-Stack / Integration Developer",
+    period: "2025 - 2026",
+    duration: "12 Months",
+    scope: "Co-developed an onboarding and supply portal workflow to manage high-security external supplier profile registrations and credentials management.",
     achievements: [
-      "Spearheaded distributed Event-Hub-to-Service-Bus topologies with isolated workers processing peak loads smoothly.",
-      "Replaced synchronous HTTP API locks with consumer-driven worker apps, neutralizing database load spikes.",
-      "Established multi-environment Infrastructure as Code (IaC) using Azure Bicep, reducing setup time for fresh environments from weeks to 20 minutes.",
-      "Integrated continuous architectural validation tests, halting cyclic dependencies before deployment."
+      "Implemented and extended onboarding and integration workflows.",
+      "Worked on backend APIs, frontend screens, role-based workflows, and external system communication.",
+      "Supported CI/CD, release preparation, debugging, and production issue analysis.",
+      "Helped improve maintainability and reliability in a complex enterprise environment."
     ],
-    techStack: [".NET 8", "Azure Service Bus", "Azure Functions", "Bicep IaC", "Entra ID", "xUnit", "ARM Templates"],
+    techStack: [
+      ".NET",
+      "ASP.NET Core",
+      "Angular",
+      "TypeScript",
+      "Azure Service Bus",
+      "Docker",
+      "Kubernetes",
+      "SQL Server",
+      "Azure DevOps",
+      "GitHub Enterprise"
+    ],
     confidentialFlag: true
   },
   {
     id: "proj-2",
-    title: "Legacy Backend Migration & Logistics Hub Modernization",
-    clientType: "European Logistics & Cargo Group",
-    sector: "Logistics, Shipping & Supply Chain",
-    role: "Freelance Senior .NET Cloud Backend Engineer",
-    period: "11/2023 - 08/2024",
+    title: "Azure Cloud-Native Integration Platform",
+    clientType: "Enterprise IT Services Hub",
+    sector: "IT Services / Enterprise Integration",
+    role: "Lead Technical Consultant / Azure Integration Developer",
+    period: "2024 - 2025",
     duration: "10 Months",
-    scope: "Decomposed a fragile monolithic .NET Framework logistics engine into highly cohesive serverless micro-backends and modern UI dashboards.",
+    scope: "Established decoupled serverless background components, message routers, and gateway filters tying together legacy systems with modern business components.",
     achievements: [
-      "Successfully decoupled the core dispatch registry using clean hexagonal structures on .NET Isolated worker functions.",
-      "Integrated secure Azure API Management (APIM) layers, enabling external logistics partners to search dispatch items securely.",
-      "Co-implemented a highly responsive Angular 17 control deck featuring real-time package updates via SignalR.",
-      "Optimized legacy SQL Server queries with proper index distributions, boosting critical execution speed by 300%."
+      "Designed and implemented Azure-based integration components.",
+      "Automated infrastructure and deployment processes.",
+      "Worked with secure configuration, secrets, APIs, and enterprise integration patterns.",
+      "Improved delivery structure and maintainability of cloud integration workloads."
     ],
-    techStack: [".NET Core 8", "Angular 17", "Azure Functions", "Azure APIM", "SignalR", "SQL Server", "GitHub Actions"],
+    techStack: [
+      ".NET",
+      "C#",
+      "Azure Functions",
+      "Azure Service Bus",
+      "Logic Apps",
+      "API Management",
+      "Azure Key Vault",
+      "Bicep",
+      "Terraform",
+      "Azure DevOps"
+    ],
     confidentialFlag: true
   },
   {
     id: "proj-3",
-    title: "Secure Enterprise B2B Document Integration Platform",
-    clientType: "German Financial Infrastructure Provider",
-    sector: "Financial Tech & Securitization",
-    role: "Senior Integrations Developer (.NET / Azure)",
-    period: "02/2022 - 10/2023",
-    duration: "21 Months",
-    scope: "Enabled critical paperless, highly compliant PDF and metadata ingestion mechanics matching rigorous German BaFin audits.",
+    title: "Smart Energy Cloud Platform",
+    clientType: "German Energy Platform Operator",
+    sector: "Energy Sector",
+    role: "Senior Full-Stack / Cloud Developer",
+    period: "2023 - 2024",
+    duration: "14 Months",
+    scope: "Supported a cloud business platform delivering administrative features, authentication bindings, monitoring reports, and scalable telemetry components.",
     achievements: [
-      "Configured robust message-level encryption on RESTful API payloads containing sensitive European corporate client metrics.",
-      "Leveraged Azure Cosmos DB and Azure Blob cold storage tiers, organizing file records with custom lifecycle retention rules.",
-      "Set up full-scale, multi-tier Azure DevOps YAML CI/CD orchestrations with automated white-box testing.",
-      "Authored extensive technical architectural runbooks, reducing external contractor onboarding time by 50%."
+      "Developed backend services and Angular-based business features.",
+      "Supported cloud infrastructure and deployment automation.",
+      "Worked with authentication, API management, monitoring, and enterprise delivery processes.",
+      "Contributed to maintainable and scalable application architecture."
     ],
-    techStack: [".NET Core 6", "Azure Key Vault", "Azure Blob Storage", "Cosmos DB", "Azure DevOps Pipelines", "REST APIs", "SonarQube"],
+    techStack: [
+      ".NET 6/7",
+      "Angular",
+      "Azure App Service",
+      "Azure Service Bus",
+      "Azure API Management",
+      "Keycloak",
+      "Terraform",
+      "Azure Monitor",
+      "Application Insights",
+      "SQL Server"
+    ],
+    confidentialFlag: true
+  },
+  {
+    id: "proj-4",
+    title: "Enterprise Angular Applications & Real-Time Interfaces",
+    clientType: "Medical and Industrial Solutions Company",
+    sector: "Business Applications / Medical & Manufacturing Environments",
+    role: "Senior Angular / Full-Stack Developer",
+    period: "2021 - 2023",
+    duration: "20 Months",
+    scope: "Rearchitected heavy UI screens to handle high-performance updates, clear state definitions, and robust live browser components.",
+    achievements: [
+      "Built and modernized Angular-based enterprise applications.",
+      "Integrated frontend applications with backend APIs and real-time communication.",
+      "Improved component structure, maintainability, and testability.",
+      "Supported complex business workflows and production-oriented delivery."
+    ],
+    techStack: [
+      "Angular",
+      "TypeScript",
+      "RxJS",
+      "Nx",
+      "Kendo UI",
+      "SignalR",
+      "Cypress",
+      "Jest",
+      ".NET APIs",
+      "Azure App Service"
+    ],
     confidentialFlag: true
   }
 ];
 
 export const TECH_CATEGORIES: TechCategory[] = [
   {
-    id: "dotnet-ecosystem",
-    categoryName: ".NET Ecosystem",
-    description: "Core programming runtime and framework frameworks. Focusing on premium backend structure.",
+    id: "dotnet-backend",
+    categoryName: ".NET & Backend",
+    description: "Robust programming runtimes, ORM engines, and modern backend architectures.",
     skills: [
-      { name: "C# / .NET 8 & 9", level: "Expert", badge: "Primary language" },
-      { name: "ASP.NET Core Web API", level: "Expert", badge: "REST & gRPC" },
-      { name: "Entity Framework Core", level: "Expert", badge: "ORM" },
-      { name: "Clean Architecture / DDD", level: "Expert", badge: "Design discipline" },
-      { name: "xUnit / FluentAssertions", level: "Expert", badge: "Test suites" },
-      { name: "SignalR / WebSockets", level: "Advanced", badge: "Real-time" }
+      { name: "C# / .NET 6-9", level: "Strong focus", badge: "Primary language" },
+      { name: "ASP.NET Core Web API", level: "Strong focus", badge: "RESTful architecture" },
+      { name: "Entity Framework Core", level: "Practical experience", badge: "Data access / ORM" },
+      { name: "REST APIs", level: "Strong focus", badge: "Web services" },
+      { name: "Clean Architecture / DDD", level: "Practical experience", badge: "Design discipline" },
+      { name: "Authentication & Authorization", level: "Practical experience", badge: "Identity / Security" },
+      { name: "SQL Server / PostgreSQL", level: "Practical experience", badge: "Relational persistence" }
     ]
   },
   {
-    id: "azure-cloud",
-    categoryName: "Azure Cloud & Serverless",
-    description: "Cloud-native services supporting robust telemetry, secure scaling, and decoupled integrations.",
+    id: "azure-integration",
+    categoryName: "Azure & Integration",
+    description: "Cloud-native middleware facilitating enterprise messaging, identity security, and backend tracking.",
     skills: [
-      { name: "Azure Service Bus", level: "Expert", badge: "Integrations & Queues" },
-      { name: "Azure Functions", level: "Expert", badge: "Serverless (Isolated)" },
-      { name: "Azure APIM", level: "Advanced", badge: "API Gateways" },
-      { name: "Azure Key Vault", level: "Expert", badge: "Secret Security" },
-      { name: "Managed Identities (Entra ID)", level: "Expert", badge: "Passwordless IAM" },
-      { name: "Cosmos DB / Azure SQL", level: "Advanced", badge: "Databases" }
+      { name: "Azure Functions", level: "Strong focus", badge: "Serverless runtime" },
+      { name: "Azure Service Bus", level: "Strong focus", badge: "Message queues & topics" },
+      { name: "Azure API Management (APIM)", level: "Project experience", badge: "API Gateways" },
+      { name: "Logic Apps", level: "Project experience", badge: "Workflow automation" },
+      { name: "Azure Key Vault", level: "Strong focus", badge: "Secure configuration" },
+      { name: "Azure App Service", level: "Project experience", badge: "App hosting" },
+      { name: "Azure SQL", level: "Project experience", badge: "Cloud Database" },
+      { name: "Application Insights & Monitor", level: "Practical experience", badge: "Telemetering" }
     ]
   },
   {
-    id: "devops-iac",
-    categoryName: "DevOps & Infrastructure",
-    description: "Complete release lifecycle, environmental isolation, and automation.",
+    id: "devops-delivery",
+    categoryName: "DevOps & Cloud Delivery",
+    description: "Automated pipelines, environmental container virtualization, and repeatable environments.",
     skills: [
-      { name: "Azure DevOps Pipelines", level: "Expert", badge: "YAML CI/CD" },
-      { name: "GitHub Actions", level: "Advanced", badge: "CI/CD" },
-      { name: "Azure Bicep / IaC", level: "Advanced", badge: "Infrastructure as Code" },
-      { name: "Docker Containers", level: "Advanced", badge: "Linux runtime consistency" },
-      { name: "IIS & Linux Host Tuning", level: "Advanced", badge: "Environment Hosting" }
+      { name: "Azure DevOps Pipelines", level: "Practical experience", badge: "Build & release YAML" },
+      { name: "GitHub Actions", level: "Project experience", badge: "Continuous Integration" },
+      { name: "Docker", level: "Practical experience", badge: "Containerization" },
+      { name: "Kubernetes (AKS basics)", level: "Project experience", badge: "Container orch." },
+      { name: "Terraform", level: "Project experience", badge: "Infrastructure as Code" },
+      { name: "Bicep", level: "Project experience", badge: "Azure-native IaC" },
+      { name: "CI/CD Pipelines", level: "Practical experience", badge: "Quality & automation gates" }
     ]
   },
   {
-    id: "frontend-business",
-    categoryName: "Frontend & Tooling",
-    description: "Sleek frontend controls that map cleanly to senior backend integration endpoints.",
+    id: "frontend-tech",
+    categoryName: "Frontend",
+    description: "Client-side platforms, state engines, and modular UI framework tools.",
     skills: [
-      { name: "Angular (Core, RxJS, Signals)", level: "Advanced", badge: "Core UI Engine" },
-      { name: "TypeScript", level: "Advanced", badge: "Strict client code" },
-      { name: "Tailwind CSS", level: "Advanced", badge: "Responsive styles" },
-      { name: "Git / Trunk-Based Flow", level: "Expert", badge: "SCM Discipline" }
+      { name: "Angular", level: "Strong focus", badge: "SPA Framework" },
+      { name: "TypeScript", level: "Strong focus", badge: "Type-safe script language" },
+      { name: "RxJS", level: "Core skill", badge: "Asynchronous streams" },
+      { name: "Nx Workspaces", level: "Project experience", badge: "Monorepo design" },
+      { name: "Angular Material", level: "Practical experience", badge: "UI components" },
+      { name: "Kendo UI", level: "Project experience", badge: "Enterprise controls" },
+      { name: "Cypress & Jest", level: "Project experience", badge: "Test suites" },
+      { name: "HTML & SCSS / Tailwind", level: "Practical experience", badge: "Responsive layout styling" }
     ]
   }
 ];
 
 export const COLLABORATION_VALUES = [
   {
-    title: "1. Senior Autonomy",
-    description: "You do not need to micro-manage me. Once onboarded, I take absolute ownership of tickets, clarify requirements proactively, and coordinate technical details with peripheral teams directly on eye-level."
+    title: "1. Senior Autonomy & Readyness",
+    description: "Once onboarded, I take absolute ownership of assigned tasks, clarify missing details with other teams proactively, and drive development work independently."
   },
   {
-    title: "2. Clean, Resilient Code is Cheaper",
-    description: "I write stable, self-documenting code supported by strong unit/integration test assertions. It stops bugs from manifesting in production and makes the system understandable for future maintenance teams."
+    title: "2. Pragmatic & Truthful Communication",
+    description: "I speak German and English at a C1 level. I believe in direct, professional, and fact-based technical alignment. I outline trade-offs and options clearly so you can make informed business decisions."
   },
   {
-    title: "3. Clear Non-Desperate Communication",
-    description: "I speak German and English fluently. I am direct, honest, and pragmatic. If a technical direction is highly risky or introduces critical technical debt, I will articulate alternatives clearly with clear trade-offs, supporting business decisions."
+    title: "3. Focus on Maintainable Code & Deployments",
+    description: "I build robust, testable solutions integrated with structured CI/CD pipelines. This ensures long-term system stability, easy handovers, and reliable production environments."
   },
   {
-    title: "4. German & European Compliance Focus",
-    description: "Operating from Frankfurt am Main, I understand critical local regulatory conditions, GDPR, secure credential guidelines, and business processes standard in central EU enterprise projects."
+    title: "4. Compliance & Enterprise Standards",
+    description: "Operating from Germany, I am naturally aligned with European software standards, GDPR requirements, passwordless security practices, and professional compliance expectations."
   }
 ];
 
 export const COLLABORATION_FAQS = [
   {
     q: "Are you fully freelance / self-employed?",
-    a: "Yes. I operate strictly as a registered freelancer. I accept contract projects directly from enterprise clients, staffing solution providers, or agencies."
+    a: "Yes. I operate strictly as a registered freelance professional in Germany. I accept contracting roles directly from corporate clients, IT project providers, or intermediary staffing agencies."
   },
   {
-    q: "How do you work with NDA and customer privacy?",
-    a: "Strict confidentiality is a given. I never use proprietary schemas, customer names, or trademarked solutions in open portfolios. All project descriptions above are genericised to respect client non-disclosure agreements."
+    q: "How do you handle NDA and confidentiality?",
+    a: "Strict NDA compliance, data privacy, and confidentiality are essential parts of my professional service. All project examples listed on this site have been anonymized, simplified, and genericized to respect client business secrets and protect NDAs."
   },
   {
-    q: "What are your standard remote setup preferences?",
-    a: "I work Remote-First. I maintain a high-end secure development office in Frankfurt am Main with dual redundant fiber access, backup power, and fully compliant hardware. I am happy to join sprint planning, workshops, or kickoffs on-site whenever needed."
+    q: "What is your typical remote and travel setup?",
+    a: "I work remote-first, equipped with a high-bandwidth, secure work office in Frankfurt am Main. I am fully prepared to join on-site kick-offs, workshops, or critical deployment alignments whenever required."
   },
   {
-    q: "What is your notice period / availability?",
-    a: "My availability is updated transparently on this landing page. Normally I am booked for 3-9 month waves, but slots open up and I often maintain 4-8 hours a week of buffer for modernization consulting, high-impact architecture reviews, or emergencies."
+    q: "How can we check your availability or profile?",
+    a: "My current availability details are kept up to date on this website (currently booking for projects starting from July 2026). You can request a copy of my full freelance CV / Profile PDF directly via the contact buttons below."
   }
 ];

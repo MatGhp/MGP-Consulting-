@@ -30,10 +30,10 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
   };
 
   const kpis = [
-    { value: "10+", label: "Years Enterprise Exp." },
-    { value: "100%", label: "Cloud Delivery Rate" },
-    { value: "German", label: "Fluent (B2/C1)" },
-    { value: "English", label: "Fluent (C2)" },
+    { value: "15+", label: "Years Exp." },
+    { value: "C1 / C1", label: "DE & EN Fluency" },
+    { value: "Remote", label: "First Preference" },
+    { value: "July '26", label: "Available From" },
   ];
 
   return (
@@ -62,7 +62,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
             >
               <Terminal className="w-3.5 h-3.5 text-blue-600" />
               <span className="font-mono text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                Senior Freelance Consultant
+                Senior Freelance Developer
               </span>
             </motion.div>
 
@@ -91,28 +91,18 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
               {PERSONAL_INFO.subheadline}
             </motion.p>
 
-            {/* Details Grid (Location, Language, Travel) */}
+            {/* Trust Facts Grid List */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 py-2 border-y border-slate-150 text-sm text-slate-650 font-medium"
+              className="py-3 border-y border-slate-200 text-sm text-slate-700 space-y-2.5 font-medium"
             >
-              <div className="flex items-center space-x-2.5">
-                <MapPin className="w-4.5 h-4.5 text-slate-400 flex-shrink-0" />
-                <span className="truncate">{PERSONAL_INFO.locationShort}</span>
-              </div>
-              <div className="flex items-center space-x-2.5">
-                <span className="font-mono text-xs text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-100 font-bold uppercase">
-                  DE / EN
-                </span>
-                <span>German & English (Full Professional)</span>
-              </div>
-              <div className="flex items-center space-x-2.5 sm:col-span-2">
-                <span className="font-mono text-xs text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200 font-bold uppercase">
-                  REMOTE-FIRST
-                </span>
-                <span className="text-slate-500 text-xs font-normal">
-                  {PERSONAL_INFO.availability.remotePreference}
-                </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                {PERSONAL_INFO.trustFacts.map((fact, index) => (
+                  <div key={index} className="flex items-start space-x-2">
+                    <span className="text-emerald-500 font-bold mt-0.5 flex-shrink-0">✓</span>
+                    <span className="text-slate-650 text-xs sm:text-sm font-medium">{fact}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
 
@@ -136,7 +126,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
                 className="px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-md font-semibold text-sm hover:bg-slate-50 transition-colors text-center flex items-center justify-center space-x-2 ml-0 sm:ml-1 shrink-0"
               >
                 <FileText className="w-4.5 h-4.5 text-slate-500" />
-                <span>Request Core Profil / CV</span>
+                <span>Request CV / Profile</span>
               </button>
             </motion.div>
 

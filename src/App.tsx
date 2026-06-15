@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: Apache-2.5
  */
 
-import { useState } from "react";
-import { ToastContainer } from "lucide-react"; // Custom indicators
+import React, { useState } from "react";
 import { FileText, X, Mail, Check, Linkedin, Download, ShieldCheck, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -48,9 +47,9 @@ export default function App() {
   // Immediate Profile Download Function
   const handleImmediateDownload = () => {
     const profileText = `======================================================================
-MOJTABA GHANAAT-PISHEH
-SENIOR .NET / AZURE INTEGRATION CONSULTANT
-Official Freelance Profile & Contract Specifications (2026 Edition)
+MOJTABA GHANAAT PISHEH
+SENIOR .NET / AZURE INTEGRATION DEVELOPER
+Official Freelance Profile & Contract Specifications
 ======================================================================
 
 CONTACT DETAILS:
@@ -63,25 +62,32 @@ Preferred contract structures: GULP, freelancermap, or direct agency billing
 
 CORE POSITIONING:
 -----------------
-Freelance developer specializing in .NET (8 & 9), cloud integration, message-driven backend systems, passwordless security integrations, CI/CD pipelines, and structured modern Angular-based administration applications.
+Senior Freelance Developer with 15+ years of software development experience specializing in .NET, Azure integration, cloud-native backend services, CI/CD, and Angular business applications.
 
 SUMMARY OF MASTERY MATRIX:
 -------------------------
-1. .NET Ecosystem: C#, ASP.NET Core Web API (REST/gRPC), EF Core, clean architecture boundaries (DDD), xUnit testing suites.
-2. Azure Cloud Platforms: Azure Service Bus (Resilient Message queues), Azure Functions (Isolated workers), Key Vault, Managed Identities, APIM, Cosmos DB.
-3. DevOps Operations: Automated release pipes via YAML (Azure DevOps / GitHub actions), Infrastructure as Code (Azure Bicep), Docker containers.
-4. Business Interfaces: Single-Page applications using Angular, TypeScript, and responsive Tailwind styling.
+1. .NET Ecosystem: C#, ASP.NET Core Web API, EF Core, Clean Architecture, test automation.
+2. Azure Cloud Platforms: Azure Functions, Azure Service Bus, Logic Apps, Key Vault, API Management, Application Insights, Azure SQL.
+3. DevOps Operations: Pipelines YAML (Azure DevOps / GitHub actions), Infrastructure as Code (Bicep/Terraform), Docker.
+4. Frontend: Angular, TypeScript, RxJS, Nx, Angular Material / Kendo UI.
 
-SELECTED RETROSPECTIVE PROJECT OUTLINES:
---------------------------------------
-* Role: Freelance Lead Azure Integration Developer (German Utility Grid)
-  Telemetry collection re-architecture. Processed massive telemetry files via event hub grids. Replaced legacy message pipelines with robust dead-letter queue rules, achieving 99.99% operational continuity.
+SELECTED EXPERIENCE SUMMARY:
+---------------------------
+* Project: Enterprise Supplier Portal & Onboarding Platform
+  Role: Freelance Senior Full-Stack / Integration Developer
+  Implemented and extended onboarding and integration workflows using .NET, ASP.NET Core, Angular, TypeScript, Azure Service Bus, and Docker. Supported production setups and CI/CD releases.
   
-* Role: Freelance Senior .NET Cloud Backend Developer (European Logistics Carrier)
-  API decoupled monolithic migration to Container Apps with isolated function workers. Hosted Angular-based package dispatcher grids with multi-environment Azure DevOps release pipelines.
+* Project: Azure Cloud-Native Integration Platform
+  Role: Lead Technical Consultant / Azure Integration Developer
+  Designed and implemented Azure-based integration components, securing credentials via Key Vault, routing with Service Bus, and automating workflows.
 
-* Role: Senior integration engineer (German Financial Broker Agency)
-  Established BaFin compliant secure document intake systems. Eliminated hardcoded connection connection passwords utilizing passwordless Azure Managed Identities.
+* Project: Smart Energy Cloud Platform
+  Role: Senior Full-Stack / Cloud Developer
+  Developed backend features and Angular business structures, working with API management, Keycloak authentication, monitoring telemetry, and Cloud deployments.
+
+* Project: Enterprise Angular Applications & Real-Time Interfaces
+  Role: Senior Angular / Full-Stack Developer
+  Modernized Angular frontend interfaces, integrating real-time server interfaces and complex workflows.
 
 ======================================================================
 This document is prepared as a standard resume snapshot. Please forward direct project scopes to: mojtaba@mgp-consulting.de
