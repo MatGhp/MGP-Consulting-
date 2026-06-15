@@ -1,0 +1,192 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { useState } from "react";
+import { Briefcase, Calendar, Clock, MapPin, Tag, ShieldCheck, Check } from "lucide-react";
+import { PROJECTS } from "../data";
+import { motion, AnimatePresence } from "motion/react";
+
+export default function Experience() {
+  const [filterTech, setFilterTech] = useState<string>("All");
+
+  // Get all unique technologies across all projects for a nice filter pill list
+  const filterPills = ["All", "Azure Functions", "Azure Service Bus", "DevOps Pipelines", "Angular"];
+
+  const filteredProjects = PROJECTS.filter((project) => {
+    if (filterTech === "All") return true;
+    if (filterTech === "DevOps Pipelines") {
+      return (
+        project.techStack.includes("Azure DevOps Pipelines") ||
+        project.techStack.includes("GitHub Actions")
+      );
+    }
+    return project.techStack.some((tech) => tech.includes(filterTech));
+  });
+
+  return (
+    <section id="experience" className="py-20 bg-white border-b border-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+          <div className="max-w-2xl">
+            <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
+              Deliveries Logbook
+            </span>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Selected Projects & Integration Deliveries
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
+              A record of complex assignments successfully completed. Reflects core backend architecture, serverless integrations, security setups, and client dashboard implementations.
+            </p>
+          </div>
+
+          {/* Secure NDA Compliance Disclaimer Badge */}
+          <div className="mt-4 md:mt-0 px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg flex items-start space-x-2.5 max-w-sm">
+            <ShieldCheck className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+            <div className="text-3xs text-slate-600 leading-relaxed">
+              <strong className="text-slate-800 uppercase tracking-wide font-bold font-mono">NDA & Privacy Compliant</strong>
+              <p className="font-normal font-sans">
+                Specific corporate names, internal URLs, and patented designs are anonymized or generalized to respect ongoing partner NDAs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Filter Pills */}
+        <div className="flex flex-wrap gap-2 mb-10 pb-2 border-b border-slate-100 select-none">
+          {filterPills.map((pill) => (
+            <button
+              key={pill}
+              onClick={() => setFilterTech(pill)}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold font-mono tracking-wide uppercase transition-all border cursor-pointer ${
+                filterTech === pill
+                  ? "bg-slate-950 text-white border-slate-950"
+                  : "bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 hover:text-slate-705"
+              }`}
+            >
+              {pill}
+            </button>
+          ))}
+        </div>
+
+        {/* Project logs cascade */}
+        <div className="space-y-12">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project) => (
+              <motion.div
+                layout
+                id={`project-card-${project.id}`}
+                key={project.id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white border border-slate-205 p-6 sm:p-8 rounded-xl hover:shadow-xs transition-shadow relative"
+              >
+                {/* Meta details header band */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100 mb-6 text-xs text-slate-500">
+                  <div className="flex flex-wrap items-center gap-y-2 gap-x-4">
+                    <span className="font-mono bg-blue-50 text-blue-700 border border-blue-100/50 px-2.5 py-1 rounded font-bold uppercase tracking-wider text-3xs">
+                      {project.sector}
+                    </span>
+                    <span className="font-sans text-slate-700 font-semibold flex items-center">
+                      <Briefcase className="w-3.5 h-3.5 mr-1.5 text-slate-400" />
+                      {project.clientType}
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4 font-mono text-3xs font-semibold uppercase tracking-wider">
+                    <span className="flex items-center">
+                      <Calendar className="w-3.5 h-3.5 mr-1 text-slate-400" />
+                      {project.period}
+                    </span>
+                    <span className="flex items-center text-blue-600 bg-blue-50/50 px-2 py-0.5 rounded border border-blue-100/30">
+                      <Clock className="w-3.5 h-3.5 mr-1 text-blue-500" />
+                      {project.duration}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Role & Title */}
+                <div className="space-y-3 mb-5">
+                  <span className="block text-xs font-mono font-bold text-blue-600 uppercase tracking-widest">
+                    {project.role}
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed font-sans font-normal">
+                    <strong>Project Scope / Mission: </strong>
+                    {project.scope}
+                  </p>
+                </div>
+
+                {/* Key Achievements Bullet block */}
+                <div className="space-y-3 mb-6">
+                  <span className="block text-3xs font-mono font-bold text-slate-400 uppercase tracking-widest">
+                    MEASURABLE ACHIEVEMENTS & DELIVERY ITEMS
+                  </span>
+                  <ul className="space-y-2.5 text-sm text-slate-700 font-sans font-normal">
+                    {project.achievements.map((achievement, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <div className="p-0.5 bg-emerald-50 text-emerald-600 border border-emerald-150 rounded-full mr-2.5 mt-0.5 flex-shrink-0">
+                          <Check className="w-3.5 h-3.5 stroke-[3px]" />
+                        </div>
+                        <span>{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Technology Badges array */}
+                <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-1.5">
+                  <span className="text-3xs font-mono font-bold text-slate-400 uppercase tracking-wider mr-2 select-none">
+                    Tech Focus:
+                  </span>
+                  {project.techStack.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2.5 py-1 bg-slate-50 border border-slate-200 text-slate-600 rounded text-3xs font-mono font-medium hover:bg-slate-100 hover:text-slate-900 transition-colors cursor-default"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+
+        {/* Custom recruitment pitch card */}
+        <div className="mt-16 bg-slate-50 border border-slate-200 p-6 md:p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-1 max-w-2xl text-center md:text-left">
+            <h4 className="text-base font-bold text-slate-900">
+              Need a full, formal PDF CV or Freelance Profile?
+            </h4>
+            <p className="text-xs text-slate-500 leading-relaxed">
+              I can provide an extensive, recruiter-optimized PDF CV (formatted cleanly for GULP, freelancermap, or direct agency client submissions) containing exact versions, framework lists, and references.
+            </p>
+          </div>
+          <button
+            id="btn-exp-cv-req"
+            onClick={() => {
+              const element = document.querySelector("#contact");
+              if (element) {
+                const topOffset = element.getBoundingClientRect().top + window.scrollY - 80;
+                window.scrollTo({ top: topOffset, behavior: "smooth" });
+              }
+            }}
+            className="px-5 py-2.5 bg-slate-900 text-white hover:bg-blue-600 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors shrink-0 cursor-pointer"
+          >
+            Get Full Profile PDF
+          </button>
+        </div>
+
+      </div>
+    </section>
+  );
+}
