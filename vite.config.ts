@@ -5,9 +5,10 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   const envBasePath = process.env.VITE_BASE_PATH?.trim();
-  const normalizedBasePath = envBasePath
-    ? `/${envBasePath.replace(/^\/+|\/+$/g, '')}/`
-    : '/';
+  const normalizedBasePath =
+    !envBasePath || envBasePath === '/'
+      ? '/'
+      : `/${envBasePath.replace(/^\/+|\/+$/g, '')}/`;
 
   return {
     base: normalizedBasePath,
