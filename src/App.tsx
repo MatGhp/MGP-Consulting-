@@ -33,11 +33,6 @@ export default function App() {
 
   const triggerDirectInquiry = () => {
     handleScrollToSection("#contact");
-    // If we want to set active tab as inquiry
-    const tabInquiry = document.getElementById("tab-btn-inquiry");
-    if (tabInquiry) {
-      tabInquiry.click();
-    }
   };
 
   const triggerCvRequestSection = () => {

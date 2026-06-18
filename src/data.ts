@@ -15,8 +15,9 @@ export const PERSONAL_INFO = {
   location: "Based in Frankfurt am Main, Germany • Remote-first across Germany and the EU",
   locationShort: "Frankfurt am Main, Germany",
   email: "mojtaba@mgp-consulting.de",
-  linkedin: "https://www.linkedin.com/in/mojtaba-ghanaat-pisheh",
-  github: "https://github.com/mojtabagp",
+  phone: "+4917643674802",
+  linkedin: "https://www.linkedin.com/in/mojtabaghp/",
+  github: "https://github.com/MatGhp",
   languages: [
     { name: "German", level: "C1 (Fluent Project Communication)" },
     { name: "English", level: "C1 (Fluent Project Communication)" },

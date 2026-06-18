@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from "react";
-import { Mail, Linkedin, FileText, CheckCircle, MapPin, Calendar, Globe, ChevronDown, Send, Download } from "lucide-react";
+import React, { useMemo, useState } from "react";
+import { Mail, Linkedin, FileText, MapPin, Calendar, Globe, ChevronDown, Phone, Copy, Check } from "lucide-react";
 import { PERSONAL_INFO, COLLABORATION_FAQS } from "../data";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -13,18 +13,7 @@ interface AvailabilityAndContactProps {
 }
 
 export default function AvailabilityAndContact({ onCvRequestedSuccess }: AvailabilityAndContactProps) {
-  const [activeTab, setActiveTab] = useState<"inquiry" | "cv">("inquiry");
-
-  const [inquiryName, setInquiryName] = useState("");
-  const [inquiryEmail, setInquiryEmail] = useState("");
-  const [inquiryCompany, setInquiryCompany] = useState("");
-  const [inquiryType, setInquiryType] = useState("Legacy .NET modernization");
-  const [inquiryMessage, setInquiryMessage] = useState("");
-  const [inquirySent, setInquirySent] = useState(false);
-
-  const [profileEmail, setProfileEmail] = useState("");
-  const [profileCompany, setProfileCompany] = useState("");
-  const [profileSent, setProfileSent] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState("");
 
   const [openFaqIndices, setOpenFaqIndices] = useState<number[]>([]);
 
@@ -36,77 +25,47 @@ export default function AvailabilityAndContact({ onCvRequestedSuccess }: Availab
     }
   };
 
-  const handleCapabilitySnapshotDownload = () => {
-    const profileText = `======================================================================
-MOJTABA GHANAAT PISHEH
-FREELANCE SENIOR .NET & AZURE DEVELOPER
-Capability Snapshot
-======================================================================
+  const profileRequestMailto = useMemo(() => {
+    const subject = encodeURIComponent("Freelancer Profile Request – .NET / Azure Project");
+    const body = encodeURIComponent(
+      "Hello Mojtaba,\n\nI would like to request your current freelance profile for a potential project opportunity.\n\nProject context:\nCompany:\nRole / focus:\nStart:\nDuration:\nRemote / onsite setup:\n\nBest regards,"
+    );
+    return `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
+  }, []);
 
-CONTACT DETAILS:
-----------------
-Email: ${PERSONAL_INFO.email}
-Phone/Direct: Request via email
-Location: Frankfurt am Main, Germany
-Availability: ${PERSONAL_INFO.availability.status} ${PERSONAL_INFO.availability.dateText}
-
-POSITIONING:
-------------
-Freelance Senior .NET & Azure Developer for Enterprise Integration and Legacy Modernization.
-Two decades of software engineering experience focused on enterprise delivery.
-
-CORE FOCUS:
------------
-- Legacy .NET modernization
-- Reliable Azure integrations
-- Maintainable backend services
-- Production-oriented delivery
-- Angular business applications
-
-NOTE:
------
-This capability snapshot is intended for initial project evaluation.
-A current freelance profile is available upon request for client submission and supplier onboarding.
-
-======================================================================
-MGP Consulting (c) 2026. Frankfurt, Germany
-======================================================================
-`;
-
-    const blob = new Blob([profileText], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.setAttribute("download", "Capability_Snapshot_Mojtaba_Ghanaat_Pisheh.txt");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const showFeedback = (message: string) => {
+    setFeedbackMessage(message);
+    window.setTimeout(() => setFeedbackMessage(""), 2500);
   };
 
-  const handleInquirySubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!inquiryName || !inquiryEmail || !inquiryMessage) {
-      alert("Please enter your name, work email, and project scope.");
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(PERSONAL_INFO.email);
+      showFeedback("Email copied.");
+    } catch {
+      showFeedback("Could not copy email. Please copy manually.");
+    }
+  };
+
+  const handleCopyPhone = async () => {
+    if (!PERSONAL_INFO.phone) {
+      showFeedback("Phone number is shared on request.");
       return;
     }
 
-    const emailSubject = encodeURIComponent(`[Project Discussion] ${inquiryType}`);
-    const emailBody = encodeURIComponent(
-      `Hello Mojtaba,\n\nI would like to discuss a project.\n\nName: ${inquiryName}\nCompany: ${inquiryCompany}\nEmail: ${inquiryEmail}\nFocus: ${inquiryType}\n\nProject scope:\n-------------------------------\n${inquiryMessage}\n\n-------------------------------\nSent from mgp-consulting.de`
-    );
-
-    setInquirySent(true);
-    window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${emailSubject}&body=${emailBody}`;
+    try {
+      await navigator.clipboard.writeText(PERSONAL_INFO.phone);
+      showFeedback("Phone copied.");
+    } catch {
+      showFeedback("Could not copy phone. Please copy manually.");
+    }
   };
 
-  const handleProfileSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!profileEmail) return;
-
-    setProfileSent(true);
+  const handleRequestFreelancerProfile = () => {
     if (onCvRequestedSuccess) {
       onCvRequestedSuccess();
     }
+    window.location.href = profileRequestMailto;
   };
 
   return (
@@ -118,8 +77,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Start a Project Discussion</h2>
           <p className="mt-4 text-base text-slate-600">
-            Available for remote-first enterprise assignments across Germany and the EU. Supported collaboration models include
-            direct client engagement, approved supplier onboarding, and professional agency frameworks.
+            Available for remote-first enterprise assignments across Germany and the EU. For project inquiries, profile requests, or supplier onboarding, please contact me directly.
           </p>
         </div>
 
@@ -157,7 +115,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
               </div>
 
               <div className="space-y-3.5">
-                <span className="font-mono text-3xs font-bold text-slate-400 uppercase tracking-widest block">Agency & Client Note</span>
+                <span className="font-mono text-3xs font-bold text-slate-400 uppercase tracking-widest block">Collaboration Note</span>
                 <ul className="space-y-2 text-xs text-slate-650">
                   <li className="flex items-start">
                     <span className="text-emerald-500 font-bold mr-2">✓</span>
@@ -169,7 +127,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                   </li>
                   <li className="flex items-start">
                     <span className="text-emerald-500 font-bold mr-2">✓</span>
-                    <span>Supports direct clients, approved supplier channels, and professional agency frameworks</span>
+                    <span>Supports direct client collaboration and approved supplier onboarding</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-emerald-500 font-bold mr-2">✓</span>
@@ -182,7 +140,8 @@ MGP Consulting (c) 2026. Frankfurt, Germany
             <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-4">
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="flex items-center space-x-2 px-4 py-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-800 rounded-lg text-xs font-semibold uppercase tracking-wider font-mono w-full justify-center transition-colors select-none"
+                aria-label="Email Mojtaba"
+                className="flex items-center space-x-2 px-4 py-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-800 rounded-lg text-sm font-semibold w-full justify-center transition-colors"
               >
                 <Mail className="w-4 h-4 fill-blue-100" />
                 <span>{PERSONAL_INFO.email}</span>
@@ -192,7 +151,8 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center space-x-2 px-4 py-3 bg-slate-50 hover:bg-slate-150 border border-slate-200 text-slate-700 rounded-lg text-xs font-semibold uppercase tracking-wider font-mono w-full justify-center transition-colors select-none"
+                aria-label="Open LinkedIn profile"
+                className="flex items-center space-x-2 px-4 py-3 bg-slate-50 hover:bg-slate-150 border border-slate-200 text-slate-700 rounded-lg text-sm font-semibold w-full justify-center transition-colors"
               >
                 <Linkedin className="w-4 h-4 text-blue-600" />
                 <span>LinkedIn Profile</span>
@@ -201,210 +161,107 @@ MGP Consulting (c) 2026. Frankfurt, Germany
           </div>
 
           <div className="lg:col-span-7">
-            <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-xs">
-              <div className="grid grid-cols-2 border-b border-slate-200 bg-slate-100 p-1">
-                <button
-                  id="tab-btn-inquiry"
-                  onClick={() => setActiveTab("inquiry")}
-                  className={`py-3.5 text-xs uppercase tracking-wider font-mono font-bold rounded-lg text-center transition-all cursor-pointer ${
-                    activeTab === "inquiry"
-                      ? "bg-white text-slate-900 shadow-3xs border border-slate-200"
-                      : "text-slate-500 hover:text-slate-800 hover:bg-white/40"
-                  }`}
+            <div className="bg-white border border-slate-200 rounded-xl shadow-xs p-6 sm:p-8 space-y-6">
+              <div className="space-y-2">
+                <h4 className="text-lg font-bold text-slate-900">Direct Contact</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Quick contact details for recruiters, enterprise teams, and technical decision makers.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <span className="text-xs text-slate-500">Email</span>
+                  <a href={`mailto:${PERSONAL_INFO.email}`} className="block text-sm font-medium text-slate-900 mt-1 break-all" aria-label="Email address">
+                    {PERSONAL_INFO.email}
+                  </a>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <span className="text-xs text-slate-500">Phone</span>
+                  <a href={`tel:${PERSONAL_INFO.phone}`} className="block text-sm font-medium text-slate-900 mt-1" aria-label="Phone number">
+                    {PERSONAL_INFO.phone}
+                  </a>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <span className="text-xs text-slate-500">LinkedIn</span>
+                  <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noreferrer" className="block text-sm font-medium text-slate-900 mt-1" aria-label="Open LinkedIn profile">
+                    LinkedIn Profile
+                  </a>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <span className="text-xs text-slate-500">GitHub</span>
+                  <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="block text-sm font-medium text-slate-900 mt-1" aria-label="Open GitHub profile">
+                    GitHub Profile
+                  </a>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <span className="text-xs text-slate-500">Location</span>
+                  <span className="block text-sm font-medium text-slate-900 mt-1">{PERSONAL_INFO.locationShort}</span>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                  <span className="text-xs text-slate-500">Availability</span>
+                  <span className="block text-sm font-medium text-slate-900 mt-1">{PERSONAL_INFO.availability.status} — {PERSONAL_INFO.availability.dateText}</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 pt-1">
+                <a
+                  href={`mailto:${PERSONAL_INFO.email}`}
+                  aria-label="Email me"
+                  className="px-5 py-2.5 bg-slate-950 text-white hover:bg-blue-600 rounded-md text-sm font-semibold transition-colors inline-flex items-center justify-center space-x-2"
                 >
-                  Discuss Project
+                  <Mail className="w-4 h-4" />
+                  <span>Email Me</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={handleRequestFreelancerProfile}
+                  aria-label="Request freelancer profile by email"
+                  className="px-5 py-2.5 bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 rounded-md text-sm font-semibold transition-colors inline-flex items-center justify-center space-x-2"
+                >
+                  <FileText className="w-4 h-4 text-slate-500" />
+                  <span>Request Freelancer Profile</span>
                 </button>
+
                 <button
-                  id="tab-btn-cv"
-                  onClick={() => setActiveTab("cv")}
-                  className={`py-3.5 text-xs uppercase tracking-wider font-mono font-bold rounded-lg text-center transition-all cursor-pointer ${
-                    activeTab === "cv"
-                      ? "bg-white text-slate-900 shadow-3xs border border-slate-200"
-                      : "text-slate-500 hover:text-slate-800 hover:bg-white/40"
-                  }`}
+                  type="button"
+                  onClick={handleCopyEmail}
+                  aria-label="Copy email address"
+                  className="px-4 py-2.5 bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-150 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center space-x-2"
                 >
-                  Request Freelancer Profile
+                  <Copy className="w-4 h-4" />
+                  <span>Copy Email</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleCopyPhone}
+                  aria-label="Copy phone number"
+                  className="px-4 py-2.5 bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-150 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center space-x-2"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Copy Phone</span>
                 </button>
               </div>
 
-              <div className="p-6 bg-white sm:p-8 min-h-[420px]">
-                {activeTab === "inquiry" ? (
-                  <form onSubmit={handleInquirySubmit} className="space-y-4">
-                    <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide font-mono block border-b border-slate-50 pb-2 mb-4">Start a Project Discussion</h4>
+              {feedbackMessage && (
+                <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-sm text-emerald-800 flex items-center space-x-2" role="status" aria-live="polite">
+                  <Check className="w-4 h-4" />
+                  <span>{feedbackMessage}</span>
+                </div>
+              )}
 
-                    {inquirySent ? (
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="bg-emerald-50 border border-emerald-200 rounded-lg p-5 text-center space-y-4 py-12"
-                      >
-                        <CheckCircle className="w-12 h-12 text-emerald-600 mx-auto" />
-                        <div className="space-y-1">
-                          <h5 className="text-base font-bold text-slate-900">Project Discussion Prepared</h5>
-                          <p className="text-xs text-slate-600 leading-relaxed max-w-md mx-auto">Your email client has been opened with prefilled project details for quick review and sending.</p>
-                        </div>
-                        <div className="bg-white border border-emerald-250 p-3 rounded text-[11px] font-mono text-slate-700 select-all max-w-sm mx-auto">
-                          Send to: <strong>{PERSONAL_INFO.email}</strong>
-                        </div>
-                        <button type="button" onClick={() => setInquirySent(false)} className="text-xs font-semibold text-blue-600 hover:underline">
-                          Edit and send another request
-                        </button>
-                      </motion.div>
-                    ) : (
-                      <div className="space-y-4 text-xs font-sans">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div className="space-y-1.5 animate-none">
-                            <label className="font-semibold text-slate-700 font-mono block uppercase text-[10px]">Name *</label>
-                            <input
-                              required
-                              type="text"
-                              value={inquiryName}
-                              onChange={(e) => setInquiryName(e.target.value)}
-                              placeholder="e.g. Martina Becker"
-                              className="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded focus:bg-white focus:ring-1 focus:ring-blue-600 focus:outline-hidden text-sm"
-                            />
-                          </div>
-
-                          <div className="space-y-1.5">
-                            <label className="font-semibold text-slate-700 font-mono block uppercase text-[10px]">Work Email *</label>
-                            <input
-                              required
-                              type="email"
-                              value={inquiryEmail}
-                              onChange={(e) => setInquiryEmail(e.target.value)}
-                              placeholder="e.g. team@enterprise-example.de"
-                              className="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded focus:bg-white focus:ring-1 focus:ring-blue-600 focus:outline-hidden text-sm"
-                            />
-                          </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div className="space-y-1.5">
-                            <label className="font-semibold text-slate-700 font-mono block uppercase text-[10px]">Company / Organization</label>
-                            <input
-                              type="text"
-                              value={inquiryCompany}
-                              onChange={(e) => setInquiryCompany(e.target.value)}
-                              placeholder="e.g. Enterprise Solutions GmbH"
-                              className="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded focus:bg-white focus:ring-1 focus:ring-blue-600 focus:outline-hidden text-sm"
-                            />
-                          </div>
-
-                          <div className="space-y-1.5">
-                            <label className="font-semibold text-slate-700 font-mono block uppercase text-[10px]">Project Focus</label>
-                            <select
-                              title="Project Focus"
-                              value={inquiryType}
-                              onChange={(e) => setInquiryType(e.target.value)}
-                              className="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded focus:bg-white focus:ring-1 focus:ring-blue-600 focus:outline-hidden text-sm"
-                            >
-                              <option>Legacy .NET modernization</option>
-                              <option>Azure integration and API platform delivery</option>
-                              <option>Angular business application modernization</option>
-                              <option>CI/CD and release reliability improvements</option>
-                              <option>Senior technical consulting</option>
-                            </select>
-                          </div>
-                        </div>
-
-                        <div className="space-y-1.5">
-                          <label className="font-semibold text-slate-700 font-mono block uppercase text-[10px]">Project Scope *</label>
-                          <textarea
-                            required
-                            rows={4}
-                            value={inquiryMessage}
-                            onChange={(e) => setInquiryMessage(e.target.value)}
-                            placeholder="Please describe your current system landscape, project scope, timeline, and key delivery expectations."
-                            className="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded focus:bg-white focus:ring-1 focus:ring-blue-600 focus:outline-hidden text-sm leading-relaxed"
-                          />
-                        </div>
-
-                        <button
-                          id="btn-submit-inquiry"
-                          type="submit"
-                          className="w-full py-3 bg-slate-950 text-white rounded font-semibold text-xs tracking-wider uppercase hover:bg-blue-600 transition-colors flex items-center justify-center space-x-2 cursor-pointer mt-2"
-                        >
-                          <Send className="w-4 h-4" />
-                          <span>Discuss Project</span>
-                        </button>
-
-                        <span className="block text-center text-3xs font-mono text-slate-400 mt-1 uppercase select-none">Sends directly to: mojtaba@mgp-consulting.de</span>
-                      </div>
-                    )}
-                  </form>
-                ) : (
-                  <form onSubmit={handleProfileSubmit} className="space-y-4 h-full flex flex-col justify-between">
-                    <div className="space-y-4">
-                      <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide font-mono block border-b border-slate-50 pb-2 mb-4">Request Freelancer Profile</h4>
-
-                      {profileSent ? (
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.98 }}
-                          animate={{ opacity: 1 }}
-                          className="bg-emerald-50 border border-emerald-200 rounded-lg p-5 text-center space-y-4 py-8"
-                        >
-                          <CheckCircle className="w-12 h-12 text-emerald-600 mx-auto" />
-                          <div>
-                            <h5 className="text-base font-bold text-slate-905">Profile Request Received</h5>
-                            <p className="text-xs text-slate-650 leading-relaxed mt-1 max-w-sm mx-auto">Thank you. Your request has been received.</p>
-                          </div>
-
-                          <button
-                            type="button"
-                            onClick={handleCapabilitySnapshotDownload}
-                            className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-mono text-2xs uppercase tracking-wide rounded-md inline-flex items-center space-x-1.5"
-                          >
-                            <Download className="w-3.5 h-3.5" />
-                            <span>Download Capability Snapshot</span>
-                          </button>
-                        </motion.div>
-                      ) : (
-                        <div className="space-y-4 text-xs font-sans">
-                          <p className="text-xs text-slate-600 leading-relaxed">A current freelance profile is available upon request for project evaluation, client submission, and supplier onboarding. It includes relevant project experience, technology focus, availability, and collaboration details.</p>
-
-                          <div className="space-y-1.5">
-                            <label className="font-semibold text-slate-705 font-mono block uppercase text-[10px]">Work Email *</label>
-                            <input
-                              required
-                              type="email"
-                              value={profileEmail}
-                              onChange={(e) => setProfileEmail(e.target.value)}
-                              placeholder="e.g. hiring@enterprise-example.de"
-                              className="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded focus:bg-white focus:ring-1 focus:ring-blue-600 focus:outline-hidden text-sm"
-                            />
-                          </div>
-
-                          <div className="space-y-1.5">
-                            <label className="font-semibold text-slate-705 font-mono block uppercase text-[10px]">Company / Organization</label>
-                            <input
-                              type="text"
-                              value={profileCompany}
-                              onChange={(e) => setProfileCompany(e.target.value)}
-                              placeholder="e.g. Enterprise Solutions GmbH"
-                              className="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded focus:bg-white focus:ring-1 focus:ring-blue-600 focus:outline-hidden text-sm"
-                            />
-                          </div>
-
-                          <button
-                            id="btn-trigger-cv-down"
-                            type="submit"
-                            className="w-full py-3 bg-slate-950 text-white rounded font-semibold text-xs tracking-wider uppercase hover:bg-blue-600 transition-colors flex items-center justify-center space-x-2 cursor-pointer mt-4"
-                          >
-                            <FileText className="w-4 h-4" />
-                            <span>Request Freelancer Profile</span>
-                          </button>
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-2xs text-slate-400 select-none">
-                      <span>Optional:</span>
-                      <button type="button" onClick={handleCapabilitySnapshotDownload} className="text-blue-600 hover:underline font-mono font-bold">
-                        Download Capability Snapshot
-                      </button>
-                    </div>
-                  </form>
-                )}
+              <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-lg flex items-start space-x-2.5">
+                <Globe className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  <strong>Project Onboarding:</strong> Available for remote-first enterprise assignments with structured onboarding, NDA-ready communication, and professional freelance collaboration.
+                </p>
               </div>
             </div>
           </div>
