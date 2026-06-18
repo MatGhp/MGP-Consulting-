@@ -109,21 +109,42 @@ export default function TechStack() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-2 space-y-1">
               <span className="font-mono text-3xs font-semibold text-blue-400 uppercase tracking-widest block">
-                How I keep delivery stable
+                Delivery habits that reduce project risk
               </span>
               <h4 className="text-md font-bold text-white">
-                How I keep delivery stable
+                Delivery habits that reduce project risk
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed font-sans font-normal">
-                I focus on maintainable implementation, practical testing, CI/CD gates, and release routines that fit
-                enterprise teams.
+                I work with small, reviewable changes, practical tests, CI/CD checks, secure configuration, and clear
+                handover notes.
               </p>
             </div>
-            <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-750 font-mono text-[10px] space-y-1.5 text-slate-300">
-              <div className="text-emerald-400">// Integrity assertions:</div>
-              <div>[Fact] public void Domain_ShouldNotNull()</div>
-              <div>[Fact] public void DB_ShouldNoHardcodedCreds()</div>
-              <div className="text-blue-400">// Security configuration audit passed</div>
+            <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700 text-sm text-slate-200">
+              <span className="text-3xs font-mono font-semibold uppercase tracking-widest text-blue-300 block mb-3">
+                Delivery checklist
+              </span>
+              <ul className="space-y-2.5">
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
+                  <span>Small, reviewable changes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
+                  <span>Practical unit and integration tests</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
+                  <span>CI/CD checks before release</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
+                  <span>No secrets in source code</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
+                  <span>Clear handover notes</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

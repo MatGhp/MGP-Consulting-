@@ -350,7 +350,7 @@ export const COLLABORATION_VALUES = [
       "I communicate in German and English (C1) and focus on clear trade-offs, practical options, and transparent status updates."
   },
   {
-    title: "How I keep delivery stable",
+    title: "Delivery habits that reduce project risk",
     description:
       "I focus on maintainable implementation, practical delivery, and CI/CD experience to support stable handover and operations."
   },
