@@ -192,7 +192,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
                     </li>
                     <li className="flex items-start">
                       <span className="text-emerald-500 font-bold mr-2">✓</span>
-                      <span>Reliable Azure Service Bus integration patterns for enterprise workflows</span>
+                      <span>Azure-based integration components for reliable system communication</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-emerald-500 font-bold mr-2">✓</span>
