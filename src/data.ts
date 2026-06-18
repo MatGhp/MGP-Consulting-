@@ -34,8 +34,7 @@ export const PERSONAL_INFO = {
     "Remote-first across Germany and the EU",
     "German and English project communication (C1)",
     "Available from July 2026",
-    "Modern .NET, C#, ASP.NET Core Web API, Entity Framework Core, REST APIs, unit & integration testing",
-    "Current project work with .NET 10; strong production experience with .NET 8/9 and enterprise modernization from older .NET versions"
+    "Strong focus on .NET, Azure integration, APIs, CI/CD, and Angular"
   ]
 };
 
