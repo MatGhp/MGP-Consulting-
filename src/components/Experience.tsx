@@ -159,32 +159,6 @@ export default function Experience() {
             ))}
           </AnimatePresence>
         </div>
-
-        {/* Custom recruitment pitch card */}
-        <div className="mt-16 bg-slate-50 border border-slate-200 p-6 md:p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 max-w-2xl text-center md:text-left">
-            <h4 className="text-base font-bold text-slate-900">
-              Need profile details?
-            </h4>
-            <p className="text-xs text-slate-500 leading-relaxed">
-              Profile details are available on request.
-            </p>
-          </div>
-          <button
-            id="btn-exp-cv-req"
-            onClick={() => {
-              const element = document.querySelector("#contact");
-              if (element) {
-                const topOffset = element.getBoundingClientRect().top + window.scrollY - 80;
-                window.scrollTo({ top: topOffset, behavior: "smooth" });
-              }
-            }}
-            className="px-5 py-2.5 bg-slate-900 text-white hover:bg-blue-600 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors shrink-0 cursor-pointer"
-          >
-            Request Freelancer Profile
-          </button>
-        </div>
-
       </div>
     </section>
   );

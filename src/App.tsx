@@ -127,11 +127,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
         <TechStack />
 
         {/* Availability details & direct contact */}
-        <AvailabilityAndContact
-          onCvRequestedSuccess={() => {
-            // Optional callback
-          }}
-        />
+        <AvailabilityAndContact />
       </main>
 
       {/* Footer Details */}
