@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useRef, useState } from "react";
-import { Mail, Linkedin, Github, MapPin, Calendar, ChevronDown, Phone, Copy } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin, Calendar, Globe, ChevronDown, Phone, Copy } from "lucide-react";
 import { PERSONAL_INFO, COLLABORATION_FAQS } from "../data";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -69,7 +69,7 @@ export default function AvailabilityAndContact() {
   return (
     <section id="contact" className="py-20 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10">
           <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
             Availability & Contact
           </span>
@@ -79,128 +79,141 @@ export default function AvailabilityAndContact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-5 space-y-8 flex flex-col justify-between">
-            <div className="space-y-6">
-              <h3 className="text-lg font-bold text-slate-900 font-sans">Availability</h3>
-
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-4">
-                <div className="flex items-center space-x-3 text-sm">
-                  <Calendar className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <div>
-                    <span className="font-mono text-3xs font-bold text-slate-400 block uppercase tracking-wider">
-                      Availability
-                    </span>
-                    <span className="text-slate-800 font-bold block">{PERSONAL_INFO.availability.status} — {PERSONAL_INFO.availability.dateText}</span>
-                  </div>
+        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-5 bg-slate-50/70 p-6 sm:p-8 border-b border-slate-200 lg:border-b-0 lg:border-r">
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold text-slate-900 font-sans">Availability & Location</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Current availability and working setup for remote-first projects.
+                  </p>
                 </div>
 
-                <div className="flex items-center space-x-3 text-sm">
-                  <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                  <div>
-                    <span className="font-mono text-3xs font-bold text-slate-400 block uppercase tracking-wider">Location</span>
-                    <span className="text-slate-700 font-normal">{PERSONAL_INFO.locationShort}</span>
+                <div className="bg-white border border-slate-200 rounded-xl p-5 space-y-4">
+                  <div className="flex items-center space-x-3 text-sm">
+                    <Calendar className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <div>
+                      <span className="font-mono text-3xs font-bold text-slate-400 block uppercase tracking-wider">
+                        Availability
+                      </span>
+                      <span className="text-slate-800 font-bold block">{PERSONAL_INFO.availability.status} — {PERSONAL_INFO.availability.dateText}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-3 text-sm">
+                    <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <div>
+                      <span className="font-mono text-3xs font-bold text-slate-400 block uppercase tracking-wider">Location</span>
+                      <span className="text-slate-700 font-normal">{PERSONAL_INFO.locationShort}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-3 text-sm">
+                    <Globe className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <div>
+                      <span className="font-mono text-3xs font-bold text-slate-400 block uppercase tracking-wider">Remote setup</span>
+                      <span className="text-slate-700 font-normal">Remote-first across Germany and the EU</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-
-          </div>
-
-          <div className="lg:col-span-7">
-            <div className="bg-white border border-slate-200 rounded-xl shadow-xs p-6 sm:p-8 space-y-6">
-              <div className="space-y-2">
-                <h4 className="text-lg font-bold text-slate-900">Direct Contact</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Use any of the channels below for project inquiries.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                  <div className="flex items-start gap-3">
-                    <Mail className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <div className="min-w-0 flex-1">
-                      <span className="text-xs text-slate-500 block">Email</span>
-                      <button
-                        type="button"
-                        onClick={handleCopyEmail}
-                        className="mt-1 inline-flex items-center gap-1.5 text-left text-sm font-medium text-slate-900 break-all transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm cursor-pointer"
-                        aria-label={`Copy email address ${PERSONAL_INFO.email}`}
-                      >
-                        <span>{PERSONAL_INFO.email}</span>
-                        <Copy className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" aria-hidden="true" />
-                      </button>
-                      {copyFeedback.email && (
-                        <div className="mt-1 text-xs text-slate-500" role="status" aria-live="polite">
-                          {copyFeedback.email}
-                        </div>
-                      )}
-                    </div>
-                  </div>
+            <div className="lg:col-span-7 p-6 sm:p-8">
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <h4 className="text-lg font-bold text-slate-900">Direct Contact</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Use any of the channels below for project inquiries.
+                  </p>
                 </div>
 
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                  <div className="flex items-start gap-3">
-                    <Phone className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <div className="min-w-0 flex-1">
-                      <span className="text-xs text-slate-500 block">Phone</span>
-                      <button
-                        type="button"
-                        onClick={handleCopyPhone}
-                        className="mt-1 inline-flex items-center gap-1.5 text-left text-sm font-medium text-slate-900 transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm cursor-pointer"
-                        aria-label={`Copy phone number ${PERSONAL_INFO.phoneFormatted}`}
-                      >
-                        <span>{PERSONAL_INFO.phoneFormatted}</span>
-                        <Copy className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" aria-hidden="true" />
-                      </button>
-                      {copyFeedback.phone && (
-                        <div className="mt-1 text-xs text-slate-500" role="status" aria-live="polite">
-                          {copyFeedback.phone}
-                        </div>
-                      )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <Mail className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <div className="min-w-0 flex-1">
+                        <span className="text-xs text-slate-500 block">Email</span>
+                        <button
+                          type="button"
+                          onClick={handleCopyEmail}
+                          className="mt-1 inline-flex items-center gap-1.5 text-left text-sm font-medium text-slate-900 break-all transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm cursor-pointer"
+                          aria-label={`Copy email address ${PERSONAL_INFO.email}`}
+                        >
+                          <span>{PERSONAL_INFO.email}</span>
+                          <Copy className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" aria-hidden="true" />
+                        </button>
+                        {copyFeedback.email && (
+                          <div className="mt-1 text-xs text-slate-500" role="status" aria-live="polite">
+                            {copyFeedback.email}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
+
+                  <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <Phone className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <div className="min-w-0 flex-1">
+                        <span className="text-xs text-slate-500 block">Phone</span>
+                        <button
+                          type="button"
+                          onClick={handleCopyPhone}
+                          className="mt-1 inline-flex items-center gap-1.5 text-left text-sm font-medium text-slate-900 transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm cursor-pointer"
+                          aria-label={`Copy phone number ${PERSONAL_INFO.phoneFormatted}`}
+                        >
+                          <span>{PERSONAL_INFO.phoneFormatted}</span>
+                          <Copy className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" aria-hidden="true" />
+                        </button>
+                        {copyFeedback.phone && (
+                          <div className="mt-1 text-xs text-slate-500" role="status" aria-live="polite">
+                            {copyFeedback.phone}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <a
+                    href={PERSONAL_INFO.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="bg-slate-50 border border-slate-200 rounded-lg p-4 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer"
+                    aria-label="Open LinkedIn profile in a new tab"
+                  >
+                    <div className="flex items-start gap-3">
+                      <Linkedin className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <div className="min-w-0 flex-1">
+                        <span className="text-xs text-slate-500 block">LinkedIn</span>
+                        <span className="mt-1 block text-sm font-medium text-slate-900">LinkedIn Profile</span>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a
+                    href={PERSONAL_INFO.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="bg-slate-50 border border-slate-200 rounded-lg p-4 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer"
+                    aria-label="Open GitHub profile in a new tab"
+                  >
+                    <div className="flex items-start gap-3">
+                      <Github className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <div className="min-w-0 flex-1">
+                        <span className="text-xs text-slate-500 block">GitHub</span>
+                        <span className="mt-1 block text-sm font-medium text-slate-900">GitHub Profile</span>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-
-                <a
-                  href={PERSONAL_INFO.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-slate-50 border border-slate-200 rounded-lg p-4 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer"
-                  aria-label="Open LinkedIn profile in a new tab"
-                >
-                  <div className="flex items-start gap-3">
-                    <Linkedin className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <div className="min-w-0 flex-1">
-                      <span className="text-xs text-slate-500 block">LinkedIn</span>
-                      <span className="mt-1 block text-sm font-medium text-slate-900">LinkedIn Profile</span>
-                    </div>
-                  </div>
-                </a>
-
-                <a
-                  href={PERSONAL_INFO.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-slate-50 border border-slate-200 rounded-lg p-4 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer"
-                  aria-label="Open GitHub profile in a new tab"
-                >
-                  <div className="flex items-start gap-3">
-                    <Github className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <div className="min-w-0 flex-1">
-                      <span className="text-xs text-slate-500 block">GitHub</span>
-                      <span className="mt-1 block text-sm font-medium text-slate-900">GitHub Profile</span>
-                    </div>
-                  </div>
-                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-20 border-t border-slate-100 pt-16">
+        <div className="mt-16 border-t border-slate-200 pt-12">
           <div className="max-w-2xl mx-auto text-center mb-10">
             <span className="font-mono text-3xs font-semibold text-blue-600 uppercase tracking-widest block mb-1">FAQ</span>
             <h3 className="text-xl sm:text-2xl font-bold text-slate-950">Collaboration FAQ</h3>

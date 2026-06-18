@@ -8,9 +8,9 @@ This repository contains a marketing website for a freelance Senior .NET and Azu
 
 When making changes, optimize for:
 
-- professional, enterprise-ready presentation
-- concise, credible business language
-- minimal, low-risk code changes
+- a professional, credible presentation
+- concise, business-friendly language
+- minimal, low-risk implementation changes
 - consistency across content, layout, and navigation
 
 ## Project Snapshot
@@ -26,16 +26,16 @@ When making changes, optimize for:
 When editing this project:
 
 1. Prefer the smallest change that solves the task.
-2. Preserve the existing structure, naming, and visual tone unless the task explicitly requires a redesign.
+2. Preserve the existing structure, naming, and visual tone unless the request clearly calls for a redesign.
 3. Avoid unrelated refactors, mass reformatting, or dependency churn.
 4. Match the existing code style in each file.
-5. Keep text polished, factual, and business-focused.
+5. Keep public-facing text clear, factual, and business-focused.
 
 ## Where Changes Should Usually Go
 
 ### Content-first updates
 
-Most copy and profile content should be updated in `src/data.ts`.
+Most business copy and profile content should be updated in `src/data.ts`.
 
 Prefer `src/data.ts` for:
 
@@ -44,13 +44,13 @@ Prefer `src/data.ts` for:
 - value propositions
 - project experience
 - collaboration FAQs
-- contact/profile metadata
+- contact and profile metadata
 
 Do not hardcode business copy in components unless there is a clear structural reason.
 
 ### Component updates
 
-Use `src/components/` for layout and presentation changes only.
+Use `src/components/` for layout and presentation changes.
 
 Preserve existing IDs, anchors, and stable class hooks when possible because navigation and UI automation may depend on them.
 
@@ -85,7 +85,7 @@ Keep website copy:
 - confident but not exaggerated
 - specific about .NET, Azure, integration, modernization, and delivery
 - easy to scan
-- free of filler, hype, or vague claims
+- free of filler, hype, and vague claims
 
 ### Copywriting rule
 
@@ -106,6 +106,26 @@ Preferred tone:
 - specific
 - human
 
+Use concrete, believable language.
+
+Prefer wording like:
+
+- “What I can help with” instead of “Core delivery value”
+- “Technologies used” instead of “Technical implementation tools”
+- “I help teams modernize existing .NET systems step by step, without risky rewrites” instead of inflated modernization claims
+- “I build Azure-based integration components that help systems exchange data reliably” instead of vague integration hype
+
+Keep in mind:
+
+- Keep the language business-friendly, but not exaggerated.
+- Keep technical accuracy.
+- Do not remove important .NET, Azure, Angular, DevOps, or integration keywords.
+- Do not make the copy too casual.
+- Do not make it sound like a startup landing page.
+- Do not make it sound like a recruiter profile.
+
+The website should sound like a real senior freelance consultant speaking clearly about what he does.
+
 Avoid phrases like:
 
 - unlock value
@@ -123,57 +143,35 @@ Avoid phrases like:
 - fully optimized
 - enterprise-ready in every way
 
-Use concrete, believable language instead.
-
-Examples:
-
-Instead of:
-“I deliver high-impact enterprise modernization solutions.”
-
-Use:
-“I help teams modernize existing .NET systems step by step, without risky rewrites.”
-
-Instead of:
-“Reliable Azure integrations protecting downstream business storage.”
-
-Use:
-“I build Azure-based integration components that help systems exchange data reliably.”
-
-Instead of:
-“Professional freelance collaboration processes are supported.”
-
-Use:
-“I can work with direct clients, supplier onboarding processes, or established freelance contract setups.”
-
-Instead of:
-“Core delivery value.”
-
-Use:
-“What I can help with.”
-
-Instead of:
-“Technical implementation tools.”
-
-Use:
-“Technologies used.”
-
-Keep in mind:
-
-- Keep the language business-friendly, but not exaggerated.
-- Keep technical accuracy.
-- Do not remove important .NET, Azure, Angular, DevOps, or integration keywords.
-- Do not make the copy too casual.
-- Do not make it sound like a startup landing page.
-- Do not make it sound like a recruiter profile.
-
-The final website should sound like a real senior freelance consultant speaking clearly about what he does.
-
-Avoid:
+Also avoid:
 
 - startup-style buzzwords
 - unverifiable superlatives
 - inconsistent capitalization of technical terms
 - long dense paragraphs when bullets would scan better
+
+## UI and UX Rules
+
+Keep the interface clean, credible, and restrained.
+
+Prefer:
+
+- one clear primary action per area
+- direct labels
+- practical supporting copy
+- consistent spacing, borders, and card weight
+- obvious interactions without over-explaining them
+
+Avoid when possible:
+
+- redundant CTA buttons
+- repeated contact or onboarding messages
+- duplicated data inside the same section
+- fake technical decoration or invented code snippets
+- decorative UI that reduces trust
+- over-explained obvious actions
+
+If a section becomes clearer by removing an element, prefer removing it over adding more UI.
 
 ## Validation Commands
 
@@ -181,8 +179,8 @@ Use these commands to verify changes when relevant:
 
 - `npm install`
 - `npm run dev`
-- `npm run lint`  
-  (`lint` runs TypeScript type-checking via `tsc --noEmit`)
+- `npm run lint`
+  - `lint` runs TypeScript type-checking via `tsc --noEmit`
 - `npm run build`
 - `npm run preview`
 
@@ -216,6 +214,7 @@ If the request is ambiguous:
 - prefer updating content over restructuring components
 - prefer editing existing files over creating new ones
 - prefer small UI refinements over broad redesigns
+- prefer removing unnecessary UI over adding new UI
 - preserve public-facing messaging unless the user asks to reposition it
 
 If a request conflicts with these instructions, follow the explicit user request.
