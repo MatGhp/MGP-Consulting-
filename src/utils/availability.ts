@@ -3,6 +3,8 @@ export interface NextAvailabilityDate {
   month: number;
 }
 
+export type AvailabilityLocale = "en" | "de";
+
 const BUSINESS_TIMEZONE = "Europe/Berlin";
 
 const getBerlinYearMonth = (referenceDate: Date = new Date()): { year: number; month: number } => {
@@ -37,11 +39,17 @@ export const getNextAvailabilityDate = (referenceDate: Date = new Date()): NextA
   };
 };
 
-export const getAvailabilityMonthYear = (referenceDate: Date = new Date()): string => {
+const toIntlLocale = (locale: AvailabilityLocale): string =>
+  locale === "de" ? "de-DE" : "en-US";
+
+export const getAvailabilityMonthYear = (
+  locale: AvailabilityLocale,
+  referenceDate: Date = new Date()
+): string => {
   const next = getNextAvailabilityDate(referenceDate);
   const displayDate = toReferenceDate(next);
 
-  const month = new Intl.DateTimeFormat("en-US", {
+  const month = new Intl.DateTimeFormat(toIntlLocale(locale), {
     timeZone: BUSINESS_TIMEZONE,
     month: "long"
   }).format(displayDate);
@@ -49,11 +57,14 @@ export const getAvailabilityMonthYear = (referenceDate: Date = new Date()): stri
   return `${month} ${next.year}`;
 };
 
-export const getAvailabilityShortMonthYear = (referenceDate: Date = new Date()): string => {
+export const getAvailabilityShortMonthYear = (
+  locale: AvailabilityLocale,
+  referenceDate: Date = new Date()
+): string => {
   const next = getNextAvailabilityDate(referenceDate);
   const displayDate = toReferenceDate(next);
 
-  const month = new Intl.DateTimeFormat("en-US", {
+  const month = new Intl.DateTimeFormat(toIntlLocale(locale), {
     timeZone: BUSINESS_TIMEZONE,
     month: "long"
   }).format(displayDate);
@@ -62,8 +73,16 @@ export const getAvailabilityShortMonthYear = (referenceDate: Date = new Date()):
   return `${month} '${yearShort}`;
 };
 
-export const getAvailabilityBadgeText = (referenceDate: Date = new Date()): string =>
-  `AVAILABLE FROM ${getAvailabilityMonthYear(referenceDate).toUpperCase()}`;
+export const getAvailabilityBadgeText = (
+  locale: AvailabilityLocale,
+  template: string,
+  referenceDate: Date = new Date()
+): string =>
+  template.replace("{{monthYear}}", getAvailabilityMonthYear(locale, referenceDate).toUpperCase());
 
-export const getAvailabilitySentence = (referenceDate: Date = new Date()): string =>
-  `Available from ${getAvailabilityMonthYear(referenceDate)}`;
+export const getAvailabilitySentence = (
+  locale: AvailabilityLocale,
+  template: string,
+  referenceDate: Date = new Date()
+): string =>
+  template.replace("{{monthYear}}", getAvailabilityMonthYear(locale, referenceDate));

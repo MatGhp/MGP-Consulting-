@@ -6,16 +6,19 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Mail, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { PERSONAL_INFO } from "../data";
 import { getAvailabilityBadgeText } from "../utils/availability";
+import { useI18n } from "../i18n";
 
 interface NavbarProps {
   onContactClick: () => void;
 }
 
 export default function Navbar({ onContactClick }: NavbarProps) {
+  const { locale, setLocale, content, t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const personalInfo = content.data.personalInfo;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,13 +28,37 @@ export default function Navbar({ onContactClick }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Value", href: "#value-add" },
-    { name: "Experience", href: "#experience" },
-    { name: "Tech", href: "#tech-focus" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const navLinks = content.ui.navbar.navLinks;
+  const availabilityBadgeText = getAvailabilityBadgeText(locale, content.ui.availability.badgeTemplate);
+
+  const languageSwitcher = (
+    <div
+      className="inline-flex items-center rounded-md border border-slate-200 bg-white"
+      role="group"
+      aria-label={t("ui.navbar.languageSwitcherAria")}
+    >
+      <button
+        type="button"
+        onClick={() => setLocale("en")}
+        aria-pressed={locale === "en" ? "true" : "false"}
+        className={`px-2.5 py-1.5 text-xs font-mono font-semibold transition-colors ${
+          locale === "en" ? "bg-slate-900 text-white" : "text-slate-600 hover:bg-slate-50"
+        }`}
+      >
+        {t("ui.navbar.languageOptionEn")}
+      </button>
+      <button
+        type="button"
+        onClick={() => setLocale("de")}
+        aria-pressed={locale === "de" ? "true" : "false"}
+        className={`px-2.5 py-1.5 text-xs font-mono font-semibold transition-colors ${
+          locale === "de" ? "bg-slate-900 text-white" : "text-slate-600 hover:bg-slate-50"
+        }`}
+      >
+        {t("ui.navbar.languageOptionDe")}
+      </button>
+    </div>
+  );
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -72,7 +99,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
               </span>
             </div>
             <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest leading-none mt-0.5">
-              .NET & Azure Enterprise Delivery
+              {t("ui.navbar.companyTagline")}
             </span>
           </a>
 
@@ -92,13 +119,14 @@ export default function Navbar({ onContactClick }: NavbarProps) {
 
           {/* Availability Status & Main CTA */}
           <div className="hidden lg:flex items-center space-x-4">
+            {languageSwitcher}
             <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span className="font-mono text-xs font-semibold text-emerald-800 uppercase tracking-wide">
-                {getAvailabilityBadgeText()}
+                {availabilityBadgeText}
               </span>
             </div>
 
@@ -107,19 +135,20 @@ export default function Navbar({ onContactClick }: NavbarProps) {
               onClick={onContactClick}
               className="px-4 py-2 bg-slate-900 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors shadow-xs"
             >
-              Discuss Project
+              {t("ui.navbar.contactCta")}
             </button>
           </div>
 
           {/* Mobile Hamburger Toggle */}
           <div className="lg:hidden flex items-center space-x-2">
+            {languageSwitcher}
             <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
               </span>
               <span className="font-mono text-[10px] font-semibold text-emerald-800 uppercase tracking-wide">
-                {getAvailabilityBadgeText()}
+                {availabilityBadgeText}
               </span>
             </div>
 
@@ -127,7 +156,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
               id="btn-mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-md text-slate-500 hover:text-slate-900 focus:outline-hidden"
-              aria-label="Toggle Menu"
+              aria-label={t("ui.navbar.toggleMenuAria")}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -148,10 +177,10 @@ export default function Navbar({ onContactClick }: NavbarProps) {
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               <div className="py-2 border-b border-slate-100">
-                <span className="text-xs font-mono text-slate-400 block mb-1">OFFICE LOCATION</span>
+                <span className="text-xs font-mono text-slate-400 block mb-1">{t("ui.navbar.officeLocationLabel").toUpperCase()}</span>
                 <span className="text-sm text-slate-700 flex items-center">
                   <MapPin className="w-4 h-4 text-blue-600 mr-1.5 flex-shrink-0" />
-                  {PERSONAL_INFO.locationShort}
+                  {personalInfo.locationShort}
                 </span>
               </div>
 
@@ -176,7 +205,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
                   className="flex items-center justify-center space-x-2 w-full py-2.5 bg-slate-900 text-white rounded-md font-medium text-sm hover:bg-blue-600"
                 >
                   <Mail className="w-4.5 h-4.5" />
-                  <span>Discuss Project</span>
+                  <span>{t("ui.navbar.contactCta")}</span>
                 </button>
               </div>
             </div>

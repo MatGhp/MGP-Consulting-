@@ -5,14 +5,18 @@
 
 import { Search, Mail, Terminal } from "lucide-react";
 import { motion } from "motion/react";
-import { PERSONAL_INFO } from "../data";
-import { getAvailabilityShortMonthYear } from "../utils/availability";
+import { getAvailabilitySentence, getAvailabilityShortMonthYear } from "../utils/availability";
+import { useI18n } from "../i18n";
 
 interface HeroProps {
   onContactClick: () => void;
 }
 
 export default function Hero({ onContactClick }: HeroProps) {
+  const { locale, content, t } = useI18n();
+  const personalInfo = content.data.personalInfo;
+  const availabilitySentence = getAvailabilitySentence(locale, content.ui.availability.sentenceTemplate);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,10 +34,10 @@ export default function Hero({ onContactClick }: HeroProps) {
   };
 
   const kpis = [
-    { value: "20+", label: "Years Exp." },
-    { value: "C1 / C1", label: "DE & EN Fluency" },
-    { value: "Remote", label: "Germany & EU" },
-    { value: getAvailabilityShortMonthYear(), label: "Available From" },
+    { value: t("ui.hero.kpiYearsValue"), label: t("ui.hero.kpiYearsExp") },
+    { value: t("ui.hero.kpiLanguageValue"), label: t("ui.hero.kpiLanguageFluency") },
+    { value: t("ui.hero.kpiRemoteValue"), label: t("ui.hero.kpiRemoteRegion") },
+    { value: getAvailabilityShortMonthYear(locale), label: t("ui.hero.kpiAvailableFrom") },
   ];
 
   return (
@@ -62,7 +66,7 @@ export default function Hero({ onContactClick }: HeroProps) {
             >
               <Terminal className="w-3.5 h-3.5 text-blue-600" />
               <span className="font-mono text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                Independent Senior Consultant
+                {t("ui.hero.identityCapsule")}
               </span>
             </motion.div>
 
@@ -72,14 +76,14 @@ export default function Hero({ onContactClick }: HeroProps) {
                 variants={itemVariants}
                 className="block text-sm font-mono font-semibold text-blue-600 uppercase tracking-widest"
               >
-                {PERSONAL_INFO.name}
+                {personalInfo.name}
               </motion.span>
               
               <motion.h1
                 variants={itemVariants}
                 className="text-4xl sm:text-5xl lg:text-[2.85rem] font-bold text-slate-900 tracking-tight leading-tight"
               >
-                {PERSONAL_INFO.headline}
+                {personalInfo.headline}
               </motion.h1>
             </div>
 
@@ -88,7 +92,7 @@ export default function Hero({ onContactClick }: HeroProps) {
               variants={itemVariants}
               className="text-lg text-slate-600 leading-relaxed max-w-2xl font-normal"
             >
-              {PERSONAL_INFO.subheadline}
+              {personalInfo.subheadline}
             </motion.p>
 
             {/* Trust Facts Grid List */}
@@ -97,10 +101,14 @@ export default function Hero({ onContactClick }: HeroProps) {
               className="py-3 border-y border-slate-200 text-sm text-slate-700 space-y-2.5 font-medium"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
-                {PERSONAL_INFO.trustFacts.map((fact, index) => (
+                {personalInfo.trustFacts.map((fact, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <span className="text-emerald-500 font-bold mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-slate-650 text-xs sm:text-sm font-medium">{fact}</span>
+                    <span className="text-slate-650 text-xs sm:text-sm font-medium">
+                      {fact === "{{availabilitySentence}}"
+                        ? availabilitySentence
+                        : fact}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -117,7 +125,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                 className="px-6 py-3 bg-slate-950 text-white rounded-md font-semibold text-sm hover:bg-blue-600 transition-colors shadow-sm text-center flex items-center justify-center space-x-2.5 cursor-pointer self-start"
               >
                 <Mail className="w-4 h-4" />
-                <span>Discuss Project</span>
+                <span>{t("ui.hero.discussProjectCta")}</span>
               </button>
             </motion.div>
 
@@ -142,16 +150,16 @@ export default function Hero({ onContactClick }: HeroProps) {
                 </div>
                 <div className="font-mono text-2xs text-slate-400 select-none flex items-center space-x-1">
                   <Terminal className="w-3 h-3 text-slate-300" />
-                  <span>Profile</span>
+                  <span>{t("ui.hero.profileWindowTitle")}</span>
                 </div>
               </div>
 
               {/* Enterprise Profile Highlight Info */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400">Core capabilities</h3>
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400">{t("ui.hero.coreCapabilitiesLabel")}</h3>
                   <p className="font-sans text-xl font-bold text-slate-900 leading-snug">
-                    Reliable Azure integrations and legacy .NET modernization
+                    {t("ui.hero.coreCapabilitiesText")}
                   </p>
                 </div>
 
@@ -174,20 +182,14 @@ export default function Hero({ onContactClick }: HeroProps) {
 
                 {/* Bullet Proof Commitments */}
                 <div className="space-y-2 pt-2 border-t border-slate-100">
-                  <span className="text-3xs font-mono uppercase tracking-wider text-slate-400 block">What I help with</span>
+                  <span className="text-3xs font-mono uppercase tracking-wider text-slate-400 block">{t("ui.hero.whatIHelpWithLabel")}</span>
                   <ul className="space-y-2 text-xs text-slate-650">
-                    <li className="flex items-start">
-                      <span className="text-emerald-500 font-bold mr-2">✓</span>
-                      <span>Secure API integration and robust credential handling with modern Azure services</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-emerald-500 font-bold mr-2">✓</span>
-                      <span>Azure-based integration components for reliable system communication</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-emerald-500 font-bold mr-2">✓</span>
-                      <span>Maintainable Angular business applications aligned with backend API delivery</span>
-                    </li>
+                    {content.ui.hero.helpItems.map((item, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <span className="text-emerald-500 font-bold mr-2">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
@@ -195,7 +197,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                 <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-lg flex items-start space-x-2.5">
                   <Search className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-2xs text-slate-600 leading-relaxed">
-                    <strong>Project setup:</strong> Available for remote-first assignments with structured onboarding and NDA-friendly communication.
+                    <strong>{t("ui.hero.projectSetupLabel")}:</strong> {t("ui.hero.projectSetupText")}
                   </p>
                 </div>
               </div>

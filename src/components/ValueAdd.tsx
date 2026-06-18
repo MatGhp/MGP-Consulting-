@@ -4,15 +4,13 @@
  */
 
 import { Shield, HelpCircle, Activity, Lightbulb, CheckCircle2 } from "lucide-react";
-import { VALUE_ADD_SCENARIOS, COLLABORATION_VALUES } from "../data";
+import { useI18n } from "../i18n";
 
 export default function ValueAdd() {
-  const scenarioRisks: Record<string, string> = {
-    "val-1": "Leads to fragile releases, unclear ownership, and expensive production support.",
-    "val-2": "Causes slow feature delivery, high regression risk, and growing technical debt.",
-    "val-3": "Creates inconsistent environments, manual errors, and unpredictable deployments.",
-    "val-4": "Results in slow UI changes, unstable state handling, and higher maintenance effort."
-  };
+  const { content, t } = useI18n();
+  const scenarios = content.data.valueAddScenarios;
+  const collaborationValues = content.data.collaborationValues;
+  const scenarioRisks = content.ui.valueAdd.scenarioRisks;
 
   const getScenarioIcon = (id: string) => {
     switch (id) {
@@ -34,19 +32,19 @@ export default function ValueAdd() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
-            Practical software problems
+            {t("ui.valueAdd.eyebrow")}
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Practical software problems
+            {t("ui.valueAdd.title")}
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            Modern projects often need more than feature work. I focus on the architectural and delivery problems that make systems hard to change, deploy, and operate.
+            {t("ui.valueAdd.intro")}
           </p>
         </div>
 
         {/* Value Add Scenarios Matrix */}
         <div className="space-y-8">
-          {VALUE_ADD_SCENARIOS.map((scenario) => (
+          {scenarios.map((scenario) => (
             <div
               key={scenario.id}
               className="bg-white border border-slate-200 shadow-xs hover:shadow-md transition-all rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12"
@@ -59,7 +57,7 @@ export default function ValueAdd() {
                       {getScenarioIcon(scenario.id)}
                     </div>
                     <span className="font-mono text-[10px] uppercase font-bold text-slate-400 tracking-wider">
-                      Problem
+                      {t("ui.valueAdd.problemLabel")}
                     </span>
                   </div>
                   <h3 className="text-lg font-bold text-slate-800">
@@ -79,7 +77,7 @@ export default function ValueAdd() {
               <div className="p-6 lg:p-8 lg:col-span-7 flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
                   <span className="font-mono text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-150 px-2 py-0.5 rounded uppercase tracking-wider font-bold inline-block">
-                    Approach
+                    {t("ui.valueAdd.approachLabel")}
                   </span>
                   <h4 className="text-md font-bold text-slate-900">
                     {scenario.solution}
@@ -88,7 +86,7 @@ export default function ValueAdd() {
                   {/* Technical Depth Specs tag */}
                   <div className="p-3 bg-slate-50 border border-slate-150 rounded-lg">
                     <span className="text-[10px] font-mono uppercase text-slate-500 font-semibold tracking-wider block mb-1">
-                      Technologies used:
+                      {t("ui.valueAdd.technologiesUsedLabel")}
                     </span>
                     <span className="font-mono text-xs text-blue-800 font-semibold leading-relaxed">
                       {scenario.technicalDepth}
@@ -103,7 +101,7 @@ export default function ValueAdd() {
                   </div>
                   <div className="text-xs">
                     <span className="font-mono uppercase text-[10px] font-bold text-emerald-700 block tracking-wider">
-                      How it helps:
+                      {t("ui.valueAdd.howItHelpsLabel")}
                     </span>
                     <span className="text-slate-700 font-medium font-sans">
                       {scenario.businessImpact}
@@ -120,18 +118,18 @@ export default function ValueAdd() {
         <div className="mt-20 border-t border-slate-200/60 pt-16">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
-              How I Work
+              {t("ui.valueAdd.collaboration.eyebrow")}
             </span>
             <h3 className="text-2xl font-bold text-slate-950">
-              How I Work
+              {t("ui.valueAdd.collaboration.title")}
             </h3>
             <p className="mt-3 text-sm text-slate-600 max-w-xl mx-auto">
-              Senior freelance collaboration works best with clear ownership, practical communication, and reliable delivery habits.
+              {t("ui.valueAdd.collaboration.intro")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {COLLABORATION_VALUES.map((val, idx) => (
+            {collaborationValues.map((val, idx) => (
               <div
                 key={idx}
                 className="bg-white border border-slate-205/60 p-5 rounded-lg shadow-2xs hover:border-slate-350 transition-colors"

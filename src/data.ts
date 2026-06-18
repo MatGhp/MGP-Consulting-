@@ -27,7 +27,7 @@ export const PERSONAL_INFO = {
   ],
   availability: {
     status: "Available",
-    dateText: `From ${getAvailabilityMonthYear()}`,
+    dateText: `From ${getAvailabilityMonthYear("en")}`,
     remotePreference: "Remote-first across Germany and the EU",
     euEligible: "Available for assignments in Germany and the EU"
   },
@@ -36,7 +36,7 @@ export const PERSONAL_INFO = {
     "Based in Frankfurt am Main, Germany",
     "Remote-first across Germany and the EU",
     "German and English project communication (C1)",
-    getAvailabilitySentence(),
+    getAvailabilitySentence("en", "Available from {{monthYear}}"),
     "Strong focus on .NET, Azure integration, APIs, CI/CD, and Angular"
   ]
 };
@@ -376,6 +376,6 @@ export const COLLABORATION_FAQS = [
   },
   {
     q: "How can we request your profile and availability details?",
-    a: `Current availability is shown on this website (${getAvailabilitySentence().toLowerCase()}). A current freelance profile is available upon request for project evaluation, client submission, and supplier onboarding.`
+    a: `Current availability is shown on this website (${getAvailabilitySentence("en", "Available from {{monthYear}}").toLowerCase()}). A current freelance profile is available upon request for project evaluation, client submission, and supplier onboarding.`
   }
 ];

@@ -4,9 +4,12 @@
  */
 
 import { Code2, Server, Settings, Monitor, ShieldCheck } from "lucide-react";
-import { TECH_CATEGORIES } from "../data";
+import { useI18n } from "../i18n";
 
 export default function TechStack() {
+  const { content, t } = useI18n();
+  const categories = content.data.techCategories;
+
   const getCategoryIcon = (id: string) => {
     switch (id) {
       case "dotnet-backend":
@@ -29,19 +32,19 @@ export default function TechStack() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
-            Tech Focus
+            {t("ui.techStack.eyebrow")}
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Core capabilities
+            {t("ui.techStack.title")}
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            My strongest experience is in .NET, Azure integration, enterprise backend systems, and Angular-based business applications.
+            {t("ui.techStack.intro")}
           </p>
         </div>
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {TECH_CATEGORIES.map((category) => (
+          {categories.map((category) => (
             <div
               key={category.id}
               className="bg-white border border-slate-200/80 rounded-xl p-6 sm:p-8 hover:shadow-xs transition-shadow flex flex-col justify-between"
@@ -95,9 +98,9 @@ export default function TechStack() {
               <div className="mt-8 pt-4 border-t border-slate-100 bg-slate-50/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-3xs text-slate-500 select-none">
                 <div className="flex items-center space-x-1.5 font-mono">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-                  <span>Used in production projects</span>
+                  <span>{t("ui.techStack.footerUsedInProduction")}</span>
                 </div>
-                <span>CI/CD project experience</span>
+                <span>{t("ui.techStack.footerCiCdExperience")}</span>
               </div>
 
             </div>
@@ -109,41 +112,26 @@ export default function TechStack() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-2 space-y-1">
               <span className="font-mono text-3xs font-semibold text-blue-400 uppercase tracking-widest block">
-                Delivery habits that reduce project risk
+                {t("ui.techStack.calloutEyebrow")}
               </span>
               <h4 className="text-md font-bold text-white">
-                Delivery habits that reduce project risk
+                {t("ui.techStack.calloutTitle")}
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed font-sans font-normal">
-                I work with small, reviewable changes, practical tests, CI/CD checks, secure configuration, and clear
-                handover notes.
+                {t("ui.techStack.calloutDescription")}
               </p>
             </div>
             <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-700 text-sm text-slate-200">
               <span className="text-3xs font-mono font-semibold uppercase tracking-widest text-blue-300 block mb-3">
-                Delivery checklist
+                {t("ui.techStack.checklistTitle")}
               </span>
               <ul className="space-y-2.5">
-                <li className="flex items-start gap-2">
-                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
-                  <span>Small, reviewable changes</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
-                  <span>Practical unit and integration tests</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
-                  <span>CI/CD checks before release</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
-                  <span>No secrets in source code</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
-                  <span>Clear handover notes</span>
-                </li>
+                {content.ui.techStack.checklistItems.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

@@ -3,23 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Briefcase, Calendar, Clock, ShieldCheck, Check } from "lucide-react";
-import { PROJECTS } from "../data";
 import { motion, AnimatePresence } from "motion/react";
+import { useI18n } from "../i18n";
 
 export default function Experience() {
-  const [filterTech, setFilterTech] = useState<string>("All");
+  const { content, t } = useI18n();
+  const projects = content.data.projects;
 
-  // Get all unique technologies across all projects for a nice filter pill list
-  const filterPills = ["All", "Azure Functions", "Azure Service Bus", "DevOps Pipelines", "Angular"];
+  const filterAll = t("ui.experience.filterAll");
+  const filterDevOps = t("ui.experience.filterDevOpsPipelines");
+  const [filterTech, setFilterTech] = useState<string>(filterAll);
 
-  const filteredProjects = PROJECTS.filter((project) => {
-    if (filterTech === "All") return true;
-    if (filterTech === "DevOps Pipelines") {
-      return (
-        project.techStack.some((tech) => tech.includes("DevOps") || tech.includes("GitHub"))
-      );
+  const filterPills = useMemo(
+    () => [filterAll, "Azure Functions", "Azure Service Bus", filterDevOps, "Angular"],
+    [filterAll, filterDevOps]
+  );
+
+  const filteredProjects = projects.filter((project) => {
+    if (filterTech === filterAll) return true;
+    if (filterTech === filterDevOps) {
+      return project.techStack.some((tech) => tech.includes("DevOps") || tech.includes("GitHub"));
     }
     return project.techStack.some((tech) => tech.includes(filterTech));
   });
@@ -27,18 +32,18 @@ export default function Experience() {
   return (
     <section id="experience" className="py-20 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div className="max-w-2xl">
             <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
-              Selected project experience
+              {t("ui.experience.eyebrow")}
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              What I’ve worked on
+              {t("ui.experience.title")}
             </h2>
             <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
-              Anonymized project references showing scope, contribution areas, and outcomes across modernization and integration work.
+              {t("ui.experience.intro")}
             </p>
           </div>
 
@@ -46,10 +51,8 @@ export default function Experience() {
           <div className="mt-4 md:mt-0 px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg flex items-start space-x-2.5 max-w-sm">
             <ShieldCheck className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
             <div className="text-3xs text-slate-600 leading-relaxed">
-              <strong className="text-slate-800 uppercase tracking-wide font-bold font-mono">NDA & privacy aware</strong>
-              <p className="font-normal font-sans">
-                Specific corporate names, internal URLs, and sensitive implementation details are anonymized or generalized to respect ongoing partner NDAs.
-              </p>
+              <strong className="text-slate-800 uppercase tracking-wide font-bold font-mono">{t("ui.experience.ndaTitle")}</strong>
+              <p className="font-normal font-sans">{t("ui.experience.ndaDescription")}</p>
             </div>
           </div>
         </div>
@@ -96,7 +99,7 @@ export default function Experience() {
                       {project.clientType}
                     </span>
                   </div>
-                  
+
                   <div className="flex items-center space-x-4 font-mono text-3xs font-semibold uppercase tracking-wider">
                     <span className="flex items-center">
                       <Calendar className="w-3.5 h-3.5 mr-1 text-slate-400" />
@@ -118,7 +121,7 @@ export default function Experience() {
                     {project.title}
                   </h3>
                   <p className="text-sm text-slate-600 leading-relaxed font-sans font-normal">
-                    <strong>Project Scope / Mission: </strong>
+                    <strong>{t("ui.experience.projectScopeLabel")}: </strong>
                     {project.scope}
                   </p>
                 </div>
@@ -126,7 +129,7 @@ export default function Experience() {
                 {/* Key Achievements Bullet block */}
                 <div className="space-y-3 mb-6">
                   <span className="block text-3xs font-mono font-bold text-slate-400 uppercase tracking-widest">
-                    Contributions & results
+                    {t("ui.experience.contributionsLabel")}
                   </span>
                   <ul className="space-y-2.5 text-sm text-slate-700 font-sans font-normal">
                     {project.achievements.map((achievement, idx) => (
@@ -143,7 +146,7 @@ export default function Experience() {
                 {/* Technology Badges array */}
                 <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-1.5">
                   <span className="text-3xs font-mono font-bold text-slate-400 uppercase tracking-wider mr-2 select-none">
-                    Technologies used:
+                    {t("ui.experience.technologiesUsedLabel")}
                   </span>
                   {project.techStack.map((tech, idx) => (
                     <span
