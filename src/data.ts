@@ -17,6 +17,7 @@ export const PERSONAL_INFO = {
   locationShort: "Frankfurt am Main, Germany",
   email: "mojtaba@mgp-consulting.de",
   phone: "+4917643674802",
+  phoneFormatted: "+49 176 4367 4802",
   linkedin: "https://www.linkedin.com/in/mojtabaghp/",
   github: "https://github.com/MatGhp",
   languages: [

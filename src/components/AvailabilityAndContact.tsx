@@ -14,6 +14,8 @@ interface AvailabilityAndContactProps {
 
 export default function AvailabilityAndContact({ onCvRequestedSuccess }: AvailabilityAndContactProps) {
   const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   const [openFaqIndices, setOpenFaqIndices] = useState<number[]>([]);
 
@@ -33,7 +35,7 @@ export default function AvailabilityAndContact({ onCvRequestedSuccess }: Availab
     return `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
   }, []);
 
-  const showFeedback = (message: string) => {
+  const showError = (message: string) => {
     setFeedbackMessage(message);
     window.setTimeout(() => setFeedbackMessage(""), 2500);
   };
@@ -41,23 +43,24 @@ export default function AvailabilityAndContact({ onCvRequestedSuccess }: Availab
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(PERSONAL_INFO.email);
-      showFeedback("Email copied.");
+      setCopiedEmail(true);
+      window.setTimeout(() => setCopiedEmail(false), 2500);
     } catch {
-      showFeedback("Could not copy email. Please copy manually.");
+      showError("Could not copy email. Please copy manually.");
     }
   };
 
   const handleCopyPhone = async () => {
     if (!PERSONAL_INFO.phone) {
-      showFeedback("Phone number is shared on request.");
+      showError("Phone number is shared on request.");
       return;
     }
-
     try {
       await navigator.clipboard.writeText(PERSONAL_INFO.phone);
-      showFeedback("Phone copied.");
+      setCopiedPhone(true);
+      window.setTimeout(() => setCopiedPhone(false), 2500);
     } catch {
-      showFeedback("Could not copy phone. Please copy manually.");
+      showError("Could not copy phone. Please copy manually.");
     }
   };
 
@@ -77,7 +80,7 @@ export default function AvailabilityAndContact({ onCvRequestedSuccess }: Availab
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Start a Project Discussion</h2>
           <p className="mt-4 text-base text-slate-600">
-            Available for remote-first enterprise assignments across Germany and the EU. For project inquiries, profile requests, or supplier onboarding, please contact me directly.
+            Available for remote-first enterprise assignments across Germany and the EU. For project inquiries, freelance profile requests, or supplier onboarding, please contact me directly.
           </p>
         </div>
 
@@ -137,27 +140,7 @@ export default function AvailabilityAndContact({ onCvRequestedSuccess }: Availab
               </div>
             </div>
 
-            <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-4">
-              <a
-                href={`mailto:${PERSONAL_INFO.email}`}
-                aria-label="Email Mojtaba"
-                className="flex items-center space-x-2 px-4 py-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-800 rounded-lg text-sm font-semibold w-full justify-center transition-colors"
-              >
-                <Mail className="w-4 h-4 fill-blue-100" />
-                <span>{PERSONAL_INFO.email}</span>
-              </a>
 
-              <a
-                href={PERSONAL_INFO.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Open LinkedIn profile"
-                className="flex items-center space-x-2 px-4 py-3 bg-slate-50 hover:bg-slate-150 border border-slate-200 text-slate-700 rounded-lg text-sm font-semibold w-full justify-center transition-colors"
-              >
-                <Linkedin className="w-4 h-4 text-blue-600" />
-                <span>LinkedIn Profile</span>
-              </a>
-            </div>
           </div>
 
           <div className="lg:col-span-7">
@@ -165,7 +148,7 @@ export default function AvailabilityAndContact({ onCvRequestedSuccess }: Availab
               <div className="space-y-2">
                 <h4 className="text-lg font-bold text-slate-900">Direct Contact</h4>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Quick contact details for recruiters, enterprise teams, and technical decision makers.
+                  Direct contact details for enterprise project inquiries, freelance profile requests, and technical discussions.
                 </p>
               </div>
 
@@ -180,7 +163,7 @@ export default function AvailabilityAndContact({ onCvRequestedSuccess }: Availab
                 <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
                   <span className="text-xs text-slate-500">Phone</span>
                   <a href={`tel:${PERSONAL_INFO.phone}`} className="block text-sm font-medium text-slate-900 mt-1" aria-label="Phone number">
-                    {PERSONAL_INFO.phone}
+                    {PERSONAL_INFO.phoneFormatted}
                   </a>
                 </div>
 
@@ -209,45 +192,49 @@ export default function AvailabilityAndContact({ onCvRequestedSuccess }: Availab
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 pt-1">
-                <a
-                  href={`mailto:${PERSONAL_INFO.email}`}
-                  aria-label="Email me"
-                  className="px-5 py-2.5 bg-slate-950 text-white hover:bg-blue-600 rounded-md text-sm font-semibold transition-colors inline-flex items-center justify-center space-x-2"
-                >
-                  <Mail className="w-4 h-4" />
-                  <span>Email Me</span>
-                </a>
+              <div className="space-y-2.5 pt-1">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={`mailto:${PERSONAL_INFO.email}`}
+                    aria-label="Email me"
+                    className="px-5 py-2.5 bg-slate-950 text-white hover:bg-blue-600 rounded-md text-sm font-semibold transition-colors inline-flex items-center justify-center space-x-2"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Email Me</span>
+                  </a>
 
-                <button
-                  type="button"
-                  onClick={handleRequestFreelancerProfile}
-                  aria-label="Request freelancer profile by email"
-                  className="px-5 py-2.5 bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 rounded-md text-sm font-semibold transition-colors inline-flex items-center justify-center space-x-2"
-                >
-                  <FileText className="w-4 h-4 text-slate-500" />
-                  <span>Request Freelancer Profile</span>
-                </button>
+                  <button
+                    type="button"
+                    onClick={handleRequestFreelancerProfile}
+                    aria-label="Request freelancer profile by email"
+                    className="px-5 py-2.5 bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 rounded-md text-sm font-semibold transition-colors inline-flex items-center justify-center space-x-2"
+                  >
+                    <FileText className="w-4 h-4 text-slate-500" />
+                    <span>Request Freelancer Profile</span>
+                  </button>
+                </div>
 
-                <button
-                  type="button"
-                  onClick={handleCopyEmail}
-                  aria-label="Copy email address"
-                  className="px-4 py-2.5 bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-150 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center space-x-2"
-                >
-                  <Copy className="w-4 h-4" />
-                  <span>Copy Email</span>
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={handleCopyEmail}
+                    aria-label={copiedEmail ? "Email address copied" : "Copy email address"}
+                    className="px-3 py-2 bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md text-xs font-medium transition-colors inline-flex items-center space-x-1.5"
+                  >
+                    {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                    <span>{copiedEmail ? "Copied" : "Copy Email"}</span>
+                  </button>
 
-                <button
-                  type="button"
-                  onClick={handleCopyPhone}
-                  aria-label="Copy phone number"
-                  className="px-4 py-2.5 bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-150 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center space-x-2"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>Copy Phone</span>
-                </button>
+                  <button
+                    type="button"
+                    onClick={handleCopyPhone}
+                    aria-label={copiedPhone ? "Phone number copied" : "Copy phone number"}
+                    className="px-3 py-2 bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-700 hover:bg-slate-100 rounded-md text-xs font-medium transition-colors inline-flex items-center space-x-1.5"
+                  >
+                    {copiedPhone ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Phone className="w-3.5 h-3.5" />}
+                    <span>{copiedPhone ? "Copied" : "Copy Phone"}</span>
+                  </button>
+                </div>
               </div>
 
               {feedbackMessage && (
@@ -257,12 +244,9 @@ export default function AvailabilityAndContact({ onCvRequestedSuccess }: Availab
                 </div>
               )}
 
-              <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-lg flex items-start space-x-2.5">
-                <Globe className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  <strong>Project Onboarding:</strong> Available for remote-first enterprise assignments with structured onboarding, NDA-ready communication, and professional freelance collaboration.
-                </p>
-              </div>
+              <p className="text-xs text-slate-500 leading-relaxed border-t border-slate-100 pt-4">
+                NDA-ready communication and structured onboarding for enterprise assignments.
+              </p>
             </div>
           </div>
         </div>
