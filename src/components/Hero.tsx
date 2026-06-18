@@ -6,6 +6,7 @@
 import { FileText, Search, Mail, Terminal } from "lucide-react";
 import { motion } from "motion/react";
 import { PERSONAL_INFO } from "../data";
+import { getAvailabilityShortMonthYear } from "../utils/availability";
 
 interface HeroProps {
   onContactClick: () => void;
@@ -33,7 +34,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
     { value: "20+", label: "Years Exp." },
     { value: "C1 / C1", label: "DE & EN Fluency" },
     { value: "Remote", label: "Germany & EU" },
-    { value: "July '26", label: "Available From" },
+    { value: getAvailabilityShortMonthYear(), label: "Available From" },
   ];
 
   return (

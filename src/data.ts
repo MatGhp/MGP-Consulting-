@@ -4,6 +4,7 @@
  */
 
 import { ServiceItem, ValueAddScenario, ProjectExperience, TechCategory } from "./types";
+import { getAvailabilityMonthYear, getAvailabilitySentence } from "./utils/availability";
 
 export const PERSONAL_INFO = {
   name: "Mojtaba Ghanaat Pisheh",
@@ -25,7 +26,7 @@ export const PERSONAL_INFO = {
   ],
   availability: {
     status: "Available",
-    dateText: "From July 2026",
+    dateText: `From ${getAvailabilityMonthYear()}`,
     remotePreference: "Remote-first across Germany and the EU",
     euEligible: "Eligible for enterprise assignments in Germany and the EU"
   },
@@ -34,7 +35,7 @@ export const PERSONAL_INFO = {
     "Based in Frankfurt am Main, Germany",
     "Remote-first across Germany and the EU",
     "German and English project communication (C1)",
-    "Available from July 2026",
+    getAvailabilitySentence(),
     "Strong focus on .NET, Azure integration, APIs, CI/CD, and Angular"
   ]
 };
@@ -374,6 +375,6 @@ export const COLLABORATION_FAQS = [
   },
   {
     q: "How can we request your profile and availability details?",
-    a: "Current availability is shown on this website (currently from July 2026). A current freelance profile is available upon request for project evaluation, client submission, and supplier onboarding."
+    a: `Current availability is shown on this website (${getAvailabilitySentence().toLowerCase()}). A current freelance profile is available upon request for project evaluation, client submission, and supplier onboarding.`
   }
 ];

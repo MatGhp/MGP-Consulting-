@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, FileText, Mail, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { PERSONAL_INFO } from "../data";
+import { getAvailabilityBadgeText } from "../utils/availability";
 
 interface NavbarProps {
   onContactClick: () => void;
@@ -98,7 +99,7 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span className="font-mono text-xs font-semibold text-emerald-800 uppercase tracking-wide">
-                {PERSONAL_INFO.availability.status} {PERSONAL_INFO.availability.dateText}
+                {getAvailabilityBadgeText()}
               </span>
             </div>
 
