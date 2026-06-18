@@ -108,7 +108,6 @@ MGP Consulting (c) 2026. Frankfurt, Germany
         {/* Hero Section */}
         <Hero
           onContactClick={triggerDirectInquiry}
-          onCvRequestClick={triggerCvRequestSection}
         />
 
         {/* Services Section */}

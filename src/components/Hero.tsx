@@ -3,17 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FileText, Search, Mail, Terminal } from "lucide-react";
+import { Search, Mail, Terminal } from "lucide-react";
 import { motion } from "motion/react";
 import { PERSONAL_INFO } from "../data";
 import { getAvailabilityShortMonthYear } from "../utils/availability";
 
 interface HeroProps {
   onContactClick: () => void;
-  onCvRequestClick: () => void;
 }
 
-export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
+export default function Hero({ onContactClick }: HeroProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -110,24 +109,15 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
             {/* Core Action Callouts */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-3 pt-2"
+              className="flex pt-2"
             >
               <button
                 id="btn-hero-contact"
                 onClick={onContactClick}
-                className="px-6 py-3 bg-slate-950 text-white rounded-md font-semibold text-sm hover:bg-blue-600 transition-colors shadow-sm text-center flex items-center justify-center space-x-2.5 cursor-pointer"
+                className="px-6 py-3 bg-slate-950 text-white rounded-md font-semibold text-sm hover:bg-blue-600 transition-colors shadow-sm text-center flex items-center justify-center space-x-2.5 cursor-pointer self-start"
               >
                 <Mail className="w-4 h-4" />
                 <span>Discuss Project</span>
-              </button>
-
-              <button
-                id="btn-hero-cv-req"
-                onClick={onCvRequestClick}
-                className="px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-md font-semibold text-sm hover:bg-slate-50 transition-colors text-center flex items-center justify-center space-x-2 ml-0 sm:ml-1 shrink-0"
-              >
-                <FileText className="w-4.5 h-4.5 text-slate-500" />
-                <span>Request Freelancer Profile</span>
               </button>
             </motion.div>
 
