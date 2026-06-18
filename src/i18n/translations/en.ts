@@ -114,6 +114,17 @@ export const en: TranslationContent = {
         "My strongest experience is in .NET, Azure integration, enterprise backend systems, and Angular-based business applications.",
       footerUsedInProduction: "Used in production projects",
       footerCiCdExperience: "CI/CD project experience",
+      proofIndicators: [
+        "Production project experience",
+        "Enterprise system delivery",
+        "CI/CD and cloud-native implementation"
+      ],
+      categoryBadges: {
+        dotnetBackend: "Scalable .NET backend systems",
+        azureIntegration: "Azure cloud-native implementation",
+        devopsDelivery: "CI/CD delivery experience",
+        frontendTech: "Enterprise Angular frontend experience"
+      },
       calloutEyebrow: "Delivery habits that reduce project risk",
       calloutTitle: "Delivery habits that reduce project risk",
       calloutDescription:

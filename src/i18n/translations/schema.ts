@@ -127,6 +127,13 @@ export interface TranslationContent {
       intro: string;
       footerUsedInProduction: string;
       footerCiCdExperience: string;
+      proofIndicators: string[];
+      categoryBadges: {
+        dotnetBackend: string;
+        azureIntegration: string;
+        devopsDelivery: string;
+        frontendTech: string;
+      };
       calloutEyebrow: string;
       calloutTitle: string;
       calloutDescription: string;

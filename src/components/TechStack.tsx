@@ -25,6 +25,21 @@ export default function TechStack() {
     }
   };
 
+  const getCategoryBadge = (id: string) => {
+    switch (id) {
+      case "dotnet-backend":
+        return t("ui.techStack.categoryBadges.dotnetBackend");
+      case "azure-integration":
+        return t("ui.techStack.categoryBadges.azureIntegration");
+      case "devops-delivery":
+        return t("ui.techStack.categoryBadges.devopsDelivery");
+      case "frontend-tech":
+        return t("ui.techStack.categoryBadges.frontendTech");
+      default:
+        return "";
+    }
+  };
+
   return (
     <section id="tech-focus" className="py-20 bg-slate-50/50 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,6 +55,21 @@ export default function TechStack() {
           <p className="mt-4 text-base text-slate-600">
             {t("ui.techStack.intro")}
           </p>
+        </div>
+
+        {/* Proof Bar */}
+        <div className="mb-12 rounded-xl border border-slate-200/90 bg-white p-4 sm:p-5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {content.ui.techStack.proofIndicators.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-2.5 rounded-md border border-slate-200/80 bg-slate-50/60 px-3.5 py-2.5"
+              >
+                <ShieldCheck className="w-4 h-4 text-emerald-600/90 flex-shrink-0" />
+                <span className="text-xs font-semibold text-slate-700">{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Categories Grid */}
@@ -59,6 +89,9 @@ export default function TechStack() {
                     <h3 className="font-sans text-md font-bold text-slate-900 leading-none">
                       {category.categoryName}
                     </h3>
+                    <span className="inline-flex items-center mt-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-semibold uppercase tracking-wider bg-blue-50 text-blue-800 border border-blue-100">
+                      {getCategoryBadge(category.id)}
+                    </span>
                     <span className="font-sans text-[11px] text-slate-400 mt-1 block">
                       {category.description}
                     </span>
@@ -92,15 +125,6 @@ export default function TechStack() {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Category Footer Assertion */}
-              <div className="mt-8 pt-4 border-t border-slate-100 bg-slate-50/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-3xs text-slate-500 select-none">
-                <div className="flex items-center space-x-1.5 font-mono">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-                  <span>{t("ui.techStack.footerUsedInProduction")}</span>
-                </div>
-                <span>{t("ui.techStack.footerCiCdExperience")}</span>
               </div>
 
             </div>

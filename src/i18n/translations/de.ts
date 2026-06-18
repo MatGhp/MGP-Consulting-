@@ -114,6 +114,17 @@ export const de: TranslationContent = {
         "Meine stärkste Projekterfahrung liegt in .NET, Azure-Integration, Enterprise-Backends und Angular Business Applications.",
       footerUsedInProduction: "In Produktionsprojekten eingesetzt",
       footerCiCdExperience: "CI/CD-Projekterfahrung",
+      proofIndicators: [
+        "Erfahrung in Produktionsprojekten",
+        "Delivery in Enterprise-Systemen",
+        "CI/CD und cloud-native Umsetzung"
+      ],
+      categoryBadges: {
+        dotnetBackend: "Skalierbare .NET-Backend-Systeme",
+        azureIntegration: "Azure cloud-native Umsetzung",
+        devopsDelivery: "CI/CD-Delivery-Erfahrung",
+        frontendTech: "Enterprise Angular Frontend-Erfahrung"
+      },
       calloutEyebrow: "Delivery-Gewohnheiten, die Projektrisiko reduzieren",
       calloutTitle: "Delivery-Gewohnheiten, die Projektrisiko reduzieren",
       calloutDescription:
