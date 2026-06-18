@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FileText, MapPin, Search, Mail, Terminal, ShieldAlert } from "lucide-react";
+import { FileText, Search, Mail, Terminal } from "lucide-react";
 import { motion } from "motion/react";
 import { PERSONAL_INFO } from "../data";
 
@@ -26,13 +26,13 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 15 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
   };
 
   const kpis = [
-    { value: "15+", label: "Years Exp." },
+    { value: "20+", label: "Years Exp." },
     { value: "C1 / C1", label: "DE & EN Fluency" },
-    { value: "Remote", label: "First Preference" },
+    { value: "Remote", label: "Germany & EU" },
     { value: "July '26", label: "Available From" },
   ];
 
@@ -62,7 +62,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
             >
               <Terminal className="w-3.5 h-3.5 text-blue-600" />
               <span className="font-mono text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                Senior Freelance Developer
+                Independent Senior Consultant
               </span>
             </motion.div>
 
@@ -117,7 +117,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
                 className="px-6 py-3 bg-slate-950 text-white rounded-md font-semibold text-sm hover:bg-blue-600 transition-colors shadow-sm text-center flex items-center justify-center space-x-2.5 cursor-pointer"
               >
                 <Mail className="w-4 h-4" />
-                <span>Submit Project Request</span>
+                <span>Discuss Project</span>
               </button>
 
               <button
@@ -126,7 +126,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
                 className="px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-md font-semibold text-sm hover:bg-slate-50 transition-colors text-center flex items-center justify-center space-x-2 ml-0 sm:ml-1 shrink-0"
               >
                 <FileText className="w-4.5 h-4.5 text-slate-500" />
-                <span>Request CV / Profile</span>
+                <span>Request Freelancer Profile</span>
               </button>
             </motion.div>
 
@@ -160,11 +160,11 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
                 <div className="space-y-2">
                   <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400">Core Expertise Profile</h3>
                   <p className="font-sans text-xl font-bold text-slate-900 leading-snug">
-                    Resilient Enterprise Integrations & Cross-Platform Modernization
+                    Reliable Azure integrations and legacy .NET modernization
                   </p>
                 </div>
 
-                {/* KPI stats blocks for recruiters */}
+                {/* Hero trust indicators */}
                 <div className="grid grid-cols-2 gap-3 pt-2">
                   {kpis.map((kpi, idx) => (
                     <div
@@ -187,15 +187,15 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
                   <ul className="space-y-2 text-xs text-slate-650">
                     <li className="flex items-start">
                       <span className="text-emerald-500 font-bold mr-2">✓</span>
-                      <span>Passwordless integrations securely utilizing Entra ID (No hardcoded credentials)</span>
+                      <span>Secure API integration and robust credential handling with modern Azure services</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-emerald-500 font-bold mr-2">✓</span>
-                      <span>Decoupled cloud queues using Azure Service Bus protecting downstream storage</span>
+                      <span>Reliable Azure Service Bus integration patterns for enterprise workflows</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-emerald-500 font-bold mr-2">✓</span>
-                      <span>Angular dashboard modernization backing clean API gateway boundaries</span>
+                      <span>Maintainable Angular business applications aligned with backend API delivery</span>
                     </li>
                   </ul>
                 </div>
@@ -204,7 +204,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
                 <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-lg flex items-start space-x-2.5">
                   <Search className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-2xs text-slate-600 leading-relaxed">
-                    <strong>Recruiter Notice:</strong> Ready for quick onboarding. Standard contracts on GULP, freelancermap, or direct agency billing are fully supported.
+                    <strong>Project Onboarding:</strong> Available for remote-first enterprise assignments with clear onboarding, NDA-ready communication, and professional freelance collaboration.
                   </p>
                 </div>
               </div>

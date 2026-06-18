@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from "react";
-import { Menu, X, FileText, Mail, CheckCircle2, MapPin } from "lucide-react";
+import { Menu, X, FileText, Mail, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { PERSONAL_INFO } from "../data";
 
@@ -72,7 +72,7 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
               </span>
             </div>
             <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest leading-none mt-0.5">
-              .NET & Azure Integration
+              .NET & Azure Enterprise Delivery
             </span>
           </a>
 
@@ -108,7 +108,7 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
               className="flex items-center space-x-1.5 px-3.5 py-1.5 border border-slate-300 text-slate-700 rounded-md text-sm font-medium hover:bg-slate-50 transition-colors"
             >
               <FileText className="w-4 h-4 text-slate-500" />
-              <span>Request CV</span>
+              <span>Request Freelancer Profile</span>
             </button>
 
             <button
@@ -116,7 +116,7 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
               onClick={onContactClick}
               className="px-4 py-2 bg-slate-900 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors shadow-xs"
             >
-              Project Request
+              Discuss Project
             </button>
           </div>
 
@@ -185,7 +185,7 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
                   className="flex items-center justify-center space-x-2 w-full py-2.5 border border-slate-300 text-slate-700 rounded-md font-medium text-sm hover:bg-slate-50"
                 >
                   <FileText className="w-4.5 h-4.5 text-slate-500" />
-                  <span>Request Full CV / Profile</span>
+                  <span>Request Freelancer Profile</span>
                 </button>
 
                 <button
@@ -197,7 +197,7 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
                   className="flex items-center justify-center space-x-2 w-full py-2.5 bg-slate-900 text-white rounded-md font-medium text-sm hover:bg-blue-600"
                 >
                   <Mail className="w-4.5 h-4.5" />
-                  <span>Send Project Inquiry</span>
+                  <span>Discuss Project</span>
                 </button>
               </div>
             </div>

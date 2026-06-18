@@ -7,11 +7,12 @@ import { ServiceItem, ValueAddScenario, ProjectExperience, TechCategory } from "
 
 export const PERSONAL_INFO = {
   name: "Mojtaba Ghanaat Pisheh",
-  role: "Freelance Senior .NET / Azure Integration Developer",
-  tagline: "Enterprise Integration | .NET Modernization | Cloud & Enterprise Delivery",
-  headline: "Senior .NET / Azure Integration Developer",
-  subheadline: "I help companies modernize, integrate, and stabilize enterprise software systems with .NET, Azure, APIs, Service Bus, Functions, CI/CD, and Angular.",
-  location: "Frankfurt am Main, Germany (Remote-First across Germany & Europe)",
+  role: "Freelance Senior .NET & Azure Developer for Enterprise Integration and Legacy Modernization",
+  tagline: "Legacy .NET Modernization | Reliable Azure Integration | Production-Oriented Delivery",
+  headline: "Freelance Senior .NET & Azure Developer",
+  subheadline:
+    "I help enterprise teams modernize legacy .NET systems, build reliable Azure integrations, and stabilize business-critical applications without risky rewrites.",
+  location: "Based in Frankfurt am Main, Germany • Remote-first across Germany and the EU",
   locationShort: "Frankfurt am Main, Germany",
   email: "mojtaba@mgp-consulting.de",
   linkedin: "https://www.linkedin.com/in/mojtaba-ghanaat-pisheh",
@@ -24,70 +25,79 @@ export const PERSONAL_INFO = {
   availability: {
     status: "Available",
     dateText: "From July 2026",
-    remotePreference: "Remote-first freelance projects (optional occasional travel)",
-    euEligible: "Fully eligible for European / German assignments"
+    remotePreference: "Remote-first across Germany and the EU",
+    euEligible: "Eligible for enterprise assignments in Germany and the EU"
   },
   trustFacts: [
-    "15+ years software development experience",
+    "20+ years software engineering experience",
     "Based in Frankfurt am Main, Germany",
-    "Remote-first freelance projects",
-    "German and English project communication",
+    "Remote-first across Germany and the EU",
+    "German and English project communication (C1)",
     "Available from July 2026",
-    "Enterprise software, Azure integration, and Angular business applications"
+    "Modern .NET, C#, ASP.NET Core Web API, Entity Framework Core, REST APIs, unit & integration testing",
+    "Current project work with .NET 10; strong production experience with .NET 8/9 and enterprise modernization from older .NET versions"
   ]
 };
 
 export const SERVICES: ServiceItem[] = [
   {
     id: "enterprise-api",
-    title: "1. Enterprise API & Integration Development",
-    description: "Designing and implementing maintainable APIs, backend services, and integration components for enterprise environments.",
+    title: "Enterprise API & Integration Development",
+    description:
+      "Design and implementation of maintainable APIs, backend services, and integration components for enterprise environments.",
     iconName: "Cable",
-    businessBenefit: "Ensures reliable, decoupled client-backend APIs and seamless communication between heterogeneous business programs.",
+    businessBenefit:
+      "Supports reliable communication across business systems, clearer API ownership, and lower integration risk in ongoing delivery.",
     keyOfferings: [
-      ".NET & ASP.NET Core Web API, REST",
-      "Azure Service Bus messaging (Topics, Queues)",
-      "Azure Functions serverless background worker triggers",
-      "API Management policies, secure authentication & identity integration"
+      "Modern .NET / ASP.NET Core, C#, Entity Framework Core, REST APIs, unit & integration testing",
+      "Azure Service Bus messaging (topics and queues)",
+      "Azure Functions for background integration workflows",
+      "Azure API Management and secure API integration"
     ]
   },
   {
     id: "azure-integration",
-    title: "2. Azure Integration & Cloud-Native Backend Services",
-    description: "Building Azure-based backend and integration components that support reliable communication, automation, and operational visibility.",
+    title: "Azure Integration & Backend Services",
+    description:
+      "Development of Azure-based backend and integration components for reliable communication, automation, and operational visibility.",
     iconName: "Cloud",
-    businessBenefit: "Guarantees reliable message routing, secure configuration storage, and comprehensive backend monitoring insights.",
+    businessBenefit:
+      "Helps reduce incidents caused by brittle integrations through reliable messaging, secure configuration management, and observable operations.",
     keyOfferings: [
       "Azure Functions, Azure Service Bus, and Logic Apps",
-      "Azure Key Vault keys, secrets, and credential storage security",
-      "Application Insights & Azure Monitor integration telemetry",
-      "Azure SQL Server setups and database schema integration"
+      "Azure Key Vault for secrets and certificate handling",
+      "Application Insights and Azure Monitor telemetry",
+      "Azure App Service and Azure SQL integration"
     ]
   },
   {
     id: "dotnet-modernization",
-    title: "3. .NET Modernization & Production Readiness",
-    description: "Modernizing existing .NET applications step by step, improving maintainability, deployment reliability, and operational stability.",
+    title: ".NET Modernization & Production Readiness",
+    description:
+      "Step-by-step modernization of existing .NET applications to improve maintainability, release reliability, and operational stability.",
     iconName: "History",
-    businessBenefit: "Significantly decreases continuous maintenance liabilities and structural code complexity overheads.",
+    businessBenefit:
+      "Contributes to faster change cycles, lower regression risk, and a more maintainable codebase without disruptive rewrites.",
     keyOfferings: [
-      "Modernizing obsolete systems to cross-platform .NET 6/7/8/9",
-      "Clean Architecture & Domain-Driven Design (DDD) refactorings",
-      "Entity Framework Core query fine-tuning and performance indexing",
-      "Test automation suites and local containerization with Docker"
+      "Modern .NET and ASP.NET Core delivery, plus modernization from older .NET versions",
+      "Refactoring with Clean Architecture and DDD principles",
+      "Entity Framework Core optimization and data access improvements",
+      "Test automation and containerized local environments with Docker"
     ]
   },
   {
     id: "angular-business-apps",
-    title: "4. Angular Business Applications",
-    description: "Building and modernizing Angular-based enterprise applications with a focus on maintainability, performance, secure API integration, and user workflows.",
+    title: "Angular Business Applications",
+    description:
+      "Implementation and modernization of Angular-based enterprise applications with maintainable architecture and reliable API integration.",
     iconName: "Layout",
-    businessBenefit: "Delivers highly responsive frontend interfaces that match backend APIs flawlessly.",
+    businessBenefit:
+      "Improves frontend maintainability, speeds up UI change cycles, and supports stable integration with backend services.",
     keyOfferings: [
-      "Angular framework, client TypeScript, & asynchronous RxJS streams",
-      "Nx workspace structuring & modular layout design standards",
-      "Angular Material or Kendo UI customized widgets",
-      "Cypress or Jest browser automated testing setups"
+      "Angular, TypeScript, and RxJS for business workflows",
+      "Nx workspace structuring and modular architecture",
+      "Angular Material and Kendo UI enterprise components",
+      "Cypress and Jest test setup"
     ]
   }
 ];
@@ -96,55 +106,68 @@ export const VALUE_ADD_SCENARIOS: ValueAddScenario[] = [
   {
     id: "val-1",
     title: "Unstable or tightly coupled integrations",
-    situation: "Distributed peripheral endpoints fail cascadingly, resulting in missing requests, broken communications, or missing transactions.",
-    solution: "Introduce clearer API boundaries, asynchronous communication using robust message passing, resilient retry / exception handling, and deep monitoring tracing.",
-    technicalDepth: ".NET core handlers, Azure Service Bus queues and topics, Application Insights",
-    businessImpact: "Improves overall system maintainability, lowers direct operational risk, and makes connected solutions significantly easier to support."
+    situation:
+      "Critical integrations are tightly coupled, so one failing dependency can cause cascading issues across connected systems.",
+    solution:
+      "Define clear API boundaries, introduce asynchronous integration patterns, and add resilient retry and error handling with meaningful telemetry.",
+    technicalDepth: ".NET, Azure Service Bus, ASP.NET Core Web API, Application Insights",
+    businessImpact:
+      "Leads to more stable integrations and helps reduce fragile releases, unclear ownership, and expensive production support."
   },
   {
     id: "val-2",
     title: "Legacy .NET applications that are difficult to change",
-    situation: "Monolith software systems have gathered major technical debt, turning trivial feature additions into risky releases with frequent regression bugs.",
-    solution: "Modernize existing codebases step by step, isolate high-impact product domains, introduce clean abstractions, and build automated regression testing boundaries.",
-    technicalDepth: ".NET modernization, modular monorepos, EF Core, Unit & integration tests",
-    businessImpact: "Empowers enterprise software development teams to deliver core feature changes securely without implementing massive risky rewrites."
+    situation:
+      "Aging codebases with high technical debt make even small feature updates slow, risky, and expensive.",
+    solution:
+      "Modernize incrementally, isolate high-impact domains, improve architecture boundaries, and strengthen automated tests around critical behavior.",
+    technicalDepth: "Modern .NET / ASP.NET Core, C#, Entity Framework Core, REST APIs, unit and integration testing. Recent project work with .NET 8–10 and modernization from older .NET versions.",
+    businessImpact:
+      "Supports faster feature delivery while helping reduce regression risk and growing technical debt."
   },
   {
     id: "val-3",
     title: "Manual or unreliable deployments",
-    situation: "Releases depend on manual file copying or manual configuration steps, which creates variations across staging and production systems.",
-    solution: "Create structured multi-tier CI/CD build and release pipelines, clean separation of configuration variables, and infrastructure definition.",
-    technicalDepth: "Azure DevOps, GitHub Actions, Docker containers, Bicep / Terraform",
-    businessImpact: "Ensures highly predictable, transparent release cycles and reduces critical manual deployment efforts and human errors."
+    situation:
+      "Manual deployment steps and inconsistent environment configuration create avoidable release defects.",
+    solution:
+      "Implement repeatable CI/CD pipelines, separate configuration from code, and standardize infrastructure provisioning practices.",
+    technicalDepth: "Azure DevOps, GitHub Actions, Docker, Bicep, Terraform",
+    businessImpact:
+      "Creates more predictable deployments and helps reduce manual errors, environment drift, and release uncertainty."
   },
   {
     id: "val-4",
     title: "Frontend applications with growing complexity",
-    situation: "Scalability issues on complex client applications create slow load frames, difficult UI state cycles, or circular data subscriptions.",
-    solution: "Revise structure of Angular components, standardize clean state flows, secure API interaction points, and structure clear architectural lines.",
-    technicalDepth: "Angular UI modularity, RxJS subscription patterns, state handling, Nx monorepro design",
-    businessImpact: "Guarantees robust, maintainable business utilities and supports stable developer velocity over years of roadmap updates."
+    situation:
+      "Business UI layers become difficult to evolve when state handling, component boundaries, and API flows are inconsistent.",
+    solution:
+      "Refactor Angular component structure, clarify state management patterns, and align API integration contracts.",
+    technicalDepth: "Angular, TypeScript, RxJS, Nx",
+    businessImpact:
+      "Results in faster UI changes, more stable state handling, and lower long-term maintenance effort."
   }
 ];
 
 export const PROJECTS: ProjectExperience[] = [
   {
     id: "proj-1",
-    title: "Enterprise Supplier Portal & Onboarding Platform",
-    clientType: "Mechanical Engineering Corporation",
+    title: "Supplier Onboarding & Integration Platform",
+    clientType: "Enterprise supplier platform",
     sector: "Enterprise / Mechanical Engineering",
-    role: "Freelance Senior Full-Stack / Integration Developer",
+    role: "Freelance Senior .NET & Integration Developer",
     period: "2025 - 2026",
     duration: "12 Months",
-    scope: "Co-developed an onboarding and supply portal workflow to manage high-security external supplier profile registrations and credentials management.",
+    scope:
+      "Extended onboarding and supplier integration workflows in a high-security multi-system enterprise environment.",
     achievements: [
-      "Implemented and extended onboarding and integration workflows.",
-      "Worked on backend APIs, frontend screens, role-based workflows, and external system communication.",
-      "Supported CI/CD, release preparation, debugging, and production issue analysis.",
-      "Helped improve maintainability and reliability in a complex enterprise environment."
+      "Implemented backend API changes and Angular workflow screens with role-based business states.",
+      "Extended integration points for external system communication and process reliability.",
+      "Supported CI/CD delivery, release preparation, debugging, and production issue analysis.",
+      "Current project delivery includes Modern .NET with .NET 10 and ASP.NET Core in production-oriented enterprise workflows."
     ],
     techStack: [
-      ".NET",
+      ".NET 10",
       "ASP.NET Core",
       "Angular",
       "TypeScript",
@@ -159,21 +182,22 @@ export const PROJECTS: ProjectExperience[] = [
   },
   {
     id: "proj-2",
-    title: "Azure Cloud-Native Integration Platform",
-    clientType: "Enterprise IT Services Hub",
+    title: "Azure Integration Platform for Business-Critical Workloads",
+    clientType: "Enterprise integration services environment",
     sector: "IT Services / Enterprise Integration",
     role: "Lead Technical Consultant / Azure Integration Developer",
     period: "2024 - 2025",
     duration: "10 Months",
-    scope: "Established decoupled serverless background components, message routers, and gateway filters tying together legacy systems with modern business components.",
+    scope:
+      "Built Azure-based integration components to connect legacy systems with modern APIs and event-driven workflows.",
     achievements: [
-      "Designed and implemented Azure-based integration components.",
-      "Automated infrastructure and deployment processes.",
-      "Worked with secure configuration, secrets, APIs, and enterprise integration patterns.",
-      "Improved delivery structure and maintainability of cloud integration workloads."
+      "Designed and implemented Azure Functions and messaging-driven integration services.",
+      "Automated infrastructure and deployment setup for repeatable project delivery.",
+      "Implemented secure configuration and secret handling using Azure Key Vault.",
+      "Improved maintainability and operational visibility for integration workloads with strong production experience across .NET 8/9 and modernization from older .NET versions."
     ],
     techStack: [
-      ".NET",
+      ".NET 8/9/10",
       "C#",
       "Azure Functions",
       "Azure Service Bus",
@@ -188,21 +212,22 @@ export const PROJECTS: ProjectExperience[] = [
   },
   {
     id: "proj-3",
-    title: "Smart Energy Cloud Platform",
-    clientType: "German Energy Platform Operator",
+    title: "Cloud Platform Enhancements for the Energy Sector",
+    clientType: "Enterprise cloud business platform",
     sector: "Energy Sector",
     role: "Senior Full-Stack / Cloud Developer",
     period: "2023 - 2024",
     duration: "14 Months",
-    scope: "Supported a cloud business platform delivering administrative features, authentication bindings, monitoring reports, and scalable telemetry components.",
+    scope:
+      "Enhanced backend and frontend capabilities for an enterprise energy platform with security, API, and observability requirements.",
     achievements: [
-      "Developed backend services and Angular-based business features.",
-      "Supported cloud infrastructure and deployment automation.",
-      "Worked with authentication, API management, monitoring, and enterprise delivery processes.",
-      "Contributed to maintainable and scalable application architecture."
+      "Delivered backend services and Angular business features for operational workflows.",
+      "Supported cloud infrastructure and deployment automation activities.",
+      "Contributed to authentication, API management, and telemetry-driven support processes.",
+      "Strengthened maintainability and release reliability for a business-critical platform."
     ],
     techStack: [
-      ".NET 6/7",
+      ".NET (incl. .NET 6/7 in earlier platform phases)",
       "Angular",
       "Azure App Service",
       "Azure Service Bus",
@@ -217,18 +242,19 @@ export const PROJECTS: ProjectExperience[] = [
   },
   {
     id: "proj-4",
-    title: "Enterprise Angular Applications & Real-Time Interfaces",
-    clientType: "Medical and Industrial Solutions Company",
+    title: "Angular Business Applications & Real-Time Interfaces",
+    clientType: "Enterprise medical and industrial software environment",
     sector: "Business Applications / Medical & Manufacturing Environments",
     role: "Senior Angular / Full-Stack Developer",
     period: "2021 - 2023",
     duration: "20 Months",
-    scope: "Rearchitected heavy UI screens to handle high-performance updates, clear state definitions, and robust live browser components.",
+    scope:
+      "Modernized complex Angular business applications with focus on maintainable component architecture and stable real-time behavior.",
     achievements: [
-      "Built and modernized Angular-based enterprise applications.",
-      "Integrated frontend applications with backend APIs and real-time communication.",
-      "Improved component structure, maintainability, and testability.",
-      "Supported complex business workflows and production-oriented delivery."
+      "Refactored Angular modules and UI workflows for clearer ownership and maintainability.",
+      "Integrated frontend features with backend APIs and real-time interfaces.",
+      "Improved testability and reliability across business-critical UI components.",
+      "Supported long-running delivery streams with production-oriented engineering practices."
     ],
     techStack: [
       "Angular",
@@ -250,9 +276,10 @@ export const TECH_CATEGORIES: TechCategory[] = [
   {
     id: "dotnet-backend",
     categoryName: ".NET & Backend",
-    description: "Robust programming runtimes, ORM engines, and modern backend architectures.",
+    description:
+      "Modern .NET / ASP.NET Core, C#, Entity Framework Core, REST APIs, unit and integration testing. Current project work with .NET 10; strong production experience with .NET 8/9 and enterprise modernization from older .NET versions.",
     skills: [
-      { name: "C# / .NET 6-9", level: "Strong focus", badge: "Primary language" },
+      { name: "Modern .NET", level: "Strong focus", badge: "Primary focus" },
       { name: "ASP.NET Core Web API", level: "Strong focus", badge: "RESTful architecture" },
       { name: "Entity Framework Core", level: "Practical experience", badge: "Data access / ORM" },
       { name: "REST APIs", level: "Strong focus", badge: "Web services" },
@@ -264,7 +291,8 @@ export const TECH_CATEGORIES: TechCategory[] = [
   {
     id: "azure-integration",
     categoryName: "Azure & Integration",
-    description: "Cloud-native middleware facilitating enterprise messaging, identity security, and backend tracking.",
+    description:
+      "Reliable Azure integration services, secure configuration management, and operational observability.",
     skills: [
       { name: "Azure Functions", level: "Strong focus", badge: "Serverless runtime" },
       { name: "Azure Service Bus", level: "Strong focus", badge: "Message queues & topics" },
@@ -273,13 +301,13 @@ export const TECH_CATEGORIES: TechCategory[] = [
       { name: "Azure Key Vault", level: "Strong focus", badge: "Secure configuration" },
       { name: "Azure App Service", level: "Project experience", badge: "App hosting" },
       { name: "Azure SQL", level: "Project experience", badge: "Cloud Database" },
-      { name: "Application Insights & Monitor", level: "Practical experience", badge: "Telemetering" }
+      { name: "Application Insights & Monitor", level: "Practical experience", badge: "Telemetry" }
     ]
   },
   {
     id: "devops-delivery",
     categoryName: "DevOps & Cloud Delivery",
-    description: "Automated pipelines, environmental container virtualization, and repeatable environments.",
+    description: "CI/CD implementation, containerized workflows, and repeatable deployment practices.",
     skills: [
       { name: "Azure DevOps Pipelines", level: "Practical experience", badge: "Build & release YAML" },
       { name: "GitHub Actions", level: "Project experience", badge: "Continuous Integration" },
@@ -293,7 +321,8 @@ export const TECH_CATEGORIES: TechCategory[] = [
   {
     id: "frontend-tech",
     categoryName: "Frontend",
-    description: "Client-side platforms, state engines, and modular UI framework tools.",
+    description:
+      "Angular-based business frontends with maintainable state management and modular architecture.",
     skills: [
       { name: "Angular", level: "Strong focus", badge: "SPA Framework" },
       { name: "TypeScript", level: "Strong focus", badge: "Type-safe script language" },
@@ -309,38 +338,42 @@ export const TECH_CATEGORIES: TechCategory[] = [
 
 export const COLLABORATION_VALUES = [
   {
-    title: "1. Senior Autonomy & Readyness",
-    description: "Once onboarded, I take absolute ownership of assigned tasks, clarify missing details with other teams proactively, and drive development work independently."
+    title: "Senior Ownership",
+    description:
+      "After onboarding, I work independently, clarify open points proactively, and drive delivery with clear technical accountability."
   },
   {
-    title: "2. Pragmatic & Truthful Communication",
-    description: "I speak German and English at a C1 level. I believe in direct, professional, and fact-based technical alignment. I outline trade-offs and options clearly so you can make informed business decisions."
+    title: "Clear Communication",
+    description:
+      "I communicate in German and English (C1) and focus on clear trade-offs, practical options, and transparent status updates."
   },
   {
-    title: "3. Focus on Maintainable Code & Deployments",
-    description: "I build robust, testable solutions integrated with structured CI/CD pipelines. This ensures long-term system stability, easy handovers, and reliable production environments."
+    title: "Quality & Delivery Approach",
+    description:
+      "I focus on maintainable implementation, production-oriented delivery, and CI/CD project experience to support stable handover and operations."
   },
   {
-    title: "4. Compliance & Enterprise Standards",
-    description: "Operating from Germany, I am naturally aligned with European software standards, GDPR requirements, passwordless security practices, and professional compliance expectations."
+    title: "Enterprise Collaboration",
+    description:
+      "Available for direct clients, approved supplier onboarding, and professional agency frameworks with NDA-ready communication and structured onboarding."
   }
 ];
 
 export const COLLABORATION_FAQS = [
   {
-    q: "Are you fully freelance / self-employed?",
-    a: "Yes. I operate strictly as a registered freelance professional in Germany. I accept contracting roles directly from corporate clients, IT project providers, or intermediary staffing agencies."
+    q: "Do you work as an independent freelancer?",
+    a: "Yes. I work as an independent freelance consultant based in Germany and support enterprise assignments through direct client engagement, approved supplier channels, and professional agency frameworks."
   },
   {
     q: "How do you handle NDA and confidentiality?",
-    a: "Strict NDA compliance, data privacy, and confidentiality are essential parts of my professional service. All project examples listed on this site have been anonymized, simplified, and genericized to respect client business secrets and protect NDAs."
+    a: "NDA-ready communication and confidentiality are standard. Project references on this website are anonymized and simplified to protect client confidentiality and active contractual obligations."
   },
   {
-    q: "What is your typical remote and travel setup?",
-    a: "I work remote-first, equipped with a high-bandwidth, secure work office in Frankfurt am Main. I am fully prepared to join on-site kick-offs, workshops, or critical deployment alignments whenever required."
+    q: "What is your remote and on-site setup?",
+    a: "I work remote-first from Frankfurt am Main and can join on-site kick-offs, workshops, and key delivery milestones when required by the project setup."
   },
   {
-    q: "How can we check your availability or profile?",
-    a: "My current availability details are kept up to date on this website (currently booking for projects starting from July 2026). You can request a copy of my full freelance CV / Profile PDF directly via the contact buttons below."
+    q: "How can we request your profile and availability details?",
+    a: "Current availability is shown on this website (currently from July 2026). A current freelance profile is available upon request for project evaluation, client submission, and supplier onboarding."
   }
 ];

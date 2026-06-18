@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Cable, Cloud, History, Layout, GitMerge, CheckCircle2, ShieldAlert } from "lucide-react";
+import { Cable, Cloud, History, Layout, GitMerge } from "lucide-react";
 import { SERVICES } from "../data";
 
 export default function Services() {
@@ -34,11 +34,11 @@ export default function Services() {
             My Services
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Where I Help Enterprise Software Projects
+            Where I Deliver Senior-Level Value
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            A freelance consultant is hired to deliver value immediately, without long training periods. 
-            I focus on core backend resilience, modular modernization, and high-performance pipeline architecture.
+            I focus on the areas where I can deliver senior-level value quickly and reliably: legacy .NET modernization,
+            Azure integration, maintainable backend services, and production-oriented project delivery.
           </p>
         </div>
 
@@ -103,20 +103,21 @@ export default function Services() {
           <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-1 max-w-3xl">
               <span className="font-mono text-[10px] bg-blue-600/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded uppercase tracking-wider">
-                Stable Coexistence Architecture
+                Legacy-to-Cloud Delivery
               </span>
               <h4 className="text-lg font-bold text-white pt-1">
-                Combining existing subsystems with Azure serverless workloads
+                Modernizing enterprise systems without risky rewrites
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Modernizing enterprise systems is rarely about throwing everything away. I build adapter layers, message-bridges, and event decorators that let your legacy ASP.NET core systems communicate seamlessly with micro-services without service interruptions.
+                Enterprise modernization rarely starts from zero. I implement integration layers and delivery patterns that
+                let existing business systems evolve safely while new services are introduced.
               </p>
             </div>
             <a
               href="#contact"
               className="inline-flex self-start md:self-auto items-center space-x-1.5 px-4.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-md text-xs font-semibold uppercase tracking-wider transition-colors shrink-0"
             >
-              Discuss System Setup
+              Discuss Project
             </a>
           </div>
         </div>

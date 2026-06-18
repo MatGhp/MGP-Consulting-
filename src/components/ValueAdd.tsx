@@ -7,6 +7,13 @@ import { Shield, HelpCircle, Activity, Lightbulb, CheckCircle2 } from "lucide-re
 import { VALUE_ADD_SCENARIOS, COLLABORATION_VALUES } from "../data";
 
 export default function ValueAdd() {
+  const scenarioRisks: Record<string, string> = {
+    "val-1": "Leads to fragile releases, unclear ownership, and expensive production support.",
+    "val-2": "Causes slow feature delivery, high regression risk, and growing technical debt.",
+    "val-3": "Creates inconsistent environments, manual errors, and unpredictable deployments.",
+    "val-4": "Results in slow UI changes, unstable state handling, and higher maintenance effort."
+  };
+
   const getScenarioIcon = (id: string) => {
     switch (id) {
       case "val-1":
@@ -33,7 +40,7 @@ export default function ValueAdd() {
             Solving Practical Enterprise Software Challenges
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            Many developers can write basic boilerplate code. I bridge the gap between complex software design problems and stable, production-ready technical implementations.
+            Modern enterprise projects often require more than feature implementation. I focus on the architectural and delivery problems that make systems hard to change, deploy, and operate.
           </p>
         </div>
 
@@ -52,7 +59,7 @@ export default function ValueAdd() {
                       {getScenarioIcon(scenario.id)}
                     </div>
                     <span className="font-mono text-[10px] uppercase font-bold text-slate-400 tracking-wider">
-                      IDENTIFIED BOTTLENECK
+                      Project challenge
                     </span>
                   </div>
                   <h3 className="text-lg font-bold text-slate-800">
@@ -64,7 +71,7 @@ export default function ValueAdd() {
                 </div>
                 <div className="pt-4 text-xs font-mono text-rose-600 flex items-center space-x-1 font-semibold select-none">
                   <span>⚠</span>
-                  <span>Results in high operations maintenance & increased software complexity</span>
+                  <span>{scenarioRisks[scenario.id]}</span>
                 </div>
               </div>
 
@@ -72,7 +79,7 @@ export default function ValueAdd() {
               <div className="p-6 lg:p-8 lg:col-span-7 flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
                   <span className="font-mono text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-150 px-2 py-0.5 rounded uppercase tracking-wider font-bold inline-block">
-                    PROVEN MITIGATION STRATEGY
+                    Delivery approach
                   </span>
                   <h4 className="text-md font-bold text-slate-900">
                     {scenario.solution}
@@ -81,7 +88,7 @@ export default function ValueAdd() {
                   {/* Technical Depth Specs tag */}
                   <div className="p-3 bg-slate-50 border border-slate-150 rounded-lg">
                     <span className="text-[10px] font-mono uppercase text-slate-500 font-semibold tracking-wider block mb-1">
-                      Technical implementation tools:
+                      Technical Focus:
                     </span>
                     <span className="font-mono text-xs text-blue-800 font-semibold leading-relaxed">
                       {scenario.technicalDepth}
@@ -96,7 +103,7 @@ export default function ValueAdd() {
                   </div>
                   <div className="text-xs">
                     <span className="font-mono uppercase text-[10px] font-bold text-emerald-700 block tracking-wider">
-                      BUSINESS RETURN:
+                      Business impact:
                     </span>
                     <span className="text-slate-700 font-medium font-sans">
                       {scenario.businessImpact}
@@ -119,7 +126,7 @@ export default function ValueAdd() {
               How I Work
             </h3>
             <p className="mt-3 text-sm text-slate-600 max-w-xl mx-auto">
-              Hiring a senior developer is an investment. These are the principles that guarantee our collaboration will be efficient, low-overhead, and high-impact.
+              Senior freelance collaboration works best with clear ownership, practical communication, and reliable delivery habits.
             </p>
           </div>
 

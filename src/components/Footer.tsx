@@ -6,8 +6,6 @@
 import { PERSONAL_INFO } from "../data";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="bg-slate-900 border-t border-slate-950 py-12 text-slate-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +23,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-2xs text-slate-400 font-sans leading-relaxed max-w-sm">
-              Operational freelancing entity for Mojtaba Ghanaat Pisheh, delivering high-performance Distributed Integration Services, passwordless Entra configurations and cross-platform backend modernization solutions for European enterprise clients.
+              Independent freelance consulting for enterprise .NET modernization, reliable Azure integrations, and production-oriented software delivery across Germany and the EU.
             </p>
           </div>
 
@@ -37,17 +35,17 @@ export default function Footer() {
             <ul className="space-y-1.5 font-sans">
               <li>
                 <a href="#services" className="hover:text-white transition-colors">
-                  Technical Services
+                  Services
                 </a>
               </li>
               <li>
                 <a href="#value-add" className="hover:text-white transition-colors">
-                  Resolution Values
+                  Value Add
                 </a>
               </li>
               <li>
                 <a href="#experience" className="hover:text-white transition-colors">
-                  Project Logbook
+                  Project Experience
                 </a>
               </li>
               <li>
@@ -63,14 +61,14 @@ export default function Footer() {
             <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
               COMPLIANCE & LEGAL
             </span>
-            <div className="text-3xs text-slate-450 leading-relaxed space-y-2">
-              <p>
-                <strong>Impressum (Imprint):</strong> Mojtaba Ghanaat Pisheh, Freelance Senior .NET / Azure Integration Developer. Based in Frankfurt am Main, Germany. Contact: mojtaba@mgp-consulting.de. Final registered corporate entity details can be provided upon final agreement.
-              </p>
-              <p>
-                <strong>Datenschutzerklärung (Privacy Policy):</strong> This website complies with European GDPR policies. No tracking cookies are used. Any data submitted via the contact form is processed strictly to manage project inquiries.
-              </p>
-            </div>
+            <ul className="text-3xs text-slate-450 leading-relaxed space-y-2 font-sans">
+              <li>
+                <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
+              </li>
+              <li>
+                <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutzerklärung</a>
+              </li>
+            </ul>
           </div>
 
         </div>
@@ -78,14 +76,12 @@ export default function Footer() {
         {/* Bottom Metadata Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-3xs text-slate-500 font-sans">
           <div>
-            <span>&copy; {currentYear} {PERSONAL_INFO.name}. All corporate rights reserved.</span>
+            <span>&copy; 2026 Mojtaba Ghanaat Pisheh. All rights reserved.</span>
           </div>
-          
+
           <div className="flex items-center space-x-4">
-            <span className="text-slate-600">|</span>
-            <span className="font-mono uppercase tracking-wider text-slate-500">
-              Active Server Status: Operational (Frankfurt)
-            </span>
+            <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
+            <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutzerklärung</a>
           </div>
         </div>
 

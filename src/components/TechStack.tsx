@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Code2, Server, Settings, Monitor, ShieldCheck, Star } from "lucide-react";
+import { Code2, Server, Settings, Monitor, ShieldCheck } from "lucide-react";
 import { TECH_CATEGORIES } from "../data";
 
 export default function TechStack() {
@@ -35,7 +35,7 @@ export default function TechStack() {
             Selected Core Capabilities
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            I specialize in .NET frameworks and enterprise Azure topologies. I do not pretend to hold equal mastery in every tool. I deliver senior value in these defined clusters:
+            My strongest delivery value is concentrated in .NET, Azure integration, enterprise backend systems, and Angular-based business applications.
           </p>
         </div>
 
@@ -95,9 +95,9 @@ export default function TechStack() {
               <div className="mt-8 pt-4 border-t border-slate-100 bg-slate-50/50 -mx-6 -mb-6 p-4 rounded-b-xl flex items-center justify-between text-3xs text-slate-500 select-none">
                 <div className="flex items-center space-x-1.5 font-mono">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-                  <span>Production Tested & Audited</span>
+                  <span>Used in production projects</span>
                 </div>
-                <span>100% CI/CD Integrated</span>
+                <span>CI/CD project experience</span>
               </div>
 
             </div>
@@ -109,13 +109,14 @@ export default function TechStack() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-2 space-y-1">
               <span className="font-mono text-3xs font-semibold text-blue-400 uppercase tracking-widest block">
-                Quality Assertion Frameworks
+                Quality & Delivery Approach
               </span>
               <h4 className="text-md font-bold text-white">
-                How I enforce structural sanity in .NET integrations
+                How quality is supported in enterprise delivery
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed font-sans font-normal">
-                I do not ship software with untested core endpoints. I integrate automated architecture assertions (like ArchUnitNET or clean assembly checks), SonarQube quality gates on Azure Pipelines, and full integration suites testing Service Bus mock runtimes automatically.
+                I support maintainable implementation and production-oriented delivery with practical testing strategies,
+                CI/CD quality gates, and structured release practices appropriate for enterprise teams.
               </p>
             </div>
             <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-750 font-mono text-[10px] space-y-1.5 text-slate-300">

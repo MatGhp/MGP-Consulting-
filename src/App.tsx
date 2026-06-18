@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from "react";
-import { FileText, X, Mail, Check, Linkedin, Download, ShieldCheck, HelpCircle } from "lucide-react";
+import { FileText, X, Check, Download, ShieldCheck } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 import Navbar from "./components/Navbar";
@@ -48,8 +48,8 @@ export default function App() {
   const handleImmediateDownload = () => {
     const profileText = `======================================================================
 MOJTABA GHANAAT PISHEH
-SENIOR .NET / AZURE INTEGRATION DEVELOPER
-Official Freelance Profile & Contract Specifications
+FREELANCE SENIOR .NET & AZURE DEVELOPER
+Capability Snapshot
 ======================================================================
 
 CONTACT DETAILS:
@@ -58,39 +58,31 @@ Email: ${PERSONAL_INFO.email}
 Phone/Direct: Request via email
 Location: Frankfurt am Main, Germany
 Availability: ${PERSONAL_INFO.availability.status} ${PERSONAL_INFO.availability.dateText}
-Preferred contract structures: GULP, freelancermap, or direct agency billing
+Collaboration: Direct client, approved supplier onboarding, or professional agency framework
 
 CORE POSITIONING:
 -----------------
-Senior Freelance Developer with 15+ years of software development experience specializing in .NET, Azure integration, cloud-native backend services, CI/CD, and Angular business applications.
+Freelance Senior .NET & Azure Developer for Enterprise Integration and Legacy Modernization.
+Two decades of software engineering experience focused on business-critical enterprise delivery.
 
-SUMMARY OF MASTERY MATRIX:
--------------------------
-1. .NET Ecosystem: C#, ASP.NET Core Web API, EF Core, Clean Architecture, test automation.
-2. Azure Cloud Platforms: Azure Functions, Azure Service Bus, Logic Apps, Key Vault, API Management, Application Insights, Azure SQL.
-3. DevOps Operations: Pipelines YAML (Azure DevOps / GitHub actions), Infrastructure as Code (Bicep/Terraform), Docker.
-4. Frontend: Angular, TypeScript, RxJS, Nx, Angular Material / Kendo UI.
+CORE FOCUS:
+-----------
+1. Legacy .NET modernization and maintainable backend services.
+2. Reliable Azure integrations with APIs, Service Bus, and Functions.
+3. Production-oriented delivery with CI/CD project experience.
+4. Angular business applications and secure API integration.
 
-SELECTED EXPERIENCE SUMMARY:
----------------------------
-* Project: Enterprise Supplier Portal & Onboarding Platform
-  Role: Freelance Senior Full-Stack / Integration Developer
-  Implemented and extended onboarding and integration workflows using .NET, ASP.NET Core, Angular, TypeScript, Azure Service Bus, and Docker. Supported production setups and CI/CD releases.
-  
-* Project: Azure Cloud-Native Integration Platform
-  Role: Lead Technical Consultant / Azure Integration Developer
-  Designed and implemented Azure-based integration components, securing credentials via Key Vault, routing with Service Bus, and automating workflows.
-
-* Project: Smart Energy Cloud Platform
-  Role: Senior Full-Stack / Cloud Developer
-  Developed backend features and Angular business structures, working with API management, Keycloak authentication, monitoring telemetry, and Cloud deployments.
-
-* Project: Enterprise Angular Applications & Real-Time Interfaces
-  Role: Senior Angular / Full-Stack Developer
-  Modernized Angular frontend interfaces, integrating real-time server interfaces and complex workflows.
+SELECTED DELIVERY AREAS:
+------------------------
+* Enterprise supplier onboarding and integration platforms
+* Azure integration services for business-critical workloads
+* Energy sector cloud platform enhancements
+* Angular business applications with real-time interfaces
 
 ======================================================================
-This document is prepared as a standard resume snapshot. Please forward direct project scopes to: mojtaba@mgp-consulting.de
+This capability snapshot is provided for initial project discussions.
+A current freelance profile is available upon request.
+Please send project scope details to: mojtaba@mgp-consulting.de
 MGP Consulting (c) 2026. Frankfurt, Germany
 ======================================================================
 `;
@@ -99,7 +91,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "Freelance_Profile_Mojtaba_Ghanaat_Pisheh.txt");
+    link.setAttribute("download", "Capability_Snapshot_Mojtaba_Ghanaat_Pisheh.txt");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -133,7 +125,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
         {/* Value Addition Scenarios */}
         <ValueAdd />
 
-        {/* Deliveries Logbook */}
+        {/* Selected Project Experience */}
         <Experience />
 
         {/* Core Technologies focus */}
@@ -150,7 +142,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
       {/* Footer Details */}
       <Footer />
 
-      {/* High-End Custom CV Request Modal */}
+      {/* Profile Request Modal */}
       <AnimatePresence>
         {cvModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -178,9 +170,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                     <FileText className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900 leading-tight">
-                      Enterprise Core profile request
-                    </h4>
+                    <h4 className="text-sm font-bold text-slate-900 leading-tight">Request Freelancer Profile</h4>
                     <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider mt-0.5 font-mono">
                       Mojtaba Ghanaat-Pisheh • MGP Consulting
                     </span>
@@ -188,6 +178,8 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                 </div>
                 <button
                   onClick={() => setCvModalOpen(false)}
+                  aria-label="Close profile request dialog"
+                  title="Close"
                   className="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
@@ -204,10 +196,10 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                     </div>
                     <div className="space-y-1">
                       <h5 className="text-md font-bold text-slate-900">
-                        Profile Snap Downloaded Successfully!
+                        Capability Snapshot Downloaded
                       </h5>
                       <p className="text-xs text-slate-600 max-w-sm mx-auto leading-relaxed">
-                        The structured profile <strong>Freelance_Profile_Mojtaba_Ghanaat_Pisheh.txt</strong> has been dispatched to your files directory. It serves as an immediate offline database of skills, certs, and project descriptions.
+                        The file <strong>Capability_Snapshot_Mojtaba_Ghanaat_Pisheh.txt</strong> has been saved locally for initial review.
                       </p>
                     </div>
                     <div className="flex items-center justify-center space-x-3 pt-2">
@@ -218,13 +210,13 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                         }}
                         className="px-4 py-2 bg-slate-950 text-white rounded text-xs font-semibold uppercase tracking-wider hover:bg-blue-600 transition-colors"
                       >
-                        Send project inquiry
+                        Discuss Project
                       </button>
                       <button
                         onClick={() => setDownloadSuccess(false)}
                         className="text-xs text-slate-450 hover:text-slate-700 hover:underline font-medium"
                       >
-                        Request again
+                        Request Freelancer Profile
                       </button>
                     </div>
                   </div>
@@ -232,29 +224,29 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                   /* Interactive compilation form */
                   <form onSubmit={handleModalSubmit} className="space-y-4">
                     <p className="text-xs text-slate-600 leading-relaxed font-sans">
-                      Complete your coordinates below to instantaneously compile and download Mojtaba's comprehensive technical summary resume sheet directly to your local file path.
+                      Complete the fields below to request the current freelance profile.
                     </p>
 
                     <div className="space-y-3 text-xs">
                       <div className="space-y-1.5 animate-none">
-                        <label className="font-semibold text-slate-705 font-mono block uppercase text-[10px]">Your Corporate Email *</label>
+                        <label className="font-semibold text-slate-705 font-mono block uppercase text-[10px]">Work Email *</label>
                         <input
                           required
                           type="email"
                           value={inputEmail}
                           onChange={(e) => setInputEmail(e.target.value)}
-                          placeholder="e.g. broker@gulp-recruitment.de"
+                          placeholder="e.g. hiring@enterprise-example.de"
                           className="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded focus:bg-white focus:ring-1 focus:ring-blue-650 focus:outline-hidden text-sm"
                         />
                       </div>
 
                       <div className="space-y-1.5">
-                        <label className="font-semibold text-slate-705 font-mono block uppercase text-[10px]">Staffing Agency / Enterprise Partner</label>
+                        <label className="font-semibold text-slate-705 font-mono block uppercase text-[10px]">Company / Organization</label>
                         <input
                           type="text"
                           value={inputCompany}
                           onChange={(e) => setInputCompany(e.target.value)}
-                          placeholder="e.g. Hays AG / freelance-partner.com"
+                          placeholder="e.g. Enterprise Solutions GmbH"
                           className="w-full bg-slate-50 border border-slate-200 px-3 py-2 rounded focus:bg-white focus:ring-1 focus:ring-blue-650 focus:outline-hidden text-sm"
                         />
                       </div>
@@ -268,7 +260,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                         onClick={handleImmediateDownload}
                         className="text-3xs text-blue-600 hover:underline font-mono text-left"
                       >
-                        Or bypass details & download immediately (.txt)
+                        Download Capability Snapshot (.txt)
                       </button>
 
                       <button
@@ -276,7 +268,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                         className="px-5 py-2.5 bg-slate-950 text-white hover:bg-blue-601 rounded text-xs font-semibold uppercase tracking-wider font-mono flex items-center justify-center space-x-1.5 cursor-pointer ml-auto"
                       >
                         <Download className="w-4 h-4" />
-                        <span>Download profile snap</span>
+                        <span>Request Freelancer Profile</span>
                       </button>
                     </div>
                   </form>
@@ -286,7 +278,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
                 <div className="mt-4 p-3 bg-blue-50/50 border border-blue-105 rounded-lg flex items-start space-x-2">
                   <ShieldCheck className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-[10px] text-slate-600 leading-normal font-sans">
-                    <strong>GDPR Statement:</strong> No cookie profiles, data tracking, or newsletter subscriptions are registered. Your details are treated with immediate operational priority and confidentiality.
+                    <strong>Privacy Note:</strong> Contact details are used only to support project communication and profile requests.
                   </p>
                 </div>
               </div>

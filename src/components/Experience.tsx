@@ -4,7 +4,7 @@
  */
 
 import { useState } from "react";
-import { Briefcase, Calendar, Clock, MapPin, Tag, ShieldCheck, Check } from "lucide-react";
+import { Briefcase, Calendar, Clock, ShieldCheck, Check } from "lucide-react";
 import { PROJECTS } from "../data";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -32,13 +32,13 @@ export default function Experience() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div className="max-w-2xl">
             <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
-              Deliveries Logbook
+              Selected Project Experience
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Selected Projects & Integration Deliveries
+              Selected Delivery Contributions
             </h2>
             <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
-              A record of complex assignments successfully completed. Reflects core backend architecture, serverless integrations, security setups, and client dashboard implementations.
+              Anonymized enterprise project references showing typical scope, contribution areas, and business impact across modernization and integration initiatives.
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export default function Experience() {
                 {/* Key Achievements Bullet block */}
                 <div className="space-y-3 mb-6">
                   <span className="block text-3xs font-mono font-bold text-slate-400 uppercase tracking-widest">
-                    MEASURABLE ACHIEVEMENTS & DELIVERY ITEMS
+                    Key Contributions & Business Impact
                   </span>
                   <ul className="space-y-2.5 text-sm text-slate-700 font-sans font-normal">
                     {project.achievements.map((achievement, idx) => (
@@ -164,10 +164,10 @@ export default function Experience() {
         <div className="mt-16 bg-slate-50 border border-slate-200 p-6 md:p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 max-w-2xl text-center md:text-left">
             <h4 className="text-base font-bold text-slate-900">
-              Need a full, formal PDF CV or Freelance Profile?
+              Need profile details for project evaluation?
             </h4>
             <p className="text-xs text-slate-500 leading-relaxed">
-              I can provide an extensive, recruiter-optimized PDF CV (formatted cleanly for GULP, freelancermap, or direct agency client submissions) containing exact versions, framework lists, and references.
+              Profile details are available upon request.
             </p>
           </div>
           <button
@@ -181,7 +181,7 @@ export default function Experience() {
             }}
             className="px-5 py-2.5 bg-slate-900 text-white hover:bg-blue-600 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors shrink-0 cursor-pointer"
           >
-            Get Full Profile PDF
+            Request Freelancer Profile
           </button>
         </div>
 
