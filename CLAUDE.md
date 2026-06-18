@@ -87,6 +87,87 @@ Keep website copy:
 - easy to scan
 - free of filler, hype, or vague claims
 
+### Copywriting rule
+
+Rewrite all public-facing text in a natural, human, professional tone.
+
+Avoid AI-sounding language, generic marketing phrases, inflated claims, and overly polished corporate wording.
+
+The copy should sound like it was written by an experienced independent senior consultant, not by an AI marketing tool.
+
+Preferred tone:
+
+- clear
+- direct
+- calm
+- confident
+- professional
+- practical
+- specific
+- human
+
+Avoid phrases like:
+
+- unlock value
+- drive transformation
+- seamless solutions
+- robust scalable modern architecture
+- comprehensive backend visibility
+- high-impact delivery
+- resilient enterprise modernization
+- immediate value add
+- cutting-edge
+- future-proof
+- guarantees
+- world-class
+- fully optimized
+- enterprise-ready in every way
+
+Use concrete, believable language instead.
+
+Examples:
+
+Instead of:
+“I deliver high-impact enterprise modernization solutions.”
+
+Use:
+“I help teams modernize existing .NET systems step by step, without risky rewrites.”
+
+Instead of:
+“Reliable Azure integrations protecting downstream business storage.”
+
+Use:
+“I build Azure-based integration components that help systems exchange data reliably.”
+
+Instead of:
+“Professional freelance collaboration processes are supported.”
+
+Use:
+“I can work with direct clients, supplier onboarding processes, or established freelance contract setups.”
+
+Instead of:
+“Core delivery value.”
+
+Use:
+“What I can help with.”
+
+Instead of:
+“Technical implementation tools.”
+
+Use:
+“Technologies used.”
+
+Keep in mind:
+
+- Keep the language business-friendly, but not exaggerated.
+- Keep technical accuracy.
+- Do not remove important .NET, Azure, Angular, DevOps, or integration keywords.
+- Do not make the copy too casual.
+- Do not make it sound like a startup landing page.
+- Do not make it sound like a recruiter profile.
+
+The final website should sound like a real senior freelance consultant speaking clearly about what he does.
+
 Avoid:
 
 - startup-style buzzwords

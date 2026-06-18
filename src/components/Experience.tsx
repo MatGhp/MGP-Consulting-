@@ -32,13 +32,13 @@ export default function Experience() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div className="max-w-2xl">
             <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
-              Selected Project Experience
+              Selected project experience
             </span>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Selected Delivery Contributions
+              What I’ve worked on
             </h2>
             <p className="mt-3 text-sm text-slate-600 leading-relaxed font-normal">
-              Anonymized enterprise project references showing typical scope, contribution areas, and business impact across modernization and integration initiatives.
+              Anonymized project references showing scope, contribution areas, and outcomes across modernization and integration work.
             </p>
           </div>
 
@@ -46,9 +46,9 @@ export default function Experience() {
           <div className="mt-4 md:mt-0 px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg flex items-start space-x-2.5 max-w-sm">
             <ShieldCheck className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
             <div className="text-3xs text-slate-600 leading-relaxed">
-              <strong className="text-slate-800 uppercase tracking-wide font-bold font-mono">NDA & Privacy Compliant</strong>
+              <strong className="text-slate-800 uppercase tracking-wide font-bold font-mono">NDA & privacy aware</strong>
               <p className="font-normal font-sans">
-                Specific corporate names, internal URLs, and patented designs are anonymized or generalized to respect ongoing partner NDAs.
+                Specific corporate names, internal URLs, and sensitive implementation details are anonymized or generalized to respect ongoing partner NDAs.
               </p>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function Experience() {
                 {/* Key Achievements Bullet block */}
                 <div className="space-y-3 mb-6">
                   <span className="block text-3xs font-mono font-bold text-slate-400 uppercase tracking-widest">
-                    Key Contributions & Business Impact
+                    Contributions & results
                   </span>
                   <ul className="space-y-2.5 text-sm text-slate-700 font-sans font-normal">
                     {project.achievements.map((achievement, idx) => (
@@ -143,7 +143,7 @@ export default function Experience() {
                 {/* Technology Badges array */}
                 <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-1.5">
                   <span className="text-3xs font-mono font-bold text-slate-400 uppercase tracking-wider mr-2 select-none">
-                    Tech Focus:
+                    Technologies used:
                   </span>
                   {project.techStack.map((tech, idx) => (
                     <span
@@ -164,10 +164,10 @@ export default function Experience() {
         <div className="mt-16 bg-slate-50 border border-slate-200 p-6 md:p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 max-w-2xl text-center md:text-left">
             <h4 className="text-base font-bold text-slate-900">
-              Need profile details for project evaluation?
+              Need profile details?
             </h4>
             <p className="text-xs text-slate-500 leading-relaxed">
-              Profile details are available upon request.
+              Profile details are available on request.
             </p>
           </div>
           <button

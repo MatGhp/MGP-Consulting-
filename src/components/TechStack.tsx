@@ -32,10 +32,10 @@ export default function TechStack() {
             Tech Focus
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Selected Core Capabilities
+            Core capabilities
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            My strongest delivery value is concentrated in .NET, Azure integration, enterprise backend systems, and Angular-based business applications.
+            My strongest experience is in .NET, Azure integration, enterprise backend systems, and Angular-based business applications.
           </p>
         </div>
 
@@ -109,14 +109,14 @@ export default function TechStack() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             <div className="md:col-span-2 space-y-1">
               <span className="font-mono text-3xs font-semibold text-blue-400 uppercase tracking-widest block">
-                Quality & Delivery Approach
+                How I keep delivery stable
               </span>
               <h4 className="text-md font-bold text-white">
-                How quality is supported in enterprise delivery
+                How I keep delivery stable
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed font-sans font-normal">
-                I support maintainable implementation and production-oriented delivery with practical testing strategies,
-                CI/CD quality gates, and structured release practices appropriate for enterprise teams.
+                I focus on maintainable implementation, practical testing, CI/CD gates, and release routines that fit
+                enterprise teams.
               </p>
             </div>
             <div className="bg-slate-800/50 p-4 rounded-lg border border-slate-750 font-mono text-[10px] space-y-1.5 text-slate-300">

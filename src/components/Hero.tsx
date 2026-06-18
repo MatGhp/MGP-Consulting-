@@ -152,14 +152,14 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
                 </div>
                 <div className="font-mono text-2xs text-slate-400 select-none flex items-center space-x-1">
                   <Terminal className="w-3 h-3 text-slate-300" />
-                  <span>Consultant Profile</span>
+                  <span>Profile</span>
                 </div>
               </div>
 
               {/* Enterprise Profile Highlight Info */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400">Core Expertise Profile</h3>
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400">Core capabilities</h3>
                   <p className="font-sans text-xl font-bold text-slate-900 leading-snug">
                     Reliable Azure integrations and legacy .NET modernization
                   </p>
@@ -184,7 +184,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
 
                 {/* Bullet Proof Commitments */}
                 <div className="space-y-2 pt-2 border-t border-slate-100">
-                  <span className="text-3xs font-mono uppercase tracking-wider text-slate-400 block">What I Deliver</span>
+                  <span className="text-3xs font-mono uppercase tracking-wider text-slate-400 block">What I help with</span>
                   <ul className="space-y-2 text-xs text-slate-650">
                     <li className="flex items-start">
                       <span className="text-emerald-500 font-bold mr-2">✓</span>
@@ -205,7 +205,7 @@ export default function Hero({ onContactClick, onCvRequestClick }: HeroProps) {
                 <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-lg flex items-start space-x-2.5">
                   <Search className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
                   <p className="text-2xs text-slate-600 leading-relaxed">
-                    <strong>Project Onboarding:</strong> Available for remote-first enterprise assignments with structured onboarding, NDA-ready communication, and professional freelance collaboration.
+                    <strong>Project setup:</strong> Available for remote-first assignments with structured onboarding and NDA-friendly communication.
                   </p>
                 </div>
               </div>

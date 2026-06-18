@@ -34,11 +34,10 @@ export default function Services() {
             My Services
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Where I Deliver Senior-Level Value
+            What I can help with
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            I focus on the areas where I can deliver senior-level value quickly and reliably: legacy .NET modernization,
-            Azure integration, maintainable backend services, and production-oriented project delivery.
+            I focus on legacy .NET modernization, Azure integration, maintainable backend services, and practical project delivery.
           </p>
         </div>
 
@@ -68,7 +67,7 @@ export default function Services() {
                 {/* Offerings list */}
                 <div className="space-y-2 pt-2">
                   <span className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider block">
-                    Core Technical Actions
+                    Technologies used
                   </span>
                   <ul className="space-y-1.5 text-xs text-slate-650">
                     {service.keyOfferings.map((item, idx) => (
@@ -85,7 +84,7 @@ export default function Services() {
               <div className="mt-6 pt-4 border-t border-slate-200/50">
                 <div className="p-3 bg-white border border-slate-150 rounded-lg">
                   <span className="text-[10px] font-mono uppercase text-blue-600 font-semibold tracking-wider block mb-1">
-                    Business Impact
+                    How it helps
                   </span>
                   <p className="text-[11px] text-slate-600 leading-normal">
                     {service.businessBenefit}
@@ -103,14 +102,14 @@ export default function Services() {
           <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-1 max-w-3xl">
               <span className="font-mono text-[10px] bg-blue-600/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded uppercase tracking-wider">
-                Legacy-to-Cloud Delivery
+                Legacy to cloud
               </span>
               <h4 className="text-lg font-bold text-white pt-1">
-                Modernizing enterprise systems without risky rewrites
+                Modernizing existing systems without risky rewrites
               </h4>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Enterprise modernization rarely starts from zero. I implement integration layers and delivery patterns that
-                let existing business systems evolve safely while new services are introduced.
+                Modernization rarely starts from zero. I implement integration layers and delivery patterns that let
+                existing systems evolve safely while new services are introduced.
               </p>
             </div>
             <a

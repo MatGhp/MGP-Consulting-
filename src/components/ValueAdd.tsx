@@ -34,13 +34,13 @@ export default function ValueAdd() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="font-mono text-xs font-semibold text-blue-600 uppercase tracking-widest block mb-2">
-            Solving Practical Enterprise Software Challenges
+            Practical software problems
           </span>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Solving Practical Enterprise Software Challenges
+            Practical software problems
           </h2>
           <p className="mt-4 text-base text-slate-600">
-            Modern enterprise projects often require more than feature implementation. I focus on the architectural and delivery problems that make systems hard to change, deploy, and operate.
+            Modern projects often need more than feature work. I focus on the architectural and delivery problems that make systems hard to change, deploy, and operate.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function ValueAdd() {
                       {getScenarioIcon(scenario.id)}
                     </div>
                     <span className="font-mono text-[10px] uppercase font-bold text-slate-400 tracking-wider">
-                      Project challenge
+                      Problem
                     </span>
                   </div>
                   <h3 className="text-lg font-bold text-slate-800">
@@ -79,7 +79,7 @@ export default function ValueAdd() {
               <div className="p-6 lg:p-8 lg:col-span-7 flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
                   <span className="font-mono text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-150 px-2 py-0.5 rounded uppercase tracking-wider font-bold inline-block">
-                    Delivery approach
+                    Approach
                   </span>
                   <h4 className="text-md font-bold text-slate-900">
                     {scenario.solution}
@@ -88,7 +88,7 @@ export default function ValueAdd() {
                   {/* Technical Depth Specs tag */}
                   <div className="p-3 bg-slate-50 border border-slate-150 rounded-lg">
                     <span className="text-[10px] font-mono uppercase text-slate-500 font-semibold tracking-wider block mb-1">
-                      Technical Focus:
+                      Technologies used:
                     </span>
                     <span className="font-mono text-xs text-blue-800 font-semibold leading-relaxed">
                       {scenario.technicalDepth}
@@ -103,7 +103,7 @@ export default function ValueAdd() {
                   </div>
                   <div className="text-xs">
                     <span className="font-mono uppercase text-[10px] font-bold text-emerald-700 block tracking-wider">
-                      Business impact:
+                      How it helps:
                     </span>
                     <span className="text-slate-700 font-medium font-sans">
                       {scenario.businessImpact}
