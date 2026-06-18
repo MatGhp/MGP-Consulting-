@@ -4,17 +4,16 @@
  */
 
 import React, { useState, useEffect } from "react";
-import { Menu, X, FileText, Mail, MapPin } from "lucide-react";
+import { Menu, X, Mail, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { PERSONAL_INFO } from "../data";
 import { getAvailabilityBadgeText } from "../utils/availability";
 
 interface NavbarProps {
   onContactClick: () => void;
-  onCvRequestClick: () => void;
 }
 
-export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps) {
+export default function Navbar({ onContactClick }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -28,9 +27,9 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
 
   const navLinks = [
     { name: "Services", href: "#services" },
-    { name: "Value Add", href: "#value-add" },
-    { name: "Selected Experience", href: "#experience" },
-    { name: "Tech Focus", href: "#tech-focus" },
+    { name: "Value", href: "#value-add" },
+    { name: "Experience", href: "#experience" },
+    { name: "Tech", href: "#tech-focus" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -104,15 +103,6 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
             </div>
 
             <button
-              id="nav-cta-cv-req"
-              onClick={onCvRequestClick}
-              className="flex items-center space-x-1.5 px-3.5 py-1.5 border border-slate-300 text-slate-700 rounded-md text-sm font-medium hover:bg-slate-50 transition-colors"
-            >
-              <FileText className="w-4 h-4 text-slate-500" />
-              <span>Request Freelancer Profile</span>
-            </button>
-
-            <button
               id="nav-cta-contact"
               onClick={onContactClick}
               className="px-4 py-2 bg-slate-900 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors shadow-xs"
@@ -129,7 +119,7 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
               </span>
               <span className="font-mono text-[10px] font-semibold text-emerald-800 uppercase tracking-wide">
-                Available
+                {getAvailabilityBadgeText()}
               </span>
             </div>
 
@@ -177,18 +167,6 @@ export default function Navbar({ onContactClick, onCvRequestClick }: NavbarProps
               ))}
 
               <div className="pt-4 border-t border-slate-100 flex flex-col space-y-2.5">
-                <button
-                  id="mobile-cta-cv"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onCvRequestClick();
-                  }}
-                  className="flex items-center justify-center space-x-2 w-full py-2.5 border border-slate-300 text-slate-700 rounded-md font-medium text-sm hover:bg-slate-50"
-                >
-                  <FileText className="w-4.5 h-4.5 text-slate-500" />
-                  <span>Request Freelancer Profile</span>
-                </button>
-
                 <button
                   id="mobile-cta-inquiry"
                   onClick={() => {

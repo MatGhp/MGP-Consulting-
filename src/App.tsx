@@ -102,10 +102,7 @@ MGP Consulting (c) 2026. Frankfurt, Germany
   return (
     <div className="relative min-h-screen bg-slate-50 selection:bg-blue-100 select-auto">
       {/* Navigation Header */}
-      <Navbar
-        onContactClick={triggerDirectInquiry}
-        onCvRequestClick={triggerCvRequestSection}
-      />
+      <Navbar onContactClick={triggerDirectInquiry} />
 
       <main className="relative">
         {/* Hero Section */}
