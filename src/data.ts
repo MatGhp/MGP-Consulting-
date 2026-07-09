@@ -8,6 +8,8 @@ import { getAvailabilityMonthYear, getAvailabilitySentence } from "./utils/avail
 
 export const PERSONAL_INFO = {
   name: "Mojtaba Ghanaat Pisheh",
+  companyName: "IT Consulting - Mojtaba Ghanaat Pisheh",
+  legalBusinessName: "IT Consulting - Mojtaba Ghanaat Pisheh",
   role: "Freelance Senior .NET & Azure Developer focused on integration and legacy modernization",
   tagline: "Legacy .NET modernization | Azure integration | practical delivery",
   headline: "Freelance Senior .NET & Azure Developer",

@@ -18,10 +18,10 @@ export default function Footer() {
           <div className="md:col-span-12 lg:col-span-5 space-y-4">
             <div className="flex items-center space-x-2">
               <span className="font-mono text-lg font-bold bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                MGP
+                IT
               </span>
               <span className="font-sans text-md font-semibold text-white tracking-tight">
-                MGP Consulting
+                IT Consulting - Mojtaba Ghanaat Pisheh
               </span>
             </div>
             <p className="text-2xs text-slate-400 font-sans leading-relaxed max-w-sm">

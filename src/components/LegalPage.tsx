@@ -33,7 +33,7 @@ export default function LegalPage({ type }: LegalPageProps) {
 
             <div className="space-y-2 text-sm text-slate-700">
               <p><strong>{t("ui.legal.providerNameLabel")}:</strong> {personalInfo.name}</p>
-              <p><strong>{t("ui.legal.businessLabel")}:</strong> MGP Consulting</p>
+              <p><strong>{t("ui.legal.businessLabel")}:</strong> {personalInfo.legalBusinessName}</p>
               <p><strong>{t("ui.legal.locationLabel")}:</strong> {personalInfo.locationShort}</p>
               <p><strong>{t("ui.legal.emailLabel")}:</strong> {personalInfo.email}</p>
             </div>
@@ -68,7 +68,7 @@ export default function LegalPage({ type }: LegalPageProps) {
           </div>
 
           <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-700 space-y-1">
-            <p><strong>{t("ui.legal.providerLabel")}:</strong> {personalInfo.name} (MGP Consulting)</p>
+            <p><strong>{t("ui.legal.providerLabel")}:</strong> {personalInfo.name} ({personalInfo.companyName})</p>
             <p><strong>{t("ui.legal.locationLabel")}:</strong> {personalInfo.locationShort}</p>
             <p><strong>{t("ui.legal.emailLabel")}:</strong> {personalInfo.email}</p>
           </div>

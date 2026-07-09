@@ -7,6 +7,8 @@ export interface PersonalLanguage {
 
 export interface PersonalInfoContent {
   name: string;
+  companyName: string;
+  legalBusinessName: string;
   role: string;
   tagline: string;
   headline: string;

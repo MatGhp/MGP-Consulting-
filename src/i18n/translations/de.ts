@@ -3,18 +3,18 @@ import { TranslationContent } from "./schema";
 export const de: TranslationContent = {
   seo: {
     home: {
-      title: "Mojtaba Ghanaat Pisheh | Freiberuflicher Senior .NET & Azure Entwickler",
+      title: "IT Consulting - Mojtaba Ghanaat Pisheh | Freiberuflicher Senior .NET & Azure Entwickler",
       description:
         "Freiberuflicher Senior .NET- und Azure-Entwickler in Frankfurt am Main. Enterprise-Integration, schrittweise .NET-Modernisierung, Azure-Backend-Services, CI/CD und Angular Business Applications."
     },
     legal: {
       impressum: {
-        title: "Impressum | MGP Consulting",
-        description: "Anbieter- und Pflichtangaben für MGP Consulting."
+        title: "Impressum | IT Consulting - Mojtaba Ghanaat Pisheh",
+        description: "Anbieter- und Pflichtangaben für IT Consulting - Mojtaba Ghanaat Pisheh."
       },
       datenschutz: {
-        title: "Datenschutzerklärung | MGP Consulting",
-        description: "Informationen zur Verarbeitung personenbezogener Daten auf der Website von MGP Consulting."
+        title: "Datenschutzerklärung | IT Consulting - Mojtaba Ghanaat Pisheh",
+        description: "Informationen zur Verarbeitung personenbezogener Daten auf der Website von IT Consulting - Mojtaba Ghanaat Pisheh."
       }
     }
   },
@@ -206,7 +206,7 @@ export const de: TranslationContent = {
     },
     app: {
       modalTitle: "Freelancer-Profil anfragen",
-      modalSubtitle: "Mojtaba Ghanaat-Pisheh • MGP Consulting",
+      modalSubtitle: "Mojtaba Ghanaat Pisheh • IT Consulting - Mojtaba Ghanaat Pisheh",
       modalCloseAria: "Dialog zum Profil anfragen schließen",
       modalCloseTitle: "Schließen",
       successTitle: "Capability Snapshot heruntergeladen",
@@ -226,7 +226,7 @@ export const de: TranslationContent = {
         "Kontaktdaten werden ausschließlich für Projektkommunikation und Profilanfragen verwendet.",
       profileFileName: "Capability_Snapshot_Mojtaba_Ghanaat_Pisheh.txt",
       profileSnapshotText:
-        "Dieser Capability Snapshot dient der ersten Projektabstimmung.\nEin aktuelles Freelancer-Profil ist auf Anfrage verfügbar.\nBitte senden Sie Projektinformationen an: mojtaba@mgp-consulting.de\nMGP Consulting (c) 2026. Frankfurt, Deutschland"
+        "Dieser Capability Snapshot dient der ersten Projektabstimmung.\nEin aktuelles Freelancer-Profil ist auf Anfrage verfügbar.\nBitte senden Sie Projektinformationen an: mojtaba@mgp-consulting.de\nIT Consulting - Mojtaba Ghanaat Pisheh (c) 2026. Frankfurt, Deutschland"
     },
     availability: {
       fromPrefix: "Ab",
@@ -237,6 +237,8 @@ export const de: TranslationContent = {
   data: {
     personalInfo: {
       name: "Mojtaba Ghanaat Pisheh",
+      companyName: "IT Consulting - Mojtaba Ghanaat Pisheh",
+      legalBusinessName: "IT Consulting - Mojtaba Ghanaat Pisheh",
       role: "Freiberuflicher Senior .NET & Azure Entwickler mit Fokus auf Integration und Legacy-Modernisierung",
       tagline: "Legacy .NET Modernisierung | Azure Integration | pragmatische Delivery",
       headline: "Freiberuflicher Senior .NET & Azure Entwickler",

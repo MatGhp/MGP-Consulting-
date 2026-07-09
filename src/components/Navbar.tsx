@@ -92,7 +92,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
           >
             <div className="flex items-center space-x-2">
               <span className="font-mono text-xl font-bold bg-linear-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                MGP
+                IT
               </span>
               <span className="font-sans text-lg font-semibold text-slate-900 tracking-tight">
                 Consulting
