@@ -48,13 +48,3 @@ export interface TechCategory {
   description: string;
   skills: TechSkill[];
 }
-
-export interface ContactMessage {
-  name: string;
-  email: string;
-  company: string;
-  role: string;
-  messageType: "Project Inquiry" | "Staffing Request" | "General Collaboration";
-  message: string;
-  freelanceDocRequested: boolean;
-}

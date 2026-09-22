@@ -39,6 +39,11 @@ export interface CollaborationFaq {
   a: string;
 }
 
+export interface LegalSection {
+  title: string;
+  paragraphs: string[];
+}
+
 export interface TranslationContent {
   seo: {
     home: {
@@ -127,8 +132,6 @@ export interface TranslationContent {
       eyebrow: string;
       title: string;
       intro: string;
-      footerUsedInProduction: string;
-      footerCiCdExperience: string;
       proofIndicators: string[];
       categoryBadges: {
         dotnetBackend: string;
@@ -192,40 +195,24 @@ export interface TranslationContent {
       privacyTitle: string;
       businessLabel: string;
       locationLabel: string;
+      phoneLabel: string;
       providerInfoBox: string;
       backToHomepage: string;
       privacyIntro: string;
-      privacyItems: string[];
+      privacySections: LegalSection[];
       providerLabel: string;
       emailLabel: string;
       infoAccordingTo: string;
       privacyDataProcessingInfo: string;
       providerNameLabel: string;
-    };
-    app: {
-      modalTitle: string;
-      modalSubtitle: string;
-      modalCloseAria: string;
-      modalCloseTitle: string;
-      successTitle: string;
-      successDescription: string;
-      successPrimaryCta: string;
-      successSecondaryCta: string;
-      formIntro: string;
-      workEmailLabel: string;
-      workEmailPlaceholder: string;
-      companyLabel: string;
-      companyPlaceholder: string;
-      directDownloadLink: string;
-      submitButton: string;
-      privacyNoteTitle: string;
-      privacyNoteText: string;
-      profileFileName: string;
-      profileSnapshotText: string;
+      controllerTitle: string;
+      bindingVersionNote: string;
+      lastUpdated: string;
     };
     availability: {
       fromPrefix: string;
       badgeTemplate: string;
+      badgeTemplateShort: string;
       sentenceTemplate: string;
     };
   };

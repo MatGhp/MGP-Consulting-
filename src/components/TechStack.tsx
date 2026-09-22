@@ -89,10 +89,10 @@ export default function TechStack() {
                     <h3 className="font-sans text-md font-bold text-slate-900 leading-none">
                       {category.categoryName}
                     </h3>
-                    <span className="inline-flex items-center mt-1.5 px-2 py-0.5 rounded text-[10px] font-mono font-semibold uppercase tracking-wider bg-blue-50 text-blue-800 border border-blue-100">
+                    <span className="inline-flex items-center mt-1.5 px-2 py-0.5 rounded text-3xs font-mono font-semibold uppercase tracking-wider bg-blue-50 text-blue-800 border border-blue-100">
                       {getCategoryBadge(category.id)}
                     </span>
-                    <span className="font-sans text-[11px] text-slate-400 mt-1 block">
+                    <span className="font-sans text-2xs text-slate-500 mt-1 block">
                       {category.description}
                     </span>
                   </div>
@@ -110,7 +110,7 @@ export default function TechStack() {
                           {skill.name}
                         </span>
                         {skill.badge && (
-                          <span className="block font-mono text-[10px] text-slate-400">
+                          <span className="block font-mono text-3xs text-slate-500">
                             {skill.badge}
                           </span>
                         )}
@@ -118,7 +118,7 @@ export default function TechStack() {
 
                       {/* Expertise Pill badge */}
                       <div className="flex items-center space-x-2">
-                        <span className="inline-flex items-center px-2 py-1 rounded text-[9px] font-mono font-bold uppercase tracking-wider bg-blue-50/75 text-blue-850 border border-blue-105/50 whitespace-nowrap">
+                        <span className="inline-flex items-center px-2 py-1 rounded text-3xs font-mono font-bold uppercase tracking-wider bg-blue-50/75 text-blue-800 border border-blue-100/50 whitespace-nowrap">
                           {skill.level}
                         </span>
                       </div>

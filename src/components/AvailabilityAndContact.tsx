@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Mail, Linkedin, Github, MapPin, Calendar, Globe, ChevronDown, Phone, Copy } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import { interpolate, useI18n } from "../i18n";
 import { getAvailabilityMonthYear, getAvailabilitySentence } from "../utils/availability";
 
@@ -104,7 +104,7 @@ export default function AvailabilityAndContact() {
                   <div className="flex items-center space-x-3 text-sm">
                     <Calendar className="w-5 h-5 text-blue-600 flex-shrink-0" />
                     <div>
-                      <span className="font-mono text-3xs font-bold text-slate-400 block uppercase tracking-wider">
+                      <span className="font-mono text-3xs font-bold text-slate-500 block uppercase tracking-wider">
                         {t("ui.contact.availabilityLabel")}
                       </span>
                       <span className="text-slate-800 font-bold block">{personalInfo.availability.status} — {availabilityDateText}</span>
@@ -114,7 +114,7 @@ export default function AvailabilityAndContact() {
                   <div className="flex items-center space-x-3 text-sm">
                     <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0" />
                     <div>
-                      <span className="font-mono text-3xs font-bold text-slate-400 block uppercase tracking-wider">{t("ui.contact.locationLabel")}</span>
+                      <span className="font-mono text-3xs font-bold text-slate-500 block uppercase tracking-wider">{t("ui.contact.locationLabel")}</span>
                       <span className="text-slate-700 font-normal">{personalInfo.locationShort}</span>
                     </div>
                   </div>
@@ -122,7 +122,7 @@ export default function AvailabilityAndContact() {
                   <div className="flex items-center space-x-3 text-sm">
                     <Globe className="w-5 h-5 text-blue-600 flex-shrink-0" />
                     <div>
-                      <span className="font-mono text-3xs font-bold text-slate-400 block uppercase tracking-wider">{t("ui.contact.remoteSetupLabel")}</span>
+                      <span className="font-mono text-3xs font-bold text-slate-500 block uppercase tracking-wider">{t("ui.contact.remoteSetupLabel")}</span>
                       <span className="text-slate-700 font-normal">{personalInfo.availability.remotePreference}</span>
                     </div>
                   </div>
@@ -145,15 +145,22 @@ export default function AvailabilityAndContact() {
                       <Mail className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
                       <div className="min-w-0 flex-1">
                         <span className="text-xs text-slate-500 block">{t("ui.contact.emailLabel")}</span>
-                        <button
-                          type="button"
-                          onClick={handleCopyEmail}
-                          className="mt-1 inline-flex items-center gap-1.5 text-left text-sm font-medium text-slate-900 break-all transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm cursor-pointer"
-                          aria-label={t("ui.contact.copyEmailAria", { email: personalInfo.email })}
-                        >
-                          <span>{personalInfo.email}</span>
-                          <Copy className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" aria-hidden="true" />
-                        </button>
+                        <div className="mt-1 flex items-center gap-2">
+                          <a
+                            href={`mailto:${personalInfo.email}`}
+                            className="text-sm font-medium text-slate-900 break-all transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm"
+                          >
+                            {personalInfo.email}
+                          </a>
+                          <button
+                            type="button"
+                            onClick={handleCopyEmail}
+                            className="p-1 rounded-sm text-slate-500 transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 cursor-pointer"
+                            aria-label={t("ui.contact.copyEmailAria", { email: personalInfo.email })}
+                          >
+                            <Copy className="w-3.5 h-3.5" aria-hidden="true" />
+                          </button>
+                        </div>
                         {copyFeedback.email && (
                           <div className="mt-1 text-xs text-slate-500" role="status" aria-live="polite">
                             {copyFeedback.email}
@@ -168,15 +175,22 @@ export default function AvailabilityAndContact() {
                       <Phone className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
                       <div className="min-w-0 flex-1">
                         <span className="text-xs text-slate-500 block">{t("ui.contact.phoneLabel")}</span>
-                        <button
-                          type="button"
-                          onClick={handleCopyPhone}
-                          className="mt-1 inline-flex items-center gap-1.5 text-left text-sm font-medium text-slate-900 transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm cursor-pointer"
-                          aria-label={t("ui.contact.copyPhoneAria", { phone: personalInfo.phoneFormatted })}
-                        >
-                          <span>{personalInfo.phoneFormatted}</span>
-                          <Copy className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" aria-hidden="true" />
-                        </button>
+                        <div className="mt-1 flex items-center gap-2">
+                          <a
+                            href={`tel:${personalInfo.phone}`}
+                            className="text-sm font-medium text-slate-900 transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm"
+                          >
+                            {personalInfo.phoneFormatted}
+                          </a>
+                          <button
+                            type="button"
+                            onClick={handleCopyPhone}
+                            className="p-1 rounded-sm text-slate-500 transition-colors hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 cursor-pointer"
+                            aria-label={t("ui.contact.copyPhoneAria", { phone: personalInfo.phoneFormatted })}
+                          >
+                            <Copy className="w-3.5 h-3.5" aria-hidden="true" />
+                          </button>
+                        </div>
                         {copyFeedback.phone && (
                           <div className="mt-1 text-xs text-slate-500" role="status" aria-live="polite">
                             {copyFeedback.phone}
@@ -238,6 +252,8 @@ export default function AvailabilityAndContact() {
                   <button
                     type="button"
                     onClick={() => toggleFaq(idx)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-panel-${idx}`}
                     className="w-full px-5 py-4 text-left flex items-center justify-between font-sans font-bold text-sm text-slate-900 cursor-pointer"
                   >
                     <span>{faq.q}</span>
@@ -246,20 +262,22 @@ export default function AvailabilityAndContact() {
 
                   <AnimatePresence initial={false}>
                     {isOpen && (
-                      <motion.div
+                      <m.div
+                        id={`faq-panel-${idx}`}
+                        role="region"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.15 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-5 pb-5 pt-1 text-xs text-slate-600 leading-relaxed font-normal border-t border-slate-150 bg-white">
+                        <div className="px-5 pb-5 pt-1 text-xs text-slate-600 leading-relaxed font-normal border-t border-slate-200 bg-white">
                           {interpolate(faq.a, {
                             availabilitySentenceLowercase: availabilitySentenceLower,
                             availabilitySentenceLower: availabilitySentenceLower
                           })}
                         </div>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>

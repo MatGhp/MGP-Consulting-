@@ -5,7 +5,7 @@
 
 import { useMemo, useState } from "react";
 import { Briefcase, Calendar, Clock, ShieldCheck, Check } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import { useI18n } from "../i18n";
 
 export default function Experience() {
@@ -66,7 +66,7 @@ export default function Experience() {
               className={`px-4 py-1.5 rounded-full text-xs font-semibold font-mono tracking-wide uppercase transition-all border cursor-pointer ${
                 filterTech === pill
                   ? "bg-slate-950 text-white border-slate-950"
-                  : "bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 hover:text-slate-705"
+                  : "bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 hover:text-slate-700"
               }`}
             >
               {pill}
@@ -78,15 +78,14 @@ export default function Experience() {
         <div className="space-y-12">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
-              <motion.div
-                layout
+              <m.div
                 id={`project-card-${project.id}`}
                 key={project.id}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white border border-slate-205 p-6 sm:p-8 rounded-xl hover:shadow-xs transition-shadow relative"
+                className="bg-white border border-slate-200 p-6 sm:p-8 rounded-xl hover:shadow-xs transition-shadow relative"
               >
                 {/* Meta details header band */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100 mb-6 text-xs text-slate-500">
@@ -95,14 +94,14 @@ export default function Experience() {
                       {project.sector}
                     </span>
                     <span className="font-sans text-slate-700 font-semibold flex items-center">
-                      <Briefcase className="w-3.5 h-3.5 mr-1.5 text-slate-400" />
+                      <Briefcase className="w-3.5 h-3.5 mr-1.5 text-slate-500" />
                       {project.clientType}
                     </span>
                   </div>
 
                   <div className="flex items-center space-x-4 font-mono text-3xs font-semibold uppercase tracking-wider">
                     <span className="flex items-center">
-                      <Calendar className="w-3.5 h-3.5 mr-1 text-slate-400" />
+                      <Calendar className="w-3.5 h-3.5 mr-1 text-slate-500" />
                       {project.period}
                     </span>
                     <span className="flex items-center text-blue-600 bg-blue-50/50 px-2 py-0.5 rounded border border-blue-100/30">
@@ -128,13 +127,13 @@ export default function Experience() {
 
                 {/* Key Achievements Bullet block */}
                 <div className="space-y-3 mb-6">
-                  <span className="block text-3xs font-mono font-bold text-slate-400 uppercase tracking-widest">
+                  <span className="block text-3xs font-mono font-bold text-slate-500 uppercase tracking-widest">
                     {t("ui.experience.contributionsLabel")}
                   </span>
                   <ul className="space-y-2.5 text-sm text-slate-700 font-sans font-normal">
                     {project.achievements.map((achievement, idx) => (
                       <li key={idx} className="flex items-start">
-                        <div className="p-0.5 bg-emerald-50 text-emerald-600 border border-emerald-150 rounded-full mr-2.5 mt-0.5 flex-shrink-0">
+                        <div className="p-0.5 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded-full mr-2.5 mt-0.5 flex-shrink-0">
                           <Check className="w-3.5 h-3.5 stroke-[3px]" />
                         </div>
                         <span>{achievement}</span>
@@ -145,7 +144,7 @@ export default function Experience() {
 
                 {/* Technology Badges array */}
                 <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-1.5">
-                  <span className="text-3xs font-mono font-bold text-slate-400 uppercase tracking-wider mr-2 select-none">
+                  <span className="text-3xs font-mono font-bold text-slate-500 uppercase tracking-wider mr-2 select-none">
                     {t("ui.experience.technologiesUsedLabel")}
                   </span>
                   {project.techStack.map((tech, idx) => (
@@ -158,7 +157,7 @@ export default function Experience() {
                   ))}
                 </div>
 
-              </motion.div>
+              </m.div>
             ))}
           </AnimatePresence>
         </div>

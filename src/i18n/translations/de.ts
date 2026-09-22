@@ -112,8 +112,6 @@ export const de: TranslationContent = {
       title: "Kernkompetenzen",
       intro:
         "Meine stärkste Projekterfahrung liegt in .NET, Azure-Integration, Enterprise-Backends und Angular Business Applications.",
-      footerUsedInProduction: "In Produktionsprojekten eingesetzt",
-      footerCiCdExperience: "CI/CD-Projekterfahrung",
       proofIndicators: [
         "Erfahrung in Produktionsprojekten",
         "Delivery in Enterprise-Systemen",
@@ -190,47 +188,72 @@ export const de: TranslationContent = {
       privacyTitle: "Datenschutzerklärung",
       businessLabel: "Geschäftsbezeichnung",
       locationLabel: "Standort",
+      phoneLabel: "Telefon",
       providerInfoBox: "Diese Seite enthält Anbieter- und Kontaktangaben für diese Website.",
       backToHomepage: "← Zur Startseite",
-      privacyIntro: "Informationen zur Datenverarbeitung auf dieser Website",
-      privacyItems: [
-        "Diese Website verwendet derzeit keine Tracking-Cookies.",
-        "Wenn Sie per E-Mail Kontakt aufnehmen, werden Ihre Nachricht und Kontaktdaten zur Bearbeitung und Beantwortung Ihrer Anfrage verwendet.",
-        "Die Daten werden ausschließlich für Kommunikation zu Projektanfragen und Profilanfragen genutzt."
+      privacyIntro:
+        "Diese Website ist eine reine Informationsseite. Sie setzt keine Cookies, verwendet keine Werbe- oder Tracking-Dienste und verlangt keine Registrierung. Nachfolgend erläutere ich, welche Daten beim Besuch dennoch anfallen und was damit geschieht.",
+      privacySections: [
+        {
+          title: "Hosting",
+          paragraphs: [
+            "Diese Website wird bei GitHub Pages gehostet, einem Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Website verarbeitet GitHub technisch notwendige Daten wie IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene Seite, Browsertyp und Referrer in Server-Logdateien.",
+            "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Mein berechtigtes Interesse liegt im sicheren und stabilen Betrieb der Website. GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+          ]
+        },
+        {
+          title: "Reichweitenmessung mit Cloudflare Web Analytics",
+          paragraphs: [
+            "Um zu verstehen, welche Inhalte aufgerufen werden, nutze ich Cloudflare Web Analytics der Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA. Der Dienst setzt keine Cookies, verwendet keine clientseitigen Kennungen und speichert keine IP-Adressen. Erfasst werden aggregierte Angaben wie aufgerufene Seite, Referrer, Browsertyp, Land und Ladezeiten.",
+            "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Mein berechtigtes Interesse liegt in der Analyse und Verbesserung des Angebots. Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert. Details: https://www.cloudflare.com/privacypolicy/"
+          ]
+        },
+        {
+          title: "Schriftarten",
+          paragraphs: [
+            "Die verwendeten Schriftarten werden lokal von dieser Website ausgeliefert. Beim Seitenaufruf wird keine Verbindung zu Google Fonts oder anderen externen Schriftanbietern aufgebaut."
+          ]
+        },
+        {
+          title: "Spracheinstellung",
+          paragraphs: [
+            "Wenn Sie zwischen Deutsch und Englisch wechseln, wird Ihre Auswahl ausschließlich im lokalen Speicher Ihres Browsers (localStorage) abgelegt, damit die Seite beim nächsten Besuch in derselben Sprache erscheint. Diese Angabe wird nicht an mich oder Dritte übertragen und ist für die gewünschte Funktion erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG)."
+          ]
+        },
+        {
+          title: "Kontaktaufnahme",
+          paragraphs: [
+            "Wenn Sie mich per E-Mail oder Telefon kontaktieren, verarbeite ich Ihre Angaben (Name, Kontaktdaten, Inhalt der Anfrage), um Ihre Anfrage zu beantworten und ein mögliches Projekt zu besprechen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn die Anfrage auf einen Vertrag zielt, im Übrigen Art. 6 Abs. 1 lit. f DSGVO.",
+            "Die Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen."
+          ]
+        },
+        {
+          title: "Links zu LinkedIn und GitHub",
+          paragraphs: [
+            "Diese Website verlinkt auf mein Profil bei LinkedIn und GitHub. Beim reinen Laden dieser Seite werden keine Daten an diese Dienste übertragen. Erst wenn Sie einen Link anklicken, verlassen Sie diese Website; es gelten dann die Datenschutzhinweise des jeweiligen Anbieters."
+          ]
+        },
+        {
+          title: "Ihre Rechte",
+          paragraphs: [
+            "Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen eine Verarbeitung auf Grundlage berechtigter Interessen (Art. 21). Wenden Sie sich dazu an die oben genannte E-Mail-Adresse.",
+            "Außerdem können Sie sich bei einer Datenschutzaufsichtsbehörde beschweren, zum Beispiel beim Hessischen Beauftragten für Datenschutz und Informationsfreiheit, Postfach 3163, 65021 Wiesbaden."
+          ]
+        }
       ],
       providerLabel: "Anbieter",
       emailLabel: "E-Mail",
-      infoAccordingTo: "Angaben gemäß § 5 TMG",
+      infoAccordingTo: "Angaben gemäß § 5 DDG",
       privacyDataProcessingInfo: "Informationen zur Datenverarbeitung auf dieser Website",
-      providerNameLabel: "Name"
-    },
-    app: {
-      modalTitle: "Freelancer-Profil anfragen",
-      modalSubtitle: "Mojtaba Ghanaat Pisheh • IT Consulting - Mojtaba Ghanaat Pisheh",
-      modalCloseAria: "Dialog zum Profil anfragen schließen",
-      modalCloseTitle: "Schließen",
-      successTitle: "Capability Snapshot heruntergeladen",
-      successDescription:
-        "Die Datei {{fileName}} wurde lokal für die erste Prüfung gespeichert.",
-      successPrimaryCta: "Projekt besprechen",
-      successSecondaryCta: "Freelancer-Profil anfragen",
-      formIntro: "Füllen Sie die Felder aus, um das aktuelle Freelancer-Profil anzufordern.",
-      workEmailLabel: "Geschäftliche E-Mail *",
-      workEmailPlaceholder: "z. B. hiring@enterprise-example.de",
-      companyLabel: "Unternehmen / Organisation",
-      companyPlaceholder: "z. B. Enterprise Solutions GmbH",
-      directDownloadLink: "Capability Snapshot herunterladen (.txt)",
-      submitButton: "Freelancer-Profil anfragen",
-      privacyNoteTitle: "Datenschutzhinweis:",
-      privacyNoteText:
-        "Kontaktdaten werden ausschließlich für Projektkommunikation und Profilanfragen verwendet.",
-      profileFileName: "Capability_Snapshot_Mojtaba_Ghanaat_Pisheh.txt",
-      profileSnapshotText:
-        "Dieser Capability Snapshot dient der ersten Projektabstimmung.\nEin aktuelles Freelancer-Profil ist auf Anfrage verfügbar.\nBitte senden Sie Projektinformationen an: mojtaba@mgp-consulting.de\nIT Consulting - Mojtaba Ghanaat Pisheh (c) 2026. Frankfurt, Deutschland"
+      providerNameLabel: "Name",
+      controllerTitle: "Verantwortlicher",
+      bindingVersionNote: "",
+      lastUpdated: "Stand: September 2026"
     },
     availability: {
       fromPrefix: "Ab",
       badgeTemplate: "VERFÜGBAR AB {{monthYear}}",
+      badgeTemplateShort: "AB {{monthYear}}",
       sentenceTemplate: "Verfügbar ab {{monthYear}}"
     }
   },

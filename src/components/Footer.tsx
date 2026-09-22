@@ -31,7 +31,7 @@ export default function Footer() {
 
           {/* Quick Shortcuts */}
           <div className="md:col-span-6 lg:col-span-3 space-y-3">
-            <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
+            <span className="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest block">
               {t("ui.footer.portfolioIndexTitle").toUpperCase()}
             </span>
             <ul className="space-y-1.5 font-sans">
@@ -60,10 +60,10 @@ export default function Footer() {
 
           {/* Compliance & Admin Terms */}
           <div className="md:col-span-6 lg:col-span-4 space-y-3">
-            <span className="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
+            <span className="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest block">
               {t("ui.footer.complianceTitle").toUpperCase()}
             </span>
-            <ul className="text-3xs text-slate-450 leading-relaxed space-y-2 font-sans">
+            <ul className="text-3xs text-slate-400 leading-relaxed space-y-2 font-sans">
               <li>
                 <a href="/impressum" className="hover:text-white transition-colors">{t("ui.footer.legalLinks.impressum")}</a>
               </li>
@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Metadata Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-3xs text-slate-500 font-sans">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-3xs text-slate-400 font-sans">
           <div>
             <span>{t("ui.footer.copyright")}</span>
           </div>

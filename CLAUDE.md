@@ -15,9 +15,9 @@ When making changes, optimize for:
 
 ## Project Snapshot
 
-- Framework: React 19 + TypeScript
-- Build tool: Vite 6
-- Styling: Tailwind CSS 4
+- Framework: React 19 + TypeScript (strict)
+- Build tool: Vite 6, tests with Vitest
+- Styling: Tailwind CSS 4, self-hosted fonts via `@fontsource`
 - UI libraries: Motion, Lucide icons
 - Hosting: GitHub Pages
 
@@ -35,9 +35,13 @@ When editing this project:
 
 ### Content-first updates
 
-Most business copy and profile content should be updated in `src/data.ts`.
+All business copy and profile content lives in the typed translation files:
 
-Prefer `src/data.ts` for:
+- `src/i18n/translations/en.ts` (English)
+- `src/i18n/translations/de.ts` (German)
+- `src/i18n/translations/schema.ts` (the `TranslationContent` type both files must satisfy)
+
+Prefer these files for:
 
 - hero copy
 - services
@@ -45,6 +49,9 @@ Prefer `src/data.ts` for:
 - project experience
 - collaboration FAQs
 - contact and profile metadata
+- Impressum and Datenschutzerklärung texts
+
+Every user-facing string exists in both languages. Change `en.ts` and `de.ts` together in the same commit; adding a key means adding it to `schema.ts` first so `npm run lint` catches a missing translation.
 
 Do not hardcode business copy in components unless there is a clear structural reason.
 
@@ -53,6 +60,10 @@ Do not hardcode business copy in components unless there is a clear structural r
 Use `src/components/` for layout and presentation changes.
 
 Preserve existing IDs, anchors, and stable class hooks when possible because navigation and UI automation may depend on them.
+
+### Routing
+
+The site is a single page plus two client-side routes, `/impressum` and `/datenschutz`, resolved in `src/routes.ts`. GitHub Pages serves `public/404.html` for unknown paths, which redirects to `/?page=<path>`; only whitelisted paths are written back to the address bar. `scripts/postbuild.mjs` copies `dist/index.html` into `dist/impressum/` and `dist/datenschutz/` so both return HTTP 200. Add new routes in `src/routes.ts`, `scripts/postbuild.mjs` and `public/sitemap.xml` together.
 
 ### Availability logic
 
@@ -180,8 +191,11 @@ Use these commands to verify changes when relevant:
 - `npm install`
 - `npm run dev`
 - `npm run lint`
-  - `lint` runs TypeScript type-checking via `tsc --noEmit`
+  - `lint` runs TypeScript type-checking via `tsc --noEmit` (strict mode)
+- `npm test`
+  - Vitest unit tests for `src/utils/availability.ts` and `src/routes.ts`
 - `npm run build`
+  - also runs `scripts/postbuild.mjs`
 - `npm run preview`
 
 ## Definition of Done
@@ -189,23 +203,26 @@ Use these commands to verify changes when relevant:
 For code or content changes, consider the work complete when all applicable checks pass:
 
 1. `npm run lint`
-2. `npm run build`
-3. Major sections still render correctly
-4. Navigation still works
-5. No availability text was hardcoded by mistake
+2. `npm test`
+3. `npm run build`
+4. Major sections still render correctly in both languages
+5. Navigation, the EN/DE switch and `/impressum` / `/datenschutz` still work
+6. No availability text was hardcoded by mistake
 
 ## Deployment Notes
 
 - Production output is generated in `dist/`.
-- GitHub Pages deployment is handled by `.github/workflows/deploy-pages.yml`.
+- GitHub Pages deployment is handled by `.github/workflows/deploy-pages.yml`; pull requests run lint, tests and build without deploying.
 - Custom domain configuration is stored in `public/CNAME`.
 
 ## Helpful Context
 
-- `src/App.tsx` composes the main sections and modal interactions.
-- `src/components/` contains the visible page sections.
-- `src/data.ts` is the main source of truth for business content.
+- `src/App.tsx` composes the main sections.
+- `src/components/` contains the visible page sections and the legal pages.
+- `src/i18n/translations/{en,de}.ts` are the source of truth for all business content.
 - `src/utils/availability.ts` controls dynamic availability text.
+- `src/utils/seo.ts` keeps title, description and Open Graph tags in sync with the active locale.
+- `index.html` and `public/` hold SEO metadata, JSON-LD, favicons, `robots.txt` and `sitemap.xml`.
 
 ## Safe Defaults for Assistants
 

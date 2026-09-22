@@ -69,10 +69,10 @@ export default function Services() {
 
                 {/* Offerings list */}
                 <div className="space-y-2 pt-2">
-                  <span className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider block">
+                  <span className="text-3xs font-mono uppercase text-slate-500 font-semibold tracking-wider block">
                     {t("ui.services.technologiesUsedLabel")}
                   </span>
-                  <ul className="space-y-1.5 text-xs text-slate-650">
+                  <ul className="space-y-1.5 text-xs text-slate-600">
                     {service.keyOfferings.map((item, idx) => (
                       <li key={idx} className="flex items-start">
                         <span className="text-blue-500 font-bold mr-1.5 flex-shrink-0">•</span>
@@ -85,11 +85,11 @@ export default function Services() {
 
               {/* Bottom value benefit highlight card */}
               <div className="mt-6 pt-4 border-t border-slate-200/50">
-                <div className="p-3 bg-white border border-slate-150 rounded-lg">
-                  <span className="text-[10px] font-mono uppercase text-blue-600 font-semibold tracking-wider block mb-1">
+                <div className="p-3 bg-white border border-slate-200 rounded-lg">
+                  <span className="text-3xs font-mono uppercase text-blue-600 font-semibold tracking-wider block mb-1">
                     {t("ui.services.howItHelpsLabel")}
                   </span>
-                  <p className="text-[11px] text-slate-600 leading-normal">
+                  <p className="text-2xs text-slate-600 leading-normal">
                     {service.businessBenefit}
                   </p>
                 </div>
@@ -104,7 +104,7 @@ export default function Services() {
           <div className="absolute right-0 top-0 w-1/3 h-full bg-linear-to-l from-blue-900/10 to-transparent pointer-events-none" />
           <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-1 max-w-3xl">
-              <span className="font-mono text-[10px] bg-blue-600/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded uppercase tracking-wider">
+              <span className="font-mono text-3xs bg-blue-600/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded uppercase tracking-wider">
                 {t("ui.services.calloutTag")}
               </span>
               <h4 className="text-lg font-bold text-white pt-1">

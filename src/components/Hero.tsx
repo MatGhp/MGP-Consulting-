@@ -4,7 +4,7 @@
  */
 
 import { Search, Mail, Terminal } from "lucide-react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import { getAvailabilitySentence, getAvailabilityShortMonthYear } from "../utils/availability";
 import { useI18n } from "../i18n";
 
@@ -50,7 +50,7 @@ export default function Hero({ onContactClick }: HeroProps) {
       <div className="absolute -bottom-12 left-10 w-80 h-80 bg-blue-50/20 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -60,7 +60,7 @@ export default function Hero({ onContactClick }: HeroProps) {
           <div className="lg:col-span-7 flex flex-col space-y-6">
             
             {/* Identity Capsule */}
-            <motion.div
+            <m.div
               variants={itemVariants}
               className="inline-flex self-start items-center space-x-2 bg-slate-100 border border-slate-200/80 px-3.5 py-1.5 rounded-full shadow-2xs"
             >
@@ -68,35 +68,35 @@ export default function Hero({ onContactClick }: HeroProps) {
               <span className="font-mono text-xs font-semibold text-slate-700 uppercase tracking-wider">
                 {t("ui.hero.identityCapsule")}
               </span>
-            </motion.div>
+            </m.div>
 
             {/* Main Headlines */}
             <div className="space-y-3">
-              <motion.span
+              <m.span
                 variants={itemVariants}
                 className="block text-sm font-mono font-semibold text-blue-600 uppercase tracking-widest"
               >
                 {personalInfo.name}
-              </motion.span>
+              </m.span>
               
-              <motion.h1
+              <m.h1
                 variants={itemVariants}
                 className="text-4xl sm:text-5xl lg:text-[2.85rem] font-bold text-slate-900 tracking-tight leading-tight"
               >
                 {personalInfo.headline}
-              </motion.h1>
+              </m.h1>
             </div>
 
             {/* Value Proposition Subhead */}
-            <motion.p
+            <m.p
               variants={itemVariants}
               className="text-lg text-slate-600 leading-relaxed max-w-2xl font-normal"
             >
               {personalInfo.subheadline}
-            </motion.p>
+            </m.p>
 
             {/* Trust Facts Grid List */}
-            <motion.div
+            <m.div
               variants={itemVariants}
               className="py-3 border-y border-slate-200 text-sm text-slate-700 space-y-2.5 font-medium"
             >
@@ -104,7 +104,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                 {personalInfo.trustFacts.map((fact, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <span className="text-emerald-500 font-bold mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-slate-650 text-xs sm:text-sm font-medium">
+                    <span className="text-slate-600 text-xs sm:text-sm font-medium">
                       {fact === "{{availabilitySentence}}"
                         ? availabilitySentence
                         : fact}
@@ -112,10 +112,10 @@ export default function Hero({ onContactClick }: HeroProps) {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
 
             {/* Core Action Callouts */}
-            <motion.div
+            <m.div
               variants={itemVariants}
               className="flex pt-2"
             >
@@ -127,7 +127,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                 <Mail className="w-4 h-4" />
                 <span>{t("ui.hero.discussProjectCta")}</span>
               </button>
-            </motion.div>
+            </m.div>
 
           </div>
 
@@ -135,7 +135,7 @@ export default function Hero({ onContactClick }: HeroProps) {
           <div className="lg:col-span-5 relative mt-6 lg:mt-0">
             
             {/* The Floating Code/Metrics Container */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -148,7 +148,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                   <span className="w-3 h-3 bg-amber-400 rounded-full inline-block" />
                   <span className="w-3 h-3 bg-emerald-400 rounded-full inline-block" />
                 </div>
-                <div className="font-mono text-2xs text-slate-400 select-none flex items-center space-x-1">
+                <div className="font-mono text-2xs text-slate-500 select-none flex items-center space-x-1">
                   <Terminal className="w-3 h-3 text-slate-300" />
                   <span>{t("ui.hero.profileWindowTitle")}</span>
                 </div>
@@ -157,7 +157,7 @@ export default function Hero({ onContactClick }: HeroProps) {
               {/* Enterprise Profile Highlight Info */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400">{t("ui.hero.coreCapabilitiesLabel")}</h3>
+                  <p className="text-xs font-mono uppercase tracking-wider text-slate-500">{t("ui.hero.coreCapabilitiesLabel")}</p>
                   <p className="font-sans text-xl font-bold text-slate-900 leading-snug">
                     {t("ui.hero.coreCapabilitiesText")}
                   </p>
@@ -168,12 +168,12 @@ export default function Hero({ onContactClick }: HeroProps) {
                   {kpis.map((kpi, idx) => (
                     <div
                       key={idx}
-                      className="bg-slate-50 border border-slate-150 p-3 rounded-lg flex flex-col justify-between"
+                      className="bg-slate-50 border border-slate-200 p-3 rounded-lg flex flex-col justify-between"
                     >
                       <span className="text-2xl font-bold text-blue-600 font-mono tracking-tight">
                         {kpi.value}
                       </span>
-                      <span className="text-3xs tracking-wide uppercase font-mono font-bold text-slate-400 mt-1">
+                      <span className="text-3xs tracking-wide uppercase font-mono font-bold text-slate-500 mt-1">
                         {kpi.label}
                       </span>
                     </div>
@@ -182,8 +182,8 @@ export default function Hero({ onContactClick }: HeroProps) {
 
                 {/* Bullet Proof Commitments */}
                 <div className="space-y-2 pt-2 border-t border-slate-100">
-                  <span className="text-3xs font-mono uppercase tracking-wider text-slate-400 block">{t("ui.hero.whatIHelpWithLabel")}</span>
-                  <ul className="space-y-2 text-xs text-slate-650">
+                  <span className="text-3xs font-mono uppercase tracking-wider text-slate-500 block">{t("ui.hero.whatIHelpWithLabel")}</span>
+                  <ul className="space-y-2 text-xs text-slate-600">
                     {content.ui.hero.helpItems.map((item, idx) => (
                       <li key={idx} className="flex items-start">
                         <span className="text-emerald-500 font-bold mr-2">✓</span>
@@ -202,9 +202,9 @@ export default function Hero({ onContactClick }: HeroProps) {
                 </div>
               </div>
 
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );
