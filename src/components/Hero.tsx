@@ -104,7 +104,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                 {personalInfo.trustFacts.map((fact, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <span className="text-emerald-500 font-bold mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-slate-650 text-xs sm:text-sm font-medium">
+                    <span className="text-slate-600 text-xs sm:text-sm font-medium">
                       {fact === "{{availabilitySentence}}"
                         ? availabilitySentence
                         : fact}
@@ -168,7 +168,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                   {kpis.map((kpi, idx) => (
                     <div
                       key={idx}
-                      className="bg-slate-50 border border-slate-150 p-3 rounded-lg flex flex-col justify-between"
+                      className="bg-slate-50 border border-slate-200 p-3 rounded-lg flex flex-col justify-between"
                     >
                       <span className="text-2xl font-bold text-blue-600 font-mono tracking-tight">
                         {kpi.value}
@@ -183,7 +183,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                 {/* Bullet Proof Commitments */}
                 <div className="space-y-2 pt-2 border-t border-slate-100">
                   <span className="text-3xs font-mono uppercase tracking-wider text-slate-400 block">{t("ui.hero.whatIHelpWithLabel")}</span>
-                  <ul className="space-y-2 text-xs text-slate-650">
+                  <ul className="space-y-2 text-xs text-slate-600">
                     {content.ui.hero.helpItems.map((item, idx) => (
                       <li key={idx} className="flex items-start">
                         <span className="text-emerald-500 font-bold mr-2">✓</span>

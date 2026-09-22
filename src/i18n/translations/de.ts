@@ -279,6 +279,7 @@ export const de: TranslationContent = {
     availability: {
       fromPrefix: "Ab",
       badgeTemplate: "VERFÜGBAR AB {{monthYear}}",
+      badgeTemplateShort: "AB {{monthYear}}",
       sentenceTemplate: "Verfügbar ab {{monthYear}}"
     }
   },

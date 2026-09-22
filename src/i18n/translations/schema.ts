@@ -235,6 +235,7 @@ export interface TranslationContent {
     availability: {
       fromPrefix: string;
       badgeTemplate: string;
+      badgeTemplateShort: string;
       sentenceTemplate: string;
     };
   };

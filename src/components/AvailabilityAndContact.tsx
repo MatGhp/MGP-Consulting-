@@ -253,7 +253,7 @@ export default function AvailabilityAndContact() {
                         transition={{ duration: 0.15 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-5 pb-5 pt-1 text-xs text-slate-600 leading-relaxed font-normal border-t border-slate-150 bg-white">
+                        <div className="px-5 pb-5 pt-1 text-xs text-slate-600 leading-relaxed font-normal border-t border-slate-200 bg-white">
                           {interpolate(faq.a, {
                             availabilitySentenceLowercase: availabilitySentenceLower,
                             availabilitySentenceLower: availabilitySentenceLower

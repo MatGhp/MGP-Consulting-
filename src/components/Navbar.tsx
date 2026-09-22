@@ -30,6 +30,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
 
   const navLinks = content.ui.navbar.navLinks;
   const availabilityBadgeText = getAvailabilityBadgeText(locale, content.ui.availability.badgeTemplate);
+  const availabilityBadgeTextShort = getAvailabilityBadgeText(locale, content.ui.availability.badgeTemplateShort);
 
   const languageSwitcher = (
     <div
@@ -84,7 +85,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
           {/* Logo Brand */}
           <a
             href="#"
-            className="flex flex-col group"
+            className="flex flex-col group min-w-0"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -140,15 +141,16 @@ export default function Navbar({ onContactClick }: NavbarProps) {
           </div>
 
           {/* Mobile Hamburger Toggle */}
-          <div className="lg:hidden flex items-center space-x-2">
+          <div className="lg:hidden flex items-center space-x-2 shrink-0">
             {languageSwitcher}
-            <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100">
+            {/* Below `sm` the availability is already visible in the hero, so the badge is hidden to keep the menu button on screen. */}
+            <div className="hidden sm:flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
               </span>
-              <span className="font-mono text-[10px] font-semibold text-emerald-800 uppercase tracking-wide">
-                {availabilityBadgeText}
+              <span className="font-mono text-[10px] font-semibold text-emerald-800 uppercase tracking-wide whitespace-nowrap">
+                {availabilityBadgeTextShort}
               </span>
             </div>
 

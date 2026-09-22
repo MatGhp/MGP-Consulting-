@@ -3,18 +3,16 @@ import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import LegalPage from './components/LegalPage.tsx';
 import { I18nProvider } from './i18n';
+import { resolveRoute } from './routes';
 import './index.css';
 
-const routeParam = new URLSearchParams(window.location.search).get('page');
-const path = (routeParam ?? window.location.pathname).toLowerCase();
-const content =
-  path === '/impressum' ? <LegalPage type="impressum" /> :
-  path === '/datenschutz' ? <LegalPage type="datenschutz" /> :
-  <App />;
+const { route, canonicalPath } = resolveRoute(window.location.search, window.location.pathname);
 
-if (routeParam) {
-  window.history.replaceState(null, '', routeParam);
+if (canonicalPath) {
+  window.history.replaceState(null, '', canonicalPath);
 }
+
+const content = route ? <LegalPage type={route} /> : <App />;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

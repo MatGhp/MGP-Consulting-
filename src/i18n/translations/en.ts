@@ -280,6 +280,7 @@ export const en: TranslationContent = {
     availability: {
       fromPrefix: "From",
       badgeTemplate: "AVAILABLE FROM {{monthYear}}",
+      badgeTemplateShort: "FROM {{monthYear}}",
       sentenceTemplate: "Available from {{monthYear}}"
     }
   },

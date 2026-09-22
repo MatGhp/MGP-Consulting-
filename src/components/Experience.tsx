@@ -66,7 +66,7 @@ export default function Experience() {
               className={`px-4 py-1.5 rounded-full text-xs font-semibold font-mono tracking-wide uppercase transition-all border cursor-pointer ${
                 filterTech === pill
                   ? "bg-slate-950 text-white border-slate-950"
-                  : "bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 hover:text-slate-705"
+                  : "bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 hover:text-slate-700"
               }`}
             >
               {pill}
@@ -86,7 +86,7 @@ export default function Experience() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white border border-slate-205 p-6 sm:p-8 rounded-xl hover:shadow-xs transition-shadow relative"
+                className="bg-white border border-slate-200 p-6 sm:p-8 rounded-xl hover:shadow-xs transition-shadow relative"
               >
                 {/* Meta details header band */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100 mb-6 text-xs text-slate-500">
@@ -134,7 +134,7 @@ export default function Experience() {
                   <ul className="space-y-2.5 text-sm text-slate-700 font-sans font-normal">
                     {project.achievements.map((achievement, idx) => (
                       <li key={idx} className="flex items-start">
-                        <div className="p-0.5 bg-emerald-50 text-emerald-600 border border-emerald-150 rounded-full mr-2.5 mt-0.5 flex-shrink-0">
+                        <div className="p-0.5 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded-full mr-2.5 mt-0.5 flex-shrink-0">
                           <Check className="w-3.5 h-3.5 stroke-[3px]" />
                         </div>
                         <span>{achievement}</span>

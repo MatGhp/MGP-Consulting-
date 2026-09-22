@@ -72,7 +72,7 @@ export default function Services() {
                   <span className="text-[10px] font-mono uppercase text-slate-400 font-semibold tracking-wider block">
                     {t("ui.services.technologiesUsedLabel")}
                   </span>
-                  <ul className="space-y-1.5 text-xs text-slate-650">
+                  <ul className="space-y-1.5 text-xs text-slate-600">
                     {service.keyOfferings.map((item, idx) => (
                       <li key={idx} className="flex items-start">
                         <span className="text-blue-500 font-bold mr-1.5 flex-shrink-0">•</span>
@@ -85,7 +85,7 @@ export default function Services() {
 
               {/* Bottom value benefit highlight card */}
               <div className="mt-6 pt-4 border-t border-slate-200/50">
-                <div className="p-3 bg-white border border-slate-150 rounded-lg">
+                <div className="p-3 bg-white border border-slate-200 rounded-lg">
                   <span className="text-[10px] font-mono uppercase text-blue-600 font-semibold tracking-wider block mb-1">
                     {t("ui.services.howItHelpsLabel")}
                   </span>

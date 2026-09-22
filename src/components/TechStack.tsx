@@ -118,7 +118,7 @@ export default function TechStack() {
 
                       {/* Expertise Pill badge */}
                       <div className="flex items-center space-x-2">
-                        <span className="inline-flex items-center px-2 py-1 rounded text-[9px] font-mono font-bold uppercase tracking-wider bg-blue-50/75 text-blue-850 border border-blue-105/50 whitespace-nowrap">
+                        <span className="inline-flex items-center px-2 py-1 rounded text-[9px] font-mono font-bold uppercase tracking-wider bg-blue-50/75 text-blue-800 border border-blue-100/50 whitespace-nowrap">
                           {skill.level}
                         </span>
                       </div>
