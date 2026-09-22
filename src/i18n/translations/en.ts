@@ -189,21 +189,69 @@ export const en: TranslationContent = {
     legal: {
       impressumTitle: "Impressum",
       privacyTitle: "Privacy Policy",
-      businessLabel: "Business Label",
+      businessLabel: "Business name",
       locationLabel: "Location",
+      phoneLabel: "Phone",
       providerInfoBox: "This page provides provider and contact information for this website.",
       backToHomepage: "← Back to Homepage",
-      privacyIntro: "Information about data processing on this website",
-      privacyItems: [
-        "This website currently does not use tracking cookies.",
-        "If you contact via email, your message and contact details are used to process and respond to your inquiry.",
-        "Data is used only for communication related to project inquiries and profile requests."
+      privacyIntro:
+        "This is a purely informational website. It sets no cookies, uses no advertising or tracking services, and requires no registration. Below I explain which data is still processed when you visit and what happens to it.",
+      privacySections: [
+        {
+          title: "Hosting",
+          paragraphs: [
+            "This website is hosted on GitHub Pages, a service of GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When you open the site, GitHub processes technically necessary data such as your IP address, time of access, requested page, browser type, and referrer in server log files.",
+            "The legal basis is Art. 6 (1) (f) GDPR; my legitimate interest is the secure and stable operation of the website. GitHub is certified under the EU-US Data Privacy Framework. See GitHub's privacy statement: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+          ]
+        },
+        {
+          title: "Audience measurement with Cloudflare Web Analytics",
+          paragraphs: [
+            "To understand which content is viewed, I use Cloudflare Web Analytics by Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA. The service sets no cookies, uses no client-side identifiers, and does not store IP addresses. It collects aggregated data such as requested page, referrer, browser type, country, and load times.",
+            "The legal basis is Art. 6 (1) (f) GDPR; my legitimate interest is analysing and improving the site. Cloudflare is certified under the EU-US Data Privacy Framework. Details: https://www.cloudflare.com/privacypolicy/"
+          ]
+        },
+        {
+          title: "Fonts",
+          paragraphs: [
+            "The fonts used on this site are served from this website itself. No connection to Google Fonts or any other external font provider is made when the page loads."
+          ]
+        },
+        {
+          title: "Language setting",
+          paragraphs: [
+            "When you switch between German and English, your choice is stored only in your browser's local storage (localStorage) so the site opens in the same language next time. This value is not transmitted to me or to third parties and is required for the function you requested (§ 25 (2) no. 2 TDDDG)."
+          ]
+        },
+        {
+          title: "Contacting me",
+          paragraphs: [
+            "If you contact me by email or phone, I process the details you provide (name, contact data, content of your request) to answer your request and discuss a possible project. The legal basis is Art. 6 (1) (b) GDPR where the request aims at a contract, otherwise Art. 6 (1) (f) GDPR.",
+            "The data is deleted once it is no longer needed for handling your request and no statutory retention periods apply."
+          ]
+        },
+        {
+          title: "Links to LinkedIn and GitHub",
+          paragraphs: [
+            "This website links to my profiles on LinkedIn and GitHub. Simply loading this page transfers no data to those services. Only when you click a link do you leave this website; the privacy policy of the respective provider then applies."
+          ]
+        },
+        {
+          title: "Your rights",
+          paragraphs: [
+            "You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20), and objection to processing based on legitimate interests (Art. 21). Please use the email address above.",
+            "You may also lodge a complaint with a data protection supervisory authority, for example the Hessian Commissioner for Data Protection and Freedom of Information, Postfach 3163, 65021 Wiesbaden, Germany."
+          ]
+        }
       ],
       providerLabel: "Provider",
       emailLabel: "Email",
-      infoAccordingTo: "Information according to § 5 TMG",
+      infoAccordingTo: "Information according to § 5 DDG (German Digital Services Act)",
       privacyDataProcessingInfo: "Information on data processing on this website",
-      providerNameLabel: "Name"
+      providerNameLabel: "Name",
+      controllerTitle: "Controller",
+      bindingVersionNote: "This is a convenience translation. The German version is the legally binding one.",
+      lastUpdated: "Last updated: September 2026"
     },
     app: {
       modalTitle: "Request Freelancer Profile",

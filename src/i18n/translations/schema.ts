@@ -39,6 +39,11 @@ export interface CollaborationFaq {
   a: string;
 }
 
+export interface LegalSection {
+  title: string;
+  paragraphs: string[];
+}
+
 export interface TranslationContent {
   seo: {
     home: {
@@ -192,15 +197,19 @@ export interface TranslationContent {
       privacyTitle: string;
       businessLabel: string;
       locationLabel: string;
+      phoneLabel: string;
       providerInfoBox: string;
       backToHomepage: string;
       privacyIntro: string;
-      privacyItems: string[];
+      privacySections: LegalSection[];
       providerLabel: string;
       emailLabel: string;
       infoAccordingTo: string;
       privacyDataProcessingInfo: string;
       providerNameLabel: string;
+      controllerTitle: string;
+      bindingVersionNote: string;
+      lastUpdated: string;
     };
     app: {
       modalTitle: string;
