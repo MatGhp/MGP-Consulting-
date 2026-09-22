@@ -56,7 +56,7 @@ export default function ValueAdd() {
                     <div className="p-1.5 rounded-md bg-white border border-slate-200 shadow-2xs">
                       {getScenarioIcon(scenario.id)}
                     </div>
-                    <span className="font-mono text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+                    <span className="font-mono text-3xs uppercase font-bold text-slate-500 tracking-wider">
                       {t("ui.valueAdd.problemLabel")}
                     </span>
                   </div>
@@ -67,7 +67,7 @@ export default function ValueAdd() {
                     {scenario.situation}
                   </p>
                 </div>
-                <div className="pt-4 text-xs font-mono text-rose-600 flex items-center space-x-1 font-semibold select-none">
+                <div className="pt-4 text-xs font-mono text-rose-700 flex items-center space-x-1 font-semibold select-none">
                   <span>⚠</span>
                   <span>{scenarioRisks[scenario.id]}</span>
                 </div>
@@ -76,7 +76,7 @@ export default function ValueAdd() {
               {/* Solution Right Grid */}
               <div className="p-6 lg:p-8 lg:col-span-7 flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
-                  <span className="font-mono text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-100 px-2 py-0.5 rounded uppercase tracking-wider font-bold inline-block">
+                  <span className="font-mono text-3xs bg-emerald-50 text-emerald-700 border border-emerald-100 px-2 py-0.5 rounded uppercase tracking-wider font-bold inline-block">
                     {t("ui.valueAdd.approachLabel")}
                   </span>
                   <h4 className="text-md font-bold text-slate-900">
@@ -85,7 +85,7 @@ export default function ValueAdd() {
                   
                   {/* Technical Depth Specs tag */}
                   <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg">
-                    <span className="text-[10px] font-mono uppercase text-slate-500 font-semibold tracking-wider block mb-1">
+                    <span className="text-3xs font-mono uppercase text-slate-500 font-semibold tracking-wider block mb-1">
                       {t("ui.valueAdd.technologiesUsedLabel")}
                     </span>
                     <span className="font-mono text-xs text-blue-800 font-semibold leading-relaxed">
@@ -100,7 +100,7 @@ export default function ValueAdd() {
                     <CheckCircle2 className="w-4.5 h-4.5" />
                   </div>
                   <div className="text-xs">
-                    <span className="font-mono uppercase text-[10px] font-bold text-emerald-700 block tracking-wider">
+                    <span className="font-mono uppercase text-3xs font-bold text-emerald-700 block tracking-wider">
                       {t("ui.valueAdd.howItHelpsLabel")}
                     </span>
                     <span className="text-slate-700 font-medium font-sans">

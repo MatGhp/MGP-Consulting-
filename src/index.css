@@ -35,6 +35,12 @@ html {
   font-family: var(--font-sans);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   @apply bg-[#fcfdff] text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-900;
 }

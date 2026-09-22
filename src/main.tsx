@@ -1,5 +1,6 @@
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
+import { LazyMotion, MotionConfig, domAnimation } from 'motion/react';
 import App from './App.tsx';
 import LegalPage from './components/LegalPage.tsx';
 import { I18nProvider } from './i18n';
@@ -16,8 +17,13 @@ const content = route ? <LegalPage type={route} /> : <App />;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <I18nProvider>
-      {content}
-    </I18nProvider>
+    {/* LazyMotion + m.* keeps the animation runtime small; reducedMotion="user" honours the OS setting. */}
+    <LazyMotion features={domAnimation} strict>
+      <MotionConfig reducedMotion="user">
+        <I18nProvider>
+          {content}
+        </I18nProvider>
+      </MotionConfig>
+    </LazyMotion>
   </StrictMode>,
 );

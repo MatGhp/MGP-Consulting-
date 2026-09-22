@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X, Mail, MapPin } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import { getAvailabilityBadgeText } from "../utils/availability";
 import { useI18n } from "../i18n";
 
@@ -99,7 +99,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
                 Consulting
               </span>
             </div>
-            <span className="font-mono text-[9px] text-slate-500 uppercase tracking-widest leading-none mt-0.5">
+            <span className="font-mono text-3xs text-slate-500 uppercase tracking-widest leading-none mt-0.5">
               {t("ui.navbar.companyTagline")}
             </span>
           </a>
@@ -123,7 +123,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
             {languageSwitcher}
             <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="animate-ping motion-reduce:animate-none absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               <span className="font-mono text-xs font-semibold text-emerald-800 uppercase tracking-wide">
@@ -146,10 +146,10 @@ export default function Navbar({ onContactClick }: NavbarProps) {
             {/* Below `sm` the availability is already visible in the hero, so the badge is hidden to keep the menu button on screen. */}
             <div className="hidden sm:flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100">
               <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="animate-ping motion-reduce:animate-none absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
               </span>
-              <span className="font-mono text-[10px] font-semibold text-emerald-800 uppercase tracking-wide whitespace-nowrap">
+              <span className="font-mono text-3xs font-semibold text-emerald-800 uppercase tracking-wide whitespace-nowrap">
                 {availabilityBadgeTextShort}
               </span>
             </div>
@@ -159,6 +159,8 @@ export default function Navbar({ onContactClick }: NavbarProps) {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-md text-slate-500 hover:text-slate-900 focus:outline-hidden"
               aria-label={t("ui.navbar.toggleMenuAria")}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav-panel"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -169,7 +171,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
       {/* Mobile Drawer menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
+          <m.div
             id="mobile-nav-panel"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -179,7 +181,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               <div className="py-2 border-b border-slate-100">
-                <span className="text-xs font-mono text-slate-400 block mb-1">{t("ui.navbar.officeLocationLabel").toUpperCase()}</span>
+                <span className="text-xs font-mono text-slate-500 block mb-1">{t("ui.navbar.officeLocationLabel").toUpperCase()}</span>
                 <span className="text-sm text-slate-700 flex items-center">
                   <MapPin className="w-4 h-4 text-blue-600 mr-1.5 flex-shrink-0" />
                   {personalInfo.locationShort}
@@ -211,7 +213,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
                 </button>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>
