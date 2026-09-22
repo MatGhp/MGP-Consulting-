@@ -157,7 +157,7 @@ export default function Hero({ onContactClick }: HeroProps) {
               {/* Enterprise Profile Highlight Info */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400">{t("ui.hero.coreCapabilitiesLabel")}</h3>
+                  <p className="text-xs font-mono uppercase tracking-wider text-slate-400">{t("ui.hero.coreCapabilitiesLabel")}</p>
                   <p className="font-sans text-xl font-bold text-slate-900 leading-snug">
                     {t("ui.hero.coreCapabilitiesText")}
                   </p>

@@ -14,18 +14,13 @@ import TechStack from "./components/TechStack";
 import AvailabilityAndContact from "./components/AvailabilityAndContact";
 import Footer from "./components/Footer";
 import { useI18n } from "./i18n";
+import { applyPageSeo } from "./utils/seo";
 
 export default function App() {
   const { locale, content } = useI18n();
 
   useEffect(() => {
-    document.documentElement.lang = locale;
-    document.title = content.seo.home.title;
-
-    const description = document.querySelector('meta[name="description"]');
-    if (description) {
-      description.setAttribute("content", content.seo.home.description);
-    }
+    applyPageSeo(locale, content.seo.home.title, content.seo.home.description);
   }, [locale, content.seo.home.title, content.seo.home.description]);
 
   const handleScrollToSection = (selector: string) => {

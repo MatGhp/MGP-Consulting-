@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useI18n } from "../i18n";
+import { applyPageSeo } from "../utils/seo";
 
 interface LegalPageProps {
   type: "impressum" | "datenschutz";
@@ -11,15 +12,8 @@ export default function LegalPage({ type }: LegalPageProps) {
   const legal = content.ui.legal;
 
   useEffect(() => {
-    document.documentElement.lang = locale;
-
     const legalSeo = type === "impressum" ? content.seo.legal.impressum : content.seo.legal.datenschutz;
-    document.title = legalSeo.title;
-
-    const description = document.querySelector('meta[name="description"]');
-    if (description) {
-      description.setAttribute("content", legalSeo.description);
-    }
+    applyPageSeo(locale, legalSeo.title, legalSeo.description);
   }, [locale, type, content.seo.legal.impressum, content.seo.legal.datenschutz]);
 
   const contactBox = (
