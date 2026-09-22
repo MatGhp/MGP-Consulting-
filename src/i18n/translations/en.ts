@@ -112,8 +112,6 @@ export const en: TranslationContent = {
       title: "Core capabilities",
       intro:
         "My strongest experience is in .NET, Azure integration, enterprise backend systems, and Angular-based business applications.",
-      footerUsedInProduction: "Used in production projects",
-      footerCiCdExperience: "CI/CD project experience",
       proofIndicators: [
         "Production project experience",
         "Enterprise system delivery",
@@ -252,30 +250,6 @@ export const en: TranslationContent = {
       controllerTitle: "Controller",
       bindingVersionNote: "This is a convenience translation. The German version is the legally binding one.",
       lastUpdated: "Last updated: September 2026"
-    },
-    app: {
-      modalTitle: "Request Freelancer Profile",
-      modalSubtitle: "Mojtaba Ghanaat Pisheh • IT Consulting - Mojtaba Ghanaat Pisheh",
-      modalCloseAria: "Close profile request dialog",
-      modalCloseTitle: "Close",
-      successTitle: "Capability Snapshot Downloaded",
-      successDescription:
-        "The file {{fileName}} has been saved locally for initial review.",
-      successPrimaryCta: "Discuss Project",
-      successSecondaryCta: "Request Freelancer Profile",
-      formIntro: "Complete the fields below to request the current freelance profile.",
-      workEmailLabel: "Work Email *",
-      workEmailPlaceholder: "e.g. hiring@enterprise-example.de",
-      companyLabel: "Company / Organization",
-      companyPlaceholder: "e.g. Enterprise Solutions GmbH",
-      directDownloadLink: "Download Capability Snapshot (.txt)",
-      submitButton: "Request Freelancer Profile",
-      privacyNoteTitle: "Privacy Note:",
-      privacyNoteText:
-        "Contact details are used only to support project communication and profile requests.",
-      profileFileName: "Capability_Snapshot_Mojtaba_Ghanaat_Pisheh.txt",
-      profileSnapshotText:
-        "This capability snapshot is provided for initial project discussions.\nA current freelance profile is available upon request.\nPlease send project scope details to: mojtaba@mgp-consulting.de\nIT Consulting - Mojtaba Ghanaat Pisheh (c) 2026. Frankfurt, Germany"
     },
     availability: {
       fromPrefix: "From",

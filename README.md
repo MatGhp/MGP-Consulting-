@@ -1,47 +1,46 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# mgp-consulting.de
 
-# Run and deploy your AI Studio app
+Marketing website for IT Consulting - Mojtaba Ghanaat Pisheh, freelance Senior .NET & Azure developer in Frankfurt am Main.
 
-This contains everything you need to run your app locally.
+Live: https://mgp-consulting.de
 
-View your app in AI Studio: https://ai.studio/apps/dd36bde6-7117-4578-9cb8-e1b0cca7faff
+## Stack
 
-## Run Locally
+- React 19 + TypeScript, built with Vite 6
+- Tailwind CSS 4, Motion, Lucide icons
+- Self-hosted fonts (`@fontsource`), no third-party requests apart from Cloudflare Web Analytics
+- Hosted on GitHub Pages, deployed by GitHub Actions
 
-**Prerequisites:**  Node.js
+## Local development
 
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run lint       # TypeScript type-check
+npm test           # Vitest unit tests
+npm run build      # production build into dist/ (+ /impressum and /datenschutz copies)
+npm run preview    # serve dist/ locally
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Where things live
 
-## Deploy to GitHub Pages
+| What | Where |
+| --- | --- |
+| All copy, profile data, services, projects, FAQ, legal texts | `src/i18n/translations/en.ts` and `de.ts` (typed by `schema.ts`) |
+| Page sections | `src/components/` |
+| Dynamic availability date | `src/utils/availability.ts` |
+| Client-side routes (`/impressum`, `/datenschutz`) | `src/routes.ts`, `public/404.html`, `scripts/postbuild.mjs` |
+| SEO metadata, JSON-LD, favicons | `index.html`, `public/` |
 
-This repository is configured to deploy automatically to GitHub Pages with GitHub Actions.
+Every user-facing string exists in both languages; change `en.ts` and `de.ts` together.
 
-- Workflow file: `.github/workflows/deploy-pages.yml`
-- Trigger: every push to `main` (plus manual `workflow_dispatch`)
-- Build output: `dist`
+## Deployment
 
-### Custom domain setup
-
-1. Replace the placeholder value in `public/CNAME` with your real domain (for example: `www.yourdomain.com`).
-2. In GitHub, open repository **Settings -> Pages** and confirm the source is **GitHub Actions**.
-3. Configure your DNS records for GitHub Pages.
-4. After DNS propagation, enable **Enforce HTTPS** in Pages settings.
-
-If you are not using a custom domain, remove `public/CNAME` and use the repository Pages URL.
-
-### Notes
-
-- The workflow sets `VITE_BASE_PATH=/`, which is correct for custom-domain hosting.
-- If you later need to use the default `*.github.io/<repo>` URL instead, set `VITE_BASE_PATH` to `/MGP-Consulting-/` in the workflow build step.
+- Every push to `main` runs type-check, tests and build, then deploys `dist/` to GitHub Pages. Pull requests run the same checks without deploying.
+- Workflow: `.github/workflows/deploy-pages.yml`
+- Custom domain: `public/CNAME`; DNS points to GitHub Pages with "Enforce HTTPS" enabled.
+- The build uses `VITE_BASE_PATH=/`. For a `*.github.io/<repo>` URL set it to `/MGP-Consulting-/`.
 
 ### Rollback
 
-- Revert the last commit on `main` and trigger the workflow again.
-- Or re-run a known-good previous workflow run from the Actions tab.
+Revert the offending commit on `main`, or re-run a known-good workflow run from the Actions tab.

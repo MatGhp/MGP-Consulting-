@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Mail, Linkedin, Github, MapPin, Calendar, Globe, ChevronDown, Phone, Copy } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { interpolate, useI18n } from "../i18n";

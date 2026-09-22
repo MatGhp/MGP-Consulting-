@@ -112,8 +112,6 @@ export const de: TranslationContent = {
       title: "Kernkompetenzen",
       intro:
         "Meine stärkste Projekterfahrung liegt in .NET, Azure-Integration, Enterprise-Backends und Angular Business Applications.",
-      footerUsedInProduction: "In Produktionsprojekten eingesetzt",
-      footerCiCdExperience: "CI/CD-Projekterfahrung",
       proofIndicators: [
         "Erfahrung in Produktionsprojekten",
         "Delivery in Enterprise-Systemen",
@@ -251,30 +249,6 @@ export const de: TranslationContent = {
       controllerTitle: "Verantwortlicher",
       bindingVersionNote: "",
       lastUpdated: "Stand: September 2026"
-    },
-    app: {
-      modalTitle: "Freelancer-Profil anfragen",
-      modalSubtitle: "Mojtaba Ghanaat Pisheh • IT Consulting - Mojtaba Ghanaat Pisheh",
-      modalCloseAria: "Dialog zum Profil anfragen schließen",
-      modalCloseTitle: "Schließen",
-      successTitle: "Capability Snapshot heruntergeladen",
-      successDescription:
-        "Die Datei {{fileName}} wurde lokal für die erste Prüfung gespeichert.",
-      successPrimaryCta: "Projekt besprechen",
-      successSecondaryCta: "Freelancer-Profil anfragen",
-      formIntro: "Füllen Sie die Felder aus, um das aktuelle Freelancer-Profil anzufordern.",
-      workEmailLabel: "Geschäftliche E-Mail *",
-      workEmailPlaceholder: "z. B. hiring@enterprise-example.de",
-      companyLabel: "Unternehmen / Organisation",
-      companyPlaceholder: "z. B. Enterprise Solutions GmbH",
-      directDownloadLink: "Capability Snapshot herunterladen (.txt)",
-      submitButton: "Freelancer-Profil anfragen",
-      privacyNoteTitle: "Datenschutzhinweis:",
-      privacyNoteText:
-        "Kontaktdaten werden ausschließlich für Projektkommunikation und Profilanfragen verwendet.",
-      profileFileName: "Capability_Snapshot_Mojtaba_Ghanaat_Pisheh.txt",
-      profileSnapshotText:
-        "Dieser Capability Snapshot dient der ersten Projektabstimmung.\nEin aktuelles Freelancer-Profil ist auf Anfrage verfügbar.\nBitte senden Sie Projektinformationen an: mojtaba@mgp-consulting.de\nIT Consulting - Mojtaba Ghanaat Pisheh (c) 2026. Frankfurt, Deutschland"
     },
     availability: {
       fromPrefix: "Ab",
