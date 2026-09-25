@@ -20,7 +20,7 @@ npm run lint       # TypeScript type-check
 npm test           # Vitest unit tests
 npm run build      # production build into dist/ (+ /impressum and /datenschutz copies)
 npm run preview    # serve dist/ locally
-npm run brand:render  # regenerate og.png, apple-touch-icon.png and favicon.ico (needs local Edge or Chrome)
+npm run brand:render  # regenerate og.png and the icons after changing hero copy or favicon.svg (needs local Edge or Chrome)
 ```
 
 ## Where things live
