@@ -1,6 +1,6 @@
 # mgp-consulting.de
 
-Marketing website for IT Consulting - Mojtaba Ghanaat Pisheh, freelance Senior .NET & Azure developer in Frankfurt am Main.
+Marketing website for MGP Consulting – Mojtaba Ghanaat Pisheh, freelance Senior .NET & Azure developer in Frankfurt am Main.
 
 Live: https://mgp-consulting.de
 
@@ -20,6 +20,7 @@ npm run lint       # TypeScript type-check
 npm test           # Vitest unit tests
 npm run build      # production build into dist/ (+ /impressum and /datenschutz copies)
 npm run preview    # serve dist/ locally
+npm run brand:render  # regenerate og.png, apple-touch-icon.png and favicon.ico (needs local Edge or Chrome)
 ```
 
 ## Where things live
@@ -31,6 +32,7 @@ npm run preview    # serve dist/ locally
 | Dynamic availability date | `src/utils/availability.ts` |
 | Client-side routes (`/impressum`, `/datenschutz`) | `src/routes.ts`, `public/404.html`, `scripts/postbuild.mjs` |
 | SEO metadata, JSON-LD, favicons | `index.html`, `public/` |
+| Social preview card and icon sources | `scripts/brand/og-card.html`, `public/favicon.svg` |
 
 Every user-facing string exists in both languages; change `en.ts` and `de.ts` together.
 

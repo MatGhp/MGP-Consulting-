@@ -11,7 +11,8 @@
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "brand:render": "node scripts/brand/render.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",
