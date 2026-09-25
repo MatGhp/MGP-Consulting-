@@ -1,4 +1,4 @@
-import { ProjectExperience, ServiceItem, TechCategory, ValueAddScenario } from "../../types";
+import { ProjectExperience, ServiceItem, SkillLevel, TechCategory } from "../../types";
 
 export interface PersonalLanguage {
   name: string;
@@ -31,6 +31,11 @@ export interface PersonalInfoContent {
 }
 
 export interface CollaborationValue {
+  title: string;
+  description: string;
+}
+
+export interface ApproachStep {
   title: string;
   description: string;
 }
@@ -87,23 +92,18 @@ export interface TranslationContent {
       eyebrow: string;
       title: string;
       intro: string;
-      technologiesUsedLabel: string;
-      howItHelpsLabel: string;
-    };
-    valueAdd: {
-      eyebrow: string;
-      title: string;
-      intro: string;
-      problemLabel: string;
+      situationLabel: string;
       approachLabel: string;
       technologiesUsedLabel: string;
       howItHelpsLabel: string;
-      scenarioRisks: Record<string, string>;
-      collaboration: {
-        eyebrow: string;
-        title: string;
-        intro: string;
-      };
+    };
+    approach: {
+      eyebrow: string;
+      title: string;
+      intro: string;
+      steps: ApproachStep[];
+      collaborationTitle: string;
+      cta: string;
     };
     experience: {
       eyebrow: string;
@@ -121,18 +121,7 @@ export interface TranslationContent {
       eyebrow: string;
       title: string;
       intro: string;
-      proofIndicators: string[];
-      categoryBadges: {
-        dotnetBackend: string;
-        azureIntegration: string;
-        devopsDelivery: string;
-        frontendTech: string;
-      };
-      calloutEyebrow: string;
-      calloutTitle: string;
-      calloutDescription: string;
-      checklistTitle: string;
-      checklistItems: string[];
+      levelLabels: Record<SkillLevel, string>;
     };
     contact: {
       eyebrow: string;
@@ -201,7 +190,6 @@ export interface TranslationContent {
   data: {
     personalInfo: PersonalInfoContent;
     services: ServiceItem[];
-    valueAddScenarios: ValueAddScenario[];
     projects: ProjectExperience[];
     techCategories: TechCategory[];
     collaborationValues: CollaborationValue[];

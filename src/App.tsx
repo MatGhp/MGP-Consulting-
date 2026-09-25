@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import ValueAdd from "./components/ValueAdd";
+import Approach from "./components/Approach";
 import Experience from "./components/Experience";
 import TechStack from "./components/TechStack";
 import AvailabilityAndContact from "./components/AvailabilityAndContact";
@@ -50,8 +50,8 @@ export default function App() {
         {/* Services Section */}
         <Services />
 
-        {/* Value Addition Scenarios */}
-        <ValueAdd />
+        {/* Numbered way of working and collaboration */}
+        <Approach onContactClick={triggerDirectInquiry} />
 
         {/* Selected Project Experience */}
         <Experience />

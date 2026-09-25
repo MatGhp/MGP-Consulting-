@@ -6,19 +6,11 @@
 export interface ServiceItem {
   id: string;
   title: string;
-  description: string;
   iconName: string;
+  situation: string; // The typical problem a client comes with
+  approach: string; // What I do about it
   businessBenefit: string;
-  keyOfferings: string[];
-}
-
-export interface ValueAddScenario {
-  id: string;
-  title: string;
-  situation: string;
-  solution: string;
-  technicalDepth: string;
-  businessImpact: string;
+  technologies: string[]; // Short names, shown as chips
 }
 
 export interface ProjectExperience {
@@ -35,10 +27,12 @@ export interface ProjectExperience {
   confidentialFlag: boolean; // Indicates the client remains anonymous intentionally
 }
 
+export type SkillLevel = "primary" | "experience";
+
 export interface TechSkill {
   name: string;
   description?: string;
-  level: string;
+  level: SkillLevel;
   badge?: string;
 }
 
