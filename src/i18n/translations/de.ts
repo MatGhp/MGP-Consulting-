@@ -3,17 +3,17 @@ import { TranslationContent } from "./schema";
 export const de: TranslationContent = {
   seo: {
     home: {
-      title: "IT Consulting - Mojtaba Ghanaat Pisheh | Freiberuflicher Senior .NET & Azure Entwickler",
+      title: "Mojtaba Ghanaat Pisheh – Freiberuflicher Senior .NET- & Azure-Entwickler | MGP Consulting",
       description:
         "Freiberuflicher Senior .NET- und Azure-Entwickler in Frankfurt am Main. Enterprise-Integration, schrittweise .NET-Modernisierung, Azure-Backend-Services, CI/CD und Angular Business Applications."
     },
     legal: {
       impressum: {
-        title: "Impressum | IT Consulting - Mojtaba Ghanaat Pisheh",
+        title: "Impressum | MGP Consulting",
         description: "Anbieter- und Pflichtangaben für IT Consulting - Mojtaba Ghanaat Pisheh."
       },
       datenschutz: {
-        title: "Datenschutzerklärung | IT Consulting - Mojtaba Ghanaat Pisheh",
+        title: "Datenschutzerklärung | MGP Consulting",
         description: "Informationen zur Verarbeitung personenbezogener Daten auf der Website von IT Consulting - Mojtaba Ghanaat Pisheh."
       }
     }
@@ -27,7 +27,6 @@ export const de: TranslationContent = {
         { name: "Tech", href: "#tech-focus" },
         { name: "Kontakt", href: "#contact" }
       ],
-      companyTagline: ".NET & Azure Enterprise Delivery",
       contactCta: "Projekt besprechen",
       toggleMenuAria: "Menü umschalten",
       officeLocationLabel: "Standort",
@@ -36,27 +35,15 @@ export const de: TranslationContent = {
       languageOptionDe: "DE"
     },
     hero: {
-      identityCapsule: "Unabhängiger Senior Consultant",
       kpiYearsValue: "20+",
-      kpiLanguageValue: "C1 / C1",
-      kpiRemoteValue: "Remote",
+      kpiLanguageValue: "C1",
+      kpiRemoteValue: "Frankfurt",
       kpiYearsExp: "Jahre Erfahrung",
-      kpiLanguageFluency: "DE & EN C1",
-      kpiRemoteRegion: "Deutschland & EU",
+      kpiLanguageFluency: "Deutsch & Englisch",
+      kpiRemoteRegion: "Remote-first, DE & EU",
       kpiAvailableFrom: "Verfügbar ab",
-      profileWindowTitle: "Profil",
-      coreCapabilitiesLabel: "Kernkompetenzen",
-      coreCapabilitiesText: "Zuverlässige Azure-Integrationen und schrittweise .NET-Modernisierung",
-      whatIHelpWithLabel: "Wobei ich unterstütze",
-      helpItems: [
-        "Sichere API-Integration und belastbarer Umgang mit Credentials in modernen Azure-Services",
-        "Azure-basierte Integrationskomponenten für zuverlässige Systemkommunikation",
-        "Wartbare Angular Business Applications mit sauberer Backend-API-Anbindung"
-      ],
-      projectSetupLabel: "Projektsetup",
-      projectSetupText:
-        "Verfügbar für Remote-first-Einsätze mit strukturiertem Onboarding und NDA-konformer Kommunikation.",
-      discussProjectCta: "Projekt besprechen"
+      discussProjectCta: "Projekt besprechen",
+      secondaryCta: "Projekterfahrung ansehen"
     },
     services: {
       eyebrow: "Leistungen",
@@ -64,12 +51,7 @@ export const de: TranslationContent = {
       intro:
         "Mein Fokus liegt auf schrittweiser .NET-Modernisierung, Azure-Integration, wartbaren Backend-Services und pragmatischer Projektumsetzung.",
       technologiesUsedLabel: "Eingesetzte Technologien",
-      howItHelpsLabel: "Ihr Nutzen",
-      calloutTag: "Legacy zu Cloud",
-      calloutTitle: "Bestehende Systeme modernisieren – ohne riskante Big-Bang-Rewrites",
-      calloutDescription:
-        "Modernisierung beginnt selten auf der grünen Wiese. Ich setze Integrationsschichten und Delivery-Muster um, mit denen bestehende Systeme sicher weiterentwickelt werden, während neue Services entstehen.",
-      calloutCta: "Projekt besprechen"
+      howItHelpsLabel: "Ihr Nutzen"
     },
     valueAdd: {
       eyebrow: "Typische Software-Probleme",
@@ -169,19 +151,12 @@ export const de: TranslationContent = {
     footer: {
       description:
         "Unabhängige Beratung für Enterprise .NET-Modernisierung, zuverlässige Azure-Integrationen und produktionsnahe Software-Delivery in Deutschland und der EU.",
-      portfolioIndexTitle: "Portfolio-Übersicht",
-      links: {
-        services: "Leistungen",
-        valueAdd: "Mehrwert",
-        projectExperience: "Projekterfahrung",
-        techFocus: "Tech-Fokus"
-      },
-      complianceTitle: "Rechtliches",
+      portfolioIndexTitle: "Navigation",
       legalLinks: {
         impressum: "Impressum",
         datenschutz: "Datenschutzerklärung"
       },
-      copyright: "© 2026 Mojtaba Ghanaat Pisheh. Alle Rechte vorbehalten."
+      copyright: "© {{year}} Mojtaba Ghanaat Pisheh. Alle Rechte vorbehalten."
     },
     legal: {
       impressumTitle: "Impressum",
@@ -260,13 +235,16 @@ export const de: TranslationContent = {
   data: {
     personalInfo: {
       name: "Mojtaba Ghanaat Pisheh",
-      companyName: "IT Consulting - Mojtaba Ghanaat Pisheh",
+      companyName: "MGP Consulting",
       legalBusinessName: "IT Consulting - Mojtaba Ghanaat Pisheh",
       role: "Freiberuflicher Senior .NET & Azure Entwickler mit Fokus auf Integration und Legacy-Modernisierung",
+      roleLine: "Freiberuflicher Senior .NET- & Azure-Entwickler",
       tagline: "Legacy .NET Modernisierung | Azure Integration | pragmatische Delivery",
-      headline: "Freiberuflicher Senior .NET & Azure Entwickler",
+      // Non-breaking space keeps the dash on the same line as "modernisieren".
+      headline: "Legacy-.NET-Systeme und Azure-Integrationen modernisieren –",
+      headlineAccent: "ohne riskante Neuentwicklung.",
       subheadline:
-        "Ich unterstütze Teams dabei, bestehende .NET-Systeme schrittweise zu modernisieren, Azure-Integrationen aufzubauen und geschäftskritische Anwendungen ohne riskante Rewrites zuverlässig weiterzuentwickeln.",
+        "Ich arbeite in Ihrem Team an bestehenden .NET-Anwendungen, Azure-Integrationen und Angular-Frontends – damit sie leichter änderbar, sicherer auszuliefern und im Betrieb zuverlässig sind.",
       location: "Standort Frankfurt am Main, Deutschland • Remote-first in Deutschland und der EU",
       locationShort: "Frankfurt am Main, Deutschland",
       email: "mojtaba@mgp-consulting.de",
@@ -283,15 +261,7 @@ export const de: TranslationContent = {
         status: "Verfügbar",
         remotePreference: "Remote-first in Deutschland und der EU",
         euEligible: "Verfügbar für Projekte in Deutschland und der EU"
-      },
-      trustFacts: [
-        "20+ Jahre Software-Engineering-Erfahrung",
-        "Standort Frankfurt am Main, Deutschland",
-        "Remote-first in Deutschland und der EU",
-        "Projektkommunikation auf Deutsch und Englisch (C1)",
-        "{{availabilitySentence}}",
-        "Starker Fokus auf .NET, Azure-Integration, APIs, CI/CD und Angular"
-      ]
+      }
     },
     services: [
       {

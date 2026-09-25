@@ -3,19 +3,20 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Search, Mail, Terminal } from "lucide-react";
+import React from "react";
+import { ArrowRight, Mail } from "lucide-react";
 import { m } from "motion/react";
-import { getAvailabilitySentence, getAvailabilityShortMonthYear } from "../utils/availability";
+import { getAvailabilityShortMonthYear } from "../utils/availability";
 import { useI18n } from "../i18n";
 
 interface HeroProps {
   onContactClick: () => void;
+  onExperienceClick: () => void;
 }
 
-export default function Hero({ onContactClick }: HeroProps) {
+export default function Hero({ onContactClick, onExperienceClick }: HeroProps) {
   const { locale, content, t } = useI18n();
   const personalInfo = content.data.personalInfo;
-  const availabilitySentence = getAvailabilitySentence(locale, content.ui.availability.sentenceTemplate);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,170 +41,89 @@ export default function Hero({ onContactClick }: HeroProps) {
     { value: getAvailabilityShortMonthYear(locale), label: t("ui.hero.kpiAvailableFrom") },
   ];
 
+  const handleExperienceClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    onExperienceClick();
+  };
+
   return (
     <section
       id="hero"
-      className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden grid-bg border-b border-slate-100"
+      className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden grid-bg bg-slate-950 text-white"
     >
-      {/* Decorative ambient gradient backdrop */}
-      <div className="absolute top-0 right-0 w-2/3 h-2/3 bg-radial from-blue-50/40 via-transparent to-transparent pointer-events-none rounded-full" />
-      <div className="absolute -bottom-12 left-10 w-80 h-80 bg-blue-50/20 blur-3xl pointer-events-none" />
+      {/* Soft ambient glow, CSS only */}
+      <div className="absolute -top-32 right-0 w-[36rem] h-[36rem] rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <m.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+          className="max-w-3xl flex flex-col space-y-6"
         >
-          {/* Hero Left Content */}
-          <div className="lg:col-span-7 flex flex-col space-y-6">
-            
-            {/* Identity Capsule */}
-            <m.div
-              variants={itemVariants}
-              className="inline-flex self-start items-center space-x-2 bg-slate-100 border border-slate-200/80 px-3.5 py-1.5 rounded-full shadow-2xs"
-            >
-              <Terminal className="w-3.5 h-3.5 text-blue-600" />
-              <span className="font-mono text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                {t("ui.hero.identityCapsule")}
-              </span>
-            </m.div>
-
-            {/* Main Headlines */}
-            <div className="space-y-3">
-              <m.span
-                variants={itemVariants}
-                className="block text-sm font-mono font-semibold text-blue-600 uppercase tracking-widest"
-              >
-                {personalInfo.name}
-              </m.span>
-              
-              <m.h1
-                variants={itemVariants}
-                className="text-4xl sm:text-5xl lg:text-[2.85rem] font-bold text-slate-900 tracking-tight leading-tight"
-              >
-                {personalInfo.headline}
-              </m.h1>
-            </div>
-
-            {/* Value Proposition Subhead */}
+          {/* Name, role and headline */}
+          <div className="space-y-4">
             <m.p
               variants={itemVariants}
-              className="text-lg text-slate-600 leading-relaxed max-w-2xl font-normal"
+              className="font-mono text-sm text-slate-300"
             >
-              {personalInfo.subheadline}
+              <span className="font-semibold text-white">{personalInfo.name}</span>
+              <span className="text-slate-400" aria-hidden="true"> · </span>
+              <span>{personalInfo.roleLine}</span>
             </m.p>
 
-            {/* Trust Facts Grid List */}
-            <m.div
+            <m.h1
               variants={itemVariants}
-              className="py-3 border-y border-slate-200 text-sm text-slate-700 space-y-2.5 font-medium"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white text-balance"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
-                {personalInfo.trustFacts.map((fact, index) => (
-                  <div key={index} className="flex items-start space-x-2">
-                    <span className="text-emerald-500 font-bold mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-slate-600 text-xs sm:text-sm font-medium">
-                      {fact === "{{availabilitySentence}}"
-                        ? availabilitySentence
-                        : fact}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </m.div>
-
-            {/* Core Action Callouts */}
-            <m.div
-              variants={itemVariants}
-              className="flex pt-2"
-            >
-              <button
-                id="btn-hero-contact"
-                onClick={onContactClick}
-                className="px-6 py-3 bg-slate-950 text-white rounded-md font-semibold text-sm hover:bg-blue-600 transition-colors shadow-sm text-center flex items-center justify-center space-x-2.5 cursor-pointer self-start"
-              >
-                <Mail className="w-4 h-4" />
-                <span>{t("ui.hero.discussProjectCta")}</span>
-              </button>
-            </m.div>
-
+              {personalInfo.headline}{" "}
+              <span className="text-blue-400">{personalInfo.headlineAccent}</span>
+            </m.h1>
           </div>
 
-          {/* Hero Right Visuals: Developer Credentials Board */}
-          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-            
-            {/* The Floating Code/Metrics Container */}
-            <m.div
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white border border-slate-200 shadow-lg rounded-xl overflow-hidden p-6 hover:shadow-xl transition-shadow"
+          {/* Value Proposition Subhead */}
+          <m.p
+            variants={itemVariants}
+            className="text-lg text-slate-300 leading-relaxed max-w-2xl"
+          >
+            {personalInfo.subheadline}
+          </m.p>
+
+          {/* Core Action Callouts */}
+          <m.div
+            variants={itemVariants}
+            className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2"
+          >
+            <button
+              id="btn-hero-contact"
+              onClick={onContactClick}
+              className="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold text-sm hover:bg-blue-700 transition-colors shadow-sm flex items-center justify-center space-x-2.5 cursor-pointer"
             >
-              {/* Fake window controls */}
-              <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
-                <div className="flex space-x-1.5">
-                  <span className="w-3 h-3 bg-rose-400 rounded-full inline-block" />
-                  <span className="w-3 h-3 bg-amber-400 rounded-full inline-block" />
-                  <span className="w-3 h-3 bg-emerald-400 rounded-full inline-block" />
-                </div>
-                <div className="font-mono text-2xs text-slate-500 select-none flex items-center space-x-1">
-                  <Terminal className="w-3 h-3 text-slate-300" />
-                  <span>{t("ui.hero.profileWindowTitle")}</span>
-                </div>
+              <Mail className="w-4 h-4" />
+              <span>{t("ui.hero.discussProjectCta")}</span>
+            </button>
+            <a
+              href="#experience"
+              onClick={handleExperienceClick}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-200 hover:text-white transition-colors"
+            >
+              <span>{t("ui.hero.secondaryCta")}</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </m.div>
+
+          {/* Key facts */}
+          <m.dl
+            variants={itemVariants}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 mt-4"
+          >
+            {kpis.map((kpi, idx) => (
+              <div key={idx} className="flex flex-col-reverse bg-slate-950 px-4 py-3">
+                <dt className="text-xs text-slate-400 mt-1">{kpi.label}</dt>
+                <dd className="font-mono text-xl font-semibold text-white tracking-tight">{kpi.value}</dd>
               </div>
-
-              {/* Enterprise Profile Highlight Info */}
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <p className="text-xs font-mono uppercase tracking-wider text-slate-500">{t("ui.hero.coreCapabilitiesLabel")}</p>
-                  <p className="font-sans text-xl font-bold text-slate-900 leading-snug">
-                    {t("ui.hero.coreCapabilitiesText")}
-                  </p>
-                </div>
-
-                {/* Hero trust indicators */}
-                <div className="grid grid-cols-2 gap-3 pt-2">
-                  {kpis.map((kpi, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-slate-50 border border-slate-200 p-3 rounded-lg flex flex-col justify-between"
-                    >
-                      <span className="text-2xl font-bold text-blue-600 font-mono tracking-tight">
-                        {kpi.value}
-                      </span>
-                      <span className="text-3xs tracking-wide uppercase font-mono font-bold text-slate-500 mt-1">
-                        {kpi.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Bullet Proof Commitments */}
-                <div className="space-y-2 pt-2 border-t border-slate-100">
-                  <span className="text-3xs font-mono uppercase tracking-wider text-slate-500 block">{t("ui.hero.whatIHelpWithLabel")}</span>
-                  <ul className="space-y-2 text-xs text-slate-600">
-                    {content.ui.hero.helpItems.map((item, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="text-emerald-500 font-bold mr-2">✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* German freelance statement */}
-                <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-lg flex items-start space-x-2.5">
-                  <Search className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <p className="text-2xs text-slate-600 leading-relaxed">
-                    <strong>{t("ui.hero.projectSetupLabel")}:</strong> {t("ui.hero.projectSetupText")}
-                  </p>
-                </div>
-              </div>
-
-            </m.div>
-          </div>
+            ))}
+          </m.dl>
         </m.div>
       </div>
     </section>

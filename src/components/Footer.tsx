@@ -6,7 +6,8 @@
 import { useI18n } from "../i18n";
 
 export default function Footer() {
-  const { t } = useI18n();
+  const { content, t } = useI18n();
+  const personalInfo = content.data.personalInfo;
 
   return (
     <footer className="bg-slate-900 border-t border-slate-950 py-12 text-slate-400 text-xs">
@@ -15,13 +16,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-b border-slate-800 pb-8 mb-8">
           
           {/* Brand Intro Column */}
-          <div className="md:col-span-12 lg:col-span-5 space-y-4">
-            <div className="flex items-center space-x-2">
-              <span className="font-mono text-lg font-bold bg-linear-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                IT
-              </span>
+          <div className="md:col-span-6 lg:col-span-7 space-y-4">
+            <div className="flex flex-col">
               <span className="font-sans text-md font-semibold text-white tracking-tight">
-                IT Consulting - Mojtaba Ghanaat Pisheh
+                {personalInfo.companyName}
+              </span>
+              <span className="font-mono text-3xs text-slate-400 uppercase tracking-widest mt-0.5">
+                {personalInfo.name}
               </span>
             </div>
             <p className="text-2xs text-slate-400 font-sans leading-relaxed max-w-sm">
@@ -30,46 +31,18 @@ export default function Footer() {
           </div>
 
           {/* Quick Shortcuts */}
-          <div className="md:col-span-6 lg:col-span-3 space-y-3">
+          <div className="md:col-span-6 lg:col-span-5 space-y-3">
             <span className="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest block">
               {t("ui.footer.portfolioIndexTitle").toUpperCase()}
             </span>
             <ul className="space-y-1.5 font-sans">
-              <li>
-                <a href="#services" className="hover:text-white transition-colors">
-                  {t("ui.footer.links.services")}
-                </a>
-              </li>
-              <li>
-                <a href="#value-add" className="hover:text-white transition-colors">
-                  {t("ui.footer.links.valueAdd")}
-                </a>
-              </li>
-              <li>
-                <a href="#experience" className="hover:text-white transition-colors">
-                  {t("ui.footer.links.projectExperience")}
-                </a>
-              </li>
-              <li>
-                <a href="#tech-focus" className="hover:text-white transition-colors">
-                  {t("ui.footer.links.techFocus")}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Compliance & Admin Terms */}
-          <div className="md:col-span-6 lg:col-span-4 space-y-3">
-            <span className="font-mono text-[10px] font-bold text-slate-400 uppercase tracking-widest block">
-              {t("ui.footer.complianceTitle").toUpperCase()}
-            </span>
-            <ul className="text-3xs text-slate-400 leading-relaxed space-y-2 font-sans">
-              <li>
-                <a href="/impressum" className="hover:text-white transition-colors">{t("ui.footer.legalLinks.impressum")}</a>
-              </li>
-              <li>
-                <a href="/datenschutz" className="hover:text-white transition-colors">{t("ui.footer.legalLinks.datenschutz")}</a>
-              </li>
+              {content.ui.navbar.navLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="hover:text-white transition-colors">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -78,10 +51,10 @@ export default function Footer() {
         {/* Bottom Metadata Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-3xs text-slate-400 font-sans">
           <div>
-            <span>{t("ui.footer.copyright")}</span>
+            <span>{t("ui.footer.copyright", { year: String(new Date().getFullYear()) })}</span>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 text-xs">
             <a href="/impressum" className="hover:text-white transition-colors">{t("ui.footer.legalLinks.impressum")}</a>
             <a href="/datenschutz" className="hover:text-white transition-colors">{t("ui.footer.legalLinks.datenschutz")}</a>
           </div>

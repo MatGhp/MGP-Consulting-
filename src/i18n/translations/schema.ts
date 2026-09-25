@@ -10,8 +10,10 @@ export interface PersonalInfoContent {
   companyName: string;
   legalBusinessName: string;
   role: string;
+  roleLine: string;
   tagline: string;
   headline: string;
+  headlineAccent: string;
   subheadline: string;
   location: string;
   locationShort: string;
@@ -26,7 +28,6 @@ export interface PersonalInfoContent {
     remotePreference: string;
     euEligible: string;
   };
-  trustFacts: string[];
 }
 
 export interface CollaborationValue {
@@ -64,7 +65,6 @@ export interface TranslationContent {
   ui: {
     navbar: {
       navLinks: Array<{ name: string; href: string }>;
-      companyTagline: string;
       contactCta: string;
       toggleMenuAria: string;
       officeLocationLabel: string;
@@ -73,7 +73,6 @@ export interface TranslationContent {
       languageOptionDe: string;
     };
     hero: {
-      identityCapsule: string;
       kpiYearsValue: string;
       kpiLanguageValue: string;
       kpiRemoteValue: string;
@@ -81,14 +80,8 @@ export interface TranslationContent {
       kpiLanguageFluency: string;
       kpiRemoteRegion: string;
       kpiAvailableFrom: string;
-      profileWindowTitle: string;
-      coreCapabilitiesLabel: string;
-      coreCapabilitiesText: string;
-      whatIHelpWithLabel: string;
-      helpItems: string[];
-      projectSetupLabel: string;
-      projectSetupText: string;
       discussProjectCta: string;
+      secondaryCta: string;
     };
     services: {
       eyebrow: string;
@@ -96,10 +89,6 @@ export interface TranslationContent {
       intro: string;
       technologiesUsedLabel: string;
       howItHelpsLabel: string;
-      calloutTag: string;
-      calloutTitle: string;
-      calloutDescription: string;
-      calloutCta: string;
     };
     valueAdd: {
       eyebrow: string;
@@ -177,13 +166,6 @@ export interface TranslationContent {
     footer: {
       description: string;
       portfolioIndexTitle: string;
-      links: {
-        services: string;
-        valueAdd: string;
-        projectExperience: string;
-        techFocus: string;
-      };
-      complianceTitle: string;
       legalLinks: {
         impressum: string;
         datenschutz: string;

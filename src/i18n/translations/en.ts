@@ -3,17 +3,17 @@ import { TranslationContent } from "./schema";
 export const en: TranslationContent = {
   seo: {
     home: {
-      title: "IT Consulting - Mojtaba Ghanaat Pisheh | Freelance Senior .NET & Azure Developer",
+      title: "Mojtaba Ghanaat Pisheh – Freelance Senior .NET & Azure Developer | MGP Consulting",
       description:
         "Freelance Senior .NET and Azure Developer based in Frankfurt am Main, Germany. Enterprise integration, legacy .NET modernization, Azure backend services, CI/CD, and Angular business applications."
     },
     legal: {
       impressum: {
-        title: "Impressum | IT Consulting - Mojtaba Ghanaat Pisheh",
+        title: "Impressum | MGP Consulting",
         description: "Provider and legal notice information for IT Consulting - Mojtaba Ghanaat Pisheh."
       },
       datenschutz: {
-        title: "Privacy Policy | IT Consulting - Mojtaba Ghanaat Pisheh",
+        title: "Privacy Policy | MGP Consulting",
         description: "Privacy and data processing information for visitors of IT Consulting - Mojtaba Ghanaat Pisheh website."
       }
     }
@@ -27,7 +27,6 @@ export const en: TranslationContent = {
         { name: "Tech", href: "#tech-focus" },
         { name: "Contact", href: "#contact" }
       ],
-      companyTagline: ".NET & Azure Enterprise Delivery",
       contactCta: "Discuss Project",
       toggleMenuAria: "Toggle menu",
       officeLocationLabel: "Office location",
@@ -36,27 +35,15 @@ export const en: TranslationContent = {
       languageOptionDe: "DE"
     },
     hero: {
-      identityCapsule: "Independent Senior Consultant",
       kpiYearsValue: "20+",
-      kpiLanguageValue: "C1 / C1",
-      kpiRemoteValue: "Remote",
-      kpiYearsExp: "Years Exp.",
-      kpiLanguageFluency: "DE & EN Fluency",
-      kpiRemoteRegion: "Germany & EU",
-      kpiAvailableFrom: "Available From",
-      profileWindowTitle: "Profile",
-      coreCapabilitiesLabel: "Core capabilities",
-      coreCapabilitiesText: "Reliable Azure integrations and legacy .NET modernization",
-      whatIHelpWithLabel: "What I help with",
-      helpItems: [
-        "Secure API integration and robust credential handling with modern Azure services",
-        "Azure-based integration components for reliable system communication",
-        "Maintainable Angular business applications aligned with backend API delivery"
-      ],
-      projectSetupLabel: "Project setup",
-      projectSetupText:
-        "Available for remote-first assignments with structured onboarding and NDA-friendly communication.",
-      discussProjectCta: "Discuss Project"
+      kpiLanguageValue: "C1",
+      kpiRemoteValue: "Frankfurt",
+      kpiYearsExp: "Years of experience",
+      kpiLanguageFluency: "German & English",
+      kpiRemoteRegion: "Remote-first, DE & EU",
+      kpiAvailableFrom: "Available from",
+      discussProjectCta: "Discuss Project",
+      secondaryCta: "View project experience"
     },
     services: {
       eyebrow: "My Services",
@@ -64,12 +51,7 @@ export const en: TranslationContent = {
       intro:
         "I focus on legacy .NET modernization, Azure integration, maintainable backend services, and practical project delivery.",
       technologiesUsedLabel: "Technologies used",
-      howItHelpsLabel: "How it helps",
-      calloutTag: "Legacy to cloud",
-      calloutTitle: "Modernizing existing systems without risky rewrites",
-      calloutDescription:
-        "Modernization rarely starts from zero. I implement integration layers and delivery patterns that let existing systems evolve safely while new services are introduced.",
-      calloutCta: "Discuss Project"
+      howItHelpsLabel: "How it helps"
     },
     valueAdd: {
       eyebrow: "Practical software problems",
@@ -170,19 +152,12 @@ export const en: TranslationContent = {
     footer: {
       description:
         "Independent freelance consulting for enterprise .NET modernization, reliable Azure integrations, and production-oriented software delivery across Germany and the EU.",
-      portfolioIndexTitle: "Portfolio index",
-      links: {
-        services: "Services",
-        valueAdd: "Value Add",
-        projectExperience: "Project Experience",
-        techFocus: "Tech Focus"
-      },
-      complianceTitle: "Compliance & Legal",
+      portfolioIndexTitle: "Navigation",
       legalLinks: {
         impressum: "Impressum",
         datenschutz: "Privacy Policy"
       },
-      copyright: "© 2026 Mojtaba Ghanaat Pisheh. All rights reserved."
+      copyright: "© {{year}} Mojtaba Ghanaat Pisheh. All rights reserved."
     },
     legal: {
       impressumTitle: "Impressum",
@@ -261,13 +236,15 @@ export const en: TranslationContent = {
   data: {
     personalInfo: {
       name: "Mojtaba Ghanaat Pisheh",
-      companyName: "IT Consulting - Mojtaba Ghanaat Pisheh",
+      companyName: "MGP Consulting",
       legalBusinessName: "IT Consulting - Mojtaba Ghanaat Pisheh",
       role: "Freelance Senior .NET & Azure Developer focused on integration and legacy modernization",
+      roleLine: "Freelance Senior .NET & Azure Developer",
       tagline: "Legacy .NET modernization | Azure integration | practical delivery",
-      headline: "Freelance Senior .NET & Azure Developer",
+      headline: "Modernizing legacy .NET systems and Azure integrations",
+      headlineAccent: "without risky rewrites.",
       subheadline:
-        "I help teams modernize legacy .NET systems step by step, build Azure integrations, and keep business-critical applications reliable without risky rewrites.",
+        "I work inside your team on existing .NET applications, Azure integrations and Angular frontends – making them easier to change, safer to release and reliable in production.",
       location: "Based in Frankfurt am Main, Germany • Remote-first across Germany and the EU",
       locationShort: "Frankfurt am Main, Germany",
       email: "mojtaba@mgp-consulting.de",
@@ -284,15 +261,7 @@ export const en: TranslationContent = {
         status: "Available",
         remotePreference: "Remote-first across Germany and the EU",
         euEligible: "Available for assignments in Germany and the EU"
-      },
-      trustFacts: [
-        "20+ years software engineering experience",
-        "Based in Frankfurt am Main, Germany",
-        "Remote-first across Germany and the EU",
-        "German and English project communication (C1)",
-        "{{availabilitySentence}}",
-        "Strong focus on .NET, Azure integration, APIs, CI/CD, and Angular"
-      ]
+      }
     },
     services: [
       {

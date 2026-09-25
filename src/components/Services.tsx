@@ -99,30 +99,6 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Dynamic Modernization Callout block */}
-        <div className="mt-12 p-6 bg-slate-950 text-slate-200 rounded-xl overflow-hidden relative">
-          <div className="absolute right-0 top-0 w-1/3 h-full bg-linear-to-l from-blue-900/10 to-transparent pointer-events-none" />
-          <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-1 max-w-3xl">
-              <span className="font-mono text-3xs bg-blue-600/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded uppercase tracking-wider">
-                {t("ui.services.calloutTag")}
-              </span>
-              <h4 className="text-lg font-bold text-white pt-1">
-                {t("ui.services.calloutTitle")}
-              </h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                {t("ui.services.calloutDescription")}
-              </p>
-            </div>
-            <a
-              href="#contact"
-              className="inline-flex self-start md:self-auto items-center space-x-1.5 px-4.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-md text-xs font-semibold uppercase tracking-wider transition-colors shrink-0"
-            >
-              {t("ui.services.calloutCta")}
-            </a>
-          </div>
-        </div>
-
       </div>
     </section>
   );

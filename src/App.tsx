@@ -44,6 +44,7 @@ export default function App() {
         {/* Hero Section */}
         <Hero
           onContactClick={triggerDirectInquiry}
+          onExperienceClick={() => handleScrollToSection("#experience")}
         />
 
         {/* Services Section */}
