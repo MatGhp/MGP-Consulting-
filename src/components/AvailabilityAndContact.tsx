@@ -4,7 +4,8 @@
  */
 
 import { useEffect, useRef, useState } from "react";
-import { Mail, Linkedin, Github, MapPin, Calendar, Globe, ChevronDown, Phone, Copy } from "lucide-react";
+import { Mail, MapPin, Calendar, Globe, ChevronDown, Phone, Copy } from "lucide-react";
+import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
 import { m, AnimatePresence } from "motion/react";
 import { interpolate, useI18n } from "../i18n";
 import { getAvailabilityMonthYear, getAvailabilitySentence } from "../utils/availability";
@@ -208,7 +209,7 @@ export default function AvailabilityAndContact() {
                     aria-label={t("ui.contact.linkedinAria")}
                   >
                     <div className="flex items-start gap-3">
-                      <Linkedin className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <LinkedInIcon className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
                       <div className="min-w-0 flex-1">
                         <span className="text-xs text-slate-500 block">{t("ui.contact.linkedinLabel")}</span>
                         <span className="mt-1 block text-sm font-medium text-slate-900">{t("ui.contact.linkedinValue")}</span>
@@ -224,7 +225,7 @@ export default function AvailabilityAndContact() {
                     aria-label={t("ui.contact.githubAria")}
                   >
                     <div className="flex items-start gap-3">
-                      <Github className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <GitHubIcon className="w-4.5 h-4.5 text-blue-600 flex-shrink-0 mt-0.5" />
                       <div className="min-w-0 flex-1">
                         <span className="text-xs text-slate-500 block">{t("ui.contact.githubLabel")}</span>
                         <span className="mt-1 block text-sm font-medium text-slate-900">{t("ui.contact.githubValue")}</span>
