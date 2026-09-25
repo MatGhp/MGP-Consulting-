@@ -32,6 +32,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Offset for the fixed navbar, used by #anchor links and by scrollToSection() in src/utils/scroll.ts. */
+  scroll-padding-top: 5rem;
   font-family: var(--font-sans);
 }
 
@@ -45,9 +47,9 @@ body {
   @apply bg-[#fcfdff] text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-900;
 }
 
-/* Custom premium elements */
+/* Subtle dot texture for the dark hero (CSS only, no images). */
 .grid-bg {
-  background-image: radial-gradient(rgba(148, 163, 184, 0.08) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(148, 163, 184, 0.14) 1.5px, transparent 1.5px);
   background-size: 24px 24px;
 }
 

@@ -8,12 +8,13 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import ValueAdd from "./components/ValueAdd";
+import Approach from "./components/Approach";
 import Experience from "./components/Experience";
 import TechStack from "./components/TechStack";
 import AvailabilityAndContact from "./components/AvailabilityAndContact";
 import Footer from "./components/Footer";
 import { useI18n } from "./i18n";
+import { scrollToSection } from "./utils/scroll";
 import { applyPageSeo } from "./utils/seo";
 
 export default function App() {
@@ -23,16 +24,8 @@ export default function App() {
     applyPageSeo(locale, content.seo.home.title, content.seo.home.description);
   }, [locale, content.seo.home.title, content.seo.home.description]);
 
-  const handleScrollToSection = (selector: string) => {
-    const element = document.querySelector(selector);
-    if (element) {
-      const topOffset = element.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: topOffset, behavior: "smooth" });
-    }
-  };
-
   const triggerDirectInquiry = () => {
-    handleScrollToSection("#contact");
+    scrollToSection("#contact");
   };
 
   return (
@@ -44,13 +37,14 @@ export default function App() {
         {/* Hero Section */}
         <Hero
           onContactClick={triggerDirectInquiry}
+          onExperienceClick={() => scrollToSection("#experience")}
         />
 
         {/* Services Section */}
         <Services />
 
-        {/* Value Addition Scenarios */}
-        <ValueAdd />
+        {/* Numbered way of working and collaboration */}
+        <Approach onContactClick={triggerDirectInquiry} />
 
         {/* Selected Project Experience */}
         <Experience />

@@ -38,7 +38,7 @@ const getBrowserLocale = (): Locale => {
 
 export const detectInitialLocale = (): Locale => getSavedLocale() ?? getBrowserLocale();
 
-const resolvePath = (obj: unknown, key: string): unknown => {
+export const resolvePath = (obj: unknown, key: string): unknown => {
   return key.split(".").reduce<unknown>((acc, part) => {
     if (acc && typeof acc === "object" && part in (acc as Record<string, unknown>)) {
       return (acc as Record<string, unknown>)[part];

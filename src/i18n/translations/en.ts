@@ -3,17 +3,17 @@ import { TranslationContent } from "./schema";
 export const en: TranslationContent = {
   seo: {
     home: {
-      title: "IT Consulting - Mojtaba Ghanaat Pisheh | Freelance Senior .NET & Azure Developer",
+      title: "Mojtaba Ghanaat Pisheh – Freelance Senior .NET & Azure Developer | MGP Consulting",
       description:
         "Freelance Senior .NET and Azure Developer based in Frankfurt am Main, Germany. Enterprise integration, legacy .NET modernization, Azure backend services, CI/CD, and Angular business applications."
     },
     legal: {
       impressum: {
-        title: "Impressum | IT Consulting - Mojtaba Ghanaat Pisheh",
+        title: "Impressum | MGP Consulting",
         description: "Provider and legal notice information for IT Consulting - Mojtaba Ghanaat Pisheh."
       },
       datenschutz: {
-        title: "Privacy Policy | IT Consulting - Mojtaba Ghanaat Pisheh",
+        title: "Privacy Policy | MGP Consulting",
         description: "Privacy and data processing information for visitors of IT Consulting - Mojtaba Ghanaat Pisheh website."
       }
     }
@@ -22,12 +22,11 @@ export const en: TranslationContent = {
     navbar: {
       navLinks: [
         { name: "Services", href: "#services" },
-        { name: "Value", href: "#value-add" },
+        { name: "Approach", href: "#approach" },
         { name: "Experience", href: "#experience" },
         { name: "Tech", href: "#tech-focus" },
         { name: "Contact", href: "#contact" }
       ],
-      companyTagline: ".NET & Azure Enterprise Delivery",
       contactCta: "Discuss Project",
       toggleMenuAria: "Toggle menu",
       officeLocationLabel: "Office location",
@@ -36,62 +35,52 @@ export const en: TranslationContent = {
       languageOptionDe: "DE"
     },
     hero: {
-      identityCapsule: "Independent Senior Consultant",
       kpiYearsValue: "20+",
-      kpiLanguageValue: "C1 / C1",
-      kpiRemoteValue: "Remote",
-      kpiYearsExp: "Years Exp.",
-      kpiLanguageFluency: "DE & EN Fluency",
-      kpiRemoteRegion: "Germany & EU",
-      kpiAvailableFrom: "Available From",
-      profileWindowTitle: "Profile",
-      coreCapabilitiesLabel: "Core capabilities",
-      coreCapabilitiesText: "Reliable Azure integrations and legacy .NET modernization",
-      whatIHelpWithLabel: "What I help with",
-      helpItems: [
-        "Secure API integration and robust credential handling with modern Azure services",
-        "Azure-based integration components for reliable system communication",
-        "Maintainable Angular business applications aligned with backend API delivery"
-      ],
-      projectSetupLabel: "Project setup",
-      projectSetupText:
-        "Available for remote-first assignments with structured onboarding and NDA-friendly communication.",
-      discussProjectCta: "Discuss Project"
+      kpiLanguageValue: "C1",
+      kpiLocationValue: "Frankfurt",
+      kpiYearsExp: "Years of experience",
+      kpiLanguageFluency: "German & English",
+      kpiLocationLabel: "Remote-first, DE & EU",
+      kpiAvailableFrom: "Available from",
+      discussProjectCta: "Discuss Project",
+      secondaryCta: "View project experience"
     },
     services: {
-      eyebrow: "My Services",
+      eyebrow: "Services",
       title: "What I can help with",
       intro:
         "I focus on legacy .NET modernization, Azure integration, maintainable backend services, and practical project delivery.",
+      situationLabel: "Typical situation",
+      approachLabel: "What I do",
       technologiesUsedLabel: "Technologies used",
-      howItHelpsLabel: "How it helps",
-      calloutTag: "Legacy to cloud",
-      calloutTitle: "Modernizing existing systems without risky rewrites",
-      calloutDescription:
-        "Modernization rarely starts from zero. I implement integration layers and delivery patterns that let existing systems evolve safely while new services are introduced.",
-      calloutCta: "Discuss Project"
+      howItHelpsLabel: "How it helps"
     },
-    valueAdd: {
-      eyebrow: "Practical software problems",
-      title: "Practical software problems",
-      intro:
-        "Modern projects often need more than feature work. I focus on the architectural and delivery problems that make systems hard to change, deploy, and operate.",
-      problemLabel: "Problem",
-      approachLabel: "Approach",
-      technologiesUsedLabel: "Technologies used:",
-      howItHelpsLabel: "How it helps:",
-      scenarioRisks: {
-        "val-1": "Leads to fragile releases, unclear ownership, and expensive production support.",
-        "val-2": "Causes slow feature delivery, high regression risk, and growing technical debt.",
-        "val-3": "Creates inconsistent environments, manual errors, and unpredictable deployments.",
-        "val-4": "Results in slow UI changes, unstable state handling, and higher maintenance effort."
-      },
-      collaboration: {
-        eyebrow: "How I Work",
-        title: "How I Work",
-        intro:
-          "Senior freelance collaboration works best with clear ownership, practical communication, and reliable delivery habits."
-      }
+    approach: {
+      eyebrow: "Approach",
+      title: "From first review to clean handover",
+      intro: "Every system is different, but the order of the work is usually the same.",
+      steps: [
+        {
+          title: "Understand the system",
+          description: "Review the codebase, integrations and release process, and agree on the risky parts first."
+        },
+        {
+          title: "Protect critical behavior",
+          description: "Add tests around critical paths and CI checks before anything larger changes."
+        },
+        {
+          title: "Improve in small steps",
+          description:
+            "Small, reviewable changes that can each be released: .NET upgrades, clearer boundaries, and Azure services where they help."
+        },
+        {
+          title: "Hand over cleanly",
+          description:
+            "Handover notes, documentation and no secrets in source code, so your team can keep maintaining the system."
+        }
+      ],
+      collaborationTitle: "Working together",
+      cta: "Discuss Project"
     },
     experience: {
       eyebrow: "Selected project experience",
@@ -108,37 +97,18 @@ export const en: TranslationContent = {
       technologiesUsedLabel: "Technologies used:"
     },
     techStack: {
-      eyebrow: "Tech Focus",
+      eyebrow: "Tech focus",
       title: "Core capabilities",
       intro:
         "My strongest experience is in .NET, Azure integration, enterprise backend systems, and Angular-based business applications.",
-      proofIndicators: [
-        "Production project experience",
-        "Enterprise system delivery",
-        "CI/CD and cloud-native implementation"
-      ],
-      categoryBadges: {
-        dotnetBackend: "Scalable .NET backend systems",
-        azureIntegration: "Azure cloud-native implementation",
-        devopsDelivery: "CI/CD delivery experience",
-        frontendTech: "Enterprise Angular frontend experience"
-      },
-      calloutEyebrow: "Delivery habits that reduce project risk",
-      calloutTitle: "Delivery habits that reduce project risk",
-      calloutDescription:
-        "I work with small, reviewable changes, practical tests, CI/CD checks, secure configuration, and clear handover notes.",
-      checklistTitle: "Delivery checklist",
-      checklistItems: [
-        "Small, reviewable changes",
-        "Practical unit and integration tests",
-        "CI/CD checks before release",
-        "No secrets in source code",
-        "Clear handover notes"
-      ]
+      levelLabels: {
+        primary: "Primary focus",
+        experience: "Project experience"
+      }
     },
     contact: {
       eyebrow: "Availability & Contact",
-      title: "Start a Project Discussion",
+      title: "Start a project discussion",
       intro:
         "Available for remote-first projects across Germany and the EU. Reach out directly by email, phone, LinkedIn, or GitHub.",
       availabilityCardTitle: "Availability & Location",
@@ -163,26 +133,19 @@ export const en: TranslationContent = {
       linkedinAria: "Open LinkedIn profile in a new tab",
       githubAria: "Open GitHub profile in a new tab",
       faqEyebrow: "FAQ",
-      faqTitle: "Collaboration FAQ",
+      faqTitle: "Questions about working together",
       faqIntro:
         "Practical answers about setup, confidentiality, availability, and profile requests."
     },
     footer: {
       description:
         "Independent freelance consulting for enterprise .NET modernization, reliable Azure integrations, and production-oriented software delivery across Germany and the EU.",
-      portfolioIndexTitle: "Portfolio index",
-      links: {
-        services: "Services",
-        valueAdd: "Value Add",
-        projectExperience: "Project Experience",
-        techFocus: "Tech Focus"
-      },
-      complianceTitle: "Compliance & Legal",
+      portfolioIndexTitle: "Navigation",
       legalLinks: {
         impressum: "Impressum",
         datenschutz: "Privacy Policy"
       },
-      copyright: "© 2026 Mojtaba Ghanaat Pisheh. All rights reserved."
+      copyright: "© {{year}} Mojtaba Ghanaat Pisheh. All rights reserved."
     },
     legal: {
       impressumTitle: "Impressum",
@@ -261,146 +224,72 @@ export const en: TranslationContent = {
   data: {
     personalInfo: {
       name: "Mojtaba Ghanaat Pisheh",
-      companyName: "IT Consulting - Mojtaba Ghanaat Pisheh",
+      companyName: "MGP Consulting",
       legalBusinessName: "IT Consulting - Mojtaba Ghanaat Pisheh",
-      role: "Freelance Senior .NET & Azure Developer focused on integration and legacy modernization",
-      tagline: "Legacy .NET modernization | Azure integration | practical delivery",
-      headline: "Freelance Senior .NET & Azure Developer",
+      role: "Freelance Senior .NET & Azure Developer",
+      headline: "Modernizing legacy .NET systems and Azure integrations",
+      headlineAccent: "without risky rewrites.",
       subheadline:
-        "I help teams modernize legacy .NET systems step by step, build Azure integrations, and keep business-critical applications reliable without risky rewrites.",
-      location: "Based in Frankfurt am Main, Germany • Remote-first across Germany and the EU",
+        "I work inside your team on existing .NET applications, Azure integrations and Angular frontends – making them easier to change, safer to release and reliable in production.",
       locationShort: "Frankfurt am Main, Germany",
       email: "mojtaba@mgp-consulting.de",
       phone: "+4917643674802",
       phoneFormatted: "+49 176 4367 4802",
       linkedin: "https://www.linkedin.com/in/mojtabaghp/",
       github: "https://github.com/MatGhp",
-      languages: [
-        { name: "German", level: "C1 (Fluent Project Communication)" },
-        { name: "English", level: "C1 (Fluent Project Communication)" },
-        { name: "Persian", level: "Native" }
-      ],
       availability: {
         status: "Available",
-        remotePreference: "Remote-first across Germany and the EU",
-        euEligible: "Available for assignments in Germany and the EU"
-      },
-      trustFacts: [
-        "20+ years software engineering experience",
-        "Based in Frankfurt am Main, Germany",
-        "Remote-first across Germany and the EU",
-        "German and English project communication (C1)",
-        "{{availabilitySentence}}",
-        "Strong focus on .NET, Azure integration, APIs, CI/CD, and Angular"
-      ]
+        remotePreference: "Remote-first across Germany and the EU"
+      }
     },
     services: [
       {
         id: "enterprise-api",
         title: "Enterprise API & Integration Development",
-        description:
-          "Design and implementation of maintainable APIs, backend services, and integration components for enterprise environments.",
         iconName: "Cable",
+        situation:
+          "Critical integrations are tightly coupled, so one failing dependency can cause cascading issues across connected systems.",
+        approach:
+          "Define clear API boundaries, use asynchronous messaging where it helps, and add retry and error handling with practical telemetry.",
         businessBenefit:
           "Helps teams keep business systems in sync, clarify API ownership, and reduce integration risk during delivery.",
-        keyOfferings: [
-          "Modern .NET / ASP.NET Core, C#, Entity Framework Core, REST APIs, unit & integration testing",
-          "Azure Service Bus messaging (topics and queues)",
-          "Azure Functions for background integration workflows",
-          "Azure API Management and secure API integration"
-        ]
+        technologies: ["ASP.NET Core Web API", "C#", "REST APIs", "Azure Service Bus", "Azure Functions", "Azure API Management"]
       },
       {
         id: "azure-integration",
         title: "Azure Integration & Backend Services",
-        description:
-          "Development of Azure-based backend and integration components for reliable communication, automation, and easier support.",
         iconName: "Cloud",
+        situation:
+          "Integrations fail without anyone noticing: messages get lost, secrets sit in configuration files, and there is too little telemetry to find the cause.",
+        approach:
+          "Build Azure-based integration components with reliable messaging, keep secrets in Key Vault, and add telemetry that shows where a problem starts.",
         businessBenefit:
-          "Helps reduce incidents caused by brittle integrations through reliable messaging, secure configuration, and practical telemetry.",
-        keyOfferings: [
-          "Azure Functions, Azure Service Bus, and Logic Apps",
-          "Azure Key Vault for secrets and certificate handling",
-          "Application Insights and Azure Monitor telemetry",
-          "Azure App Service and Azure SQL integration"
-        ]
+          "Helps reduce incidents caused by brittle integrations and makes problems easier to find when they happen.",
+        technologies: ["Azure Functions", "Azure Service Bus", "Logic Apps", "Azure Key Vault", "Application Insights", "Azure App Service", "Azure SQL"]
       },
       {
         id: "dotnet-modernization",
         title: ".NET Modernization & Delivery Readiness",
-        description:
-          "Step-by-step modernization of existing .NET applications to improve maintainability, release reliability, and operational stability.",
         iconName: "History",
+        situation:
+          "Aging codebases make even small changes slow and risky, and manual deployment steps add avoidable release defects.",
+        approach:
+          "Modernize step by step, isolate important parts of the system, strengthen automated tests around critical behavior, and set up repeatable CI/CD pipelines.",
         businessBenefit:
-          "Helps reduce regression risk and makes the codebase easier to maintain without disruptive rewrites.",
-        keyOfferings: [
-          "Modern .NET and ASP.NET Core delivery, plus upgrades from older .NET versions",
-          "Refactoring with Clean Architecture and DDD principles",
-          "Entity Framework Core optimization and data access improvements",
-          "Test automation and containerized local environments with Docker"
-        ]
+          "Helps teams deliver changes faster, with less regression risk and more predictable releases.",
+        technologies: [".NET 8–10", "ASP.NET Core", "Entity Framework Core", "Clean Architecture / DDD", "Docker", "Azure DevOps", "GitHub Actions", "Bicep / Terraform"]
       },
       {
         id: "angular-business-apps",
         title: "Angular Business Applications",
-        description:
-          "Implementation and modernization of Angular applications with maintainable architecture and reliable API integration.",
         iconName: "Layout",
+        situation:
+          "Business UIs become hard to change when state handling, component boundaries, and API flows are inconsistent.",
+        approach:
+          "Refactor the Angular component structure, clarify state management patterns, and align API integration contracts.",
         businessBenefit:
-          "Makes UI changes easier to deliver and keeps integration with backend services stable.",
-        keyOfferings: [
-          "Angular, TypeScript, and RxJS for business workflows",
-          "Nx workspace structuring and modular architecture",
-          "Angular Material and Kendo UI enterprise components",
-          "Cypress and Jest test setup"
-        ]
-      }
-    ],
-    valueAddScenarios: [
-      {
-        id: "val-1",
-        title: "Unstable or tightly coupled integrations",
-        situation:
-          "Critical integrations are tightly coupled, so one failing dependency can cause cascading issues across connected systems.",
-        solution:
-          "Define clear API boundaries, use asynchronous patterns where they help, and add retry and error handling with practical telemetry.",
-        technicalDepth: ".NET, Azure Service Bus, ASP.NET Core Web API, Application Insights",
-        businessImpact:
-          "Helps make integrations steadier and reduces fragile releases, unclear ownership, and expensive support work."
-      },
-      {
-        id: "val-2",
-        title: "Legacy .NET applications that are difficult to change",
-        situation:
-          "Aging codebases with high technical debt make even small feature updates slow, risky, and expensive.",
-        solution:
-          "Modernize step by step, isolate important parts of the system, improve architecture boundaries, and strengthen automated tests around critical behavior.",
-        technicalDepth:
-          "Modern .NET / ASP.NET Core, C#, Entity Framework Core, REST APIs, unit and integration testing. Recent project work with .NET 8–10 and modernization from older .NET versions.",
-        businessImpact:
-          "Helps teams deliver changes faster while reducing regression risk and technical debt."
-      },
-      {
-        id: "val-3",
-        title: "Manual or unreliable deployments",
-        situation:
-          "Manual deployment steps and inconsistent environment configuration create avoidable release defects.",
-        solution:
-          "Implement repeatable CI/CD pipelines, separate configuration from code, and standardize infrastructure provisioning practices.",
-        technicalDepth: "Azure DevOps, GitHub Actions, Docker, Bicep, Terraform",
-        businessImpact:
-          "Makes releases more predictable and helps reduce manual errors, environment drift, and uncertainty."
-      },
-      {
-        id: "val-4",
-        title: "Frontend applications with growing complexity",
-        situation:
-          "Business UI layers become difficult to evolve when state handling, component boundaries, and API flows are inconsistent.",
-        solution:
-          "Refactor Angular component structure, clarify state management patterns, and align API integration contracts.",
-        technicalDepth: "Angular, TypeScript, RxJS, Nx",
-        businessImpact:
-          "Helps teams make UI changes faster, keep state handling stable, and reduce long-term maintenance effort."
+          "Helps teams make UI changes faster, keep state handling stable, and reduce long-term maintenance effort.",
+        technologies: ["Angular", "TypeScript", "RxJS", "Nx", "Angular Material", "Kendo UI", "Cypress", "Jest"]
       }
     ],
     projects: [
@@ -532,13 +421,13 @@ export const en: TranslationContent = {
         description:
           "Modern .NET / ASP.NET Core, C#, Entity Framework Core, REST APIs, unit and integration testing. Current project work with .NET 10; strong production experience with .NET 8/9 and modernization from older .NET versions.",
         skills: [
-          { name: "Modern .NET", level: "Strong focus", badge: "Primary focus" },
-          { name: "ASP.NET Core Web API", level: "Strong focus", badge: "RESTful architecture" },
-          { name: "Entity Framework Core", level: "Practical experience", badge: "Data access / ORM" },
-          { name: "REST APIs", level: "Strong focus", badge: "Web services" },
-          { name: "Clean Architecture / DDD", level: "Practical experience", badge: "Design discipline" },
-          { name: "Authentication & Authorization", level: "Practical experience", badge: "Identity / Security" },
-          { name: "SQL Server / PostgreSQL", level: "Practical experience", badge: "Relational persistence" }
+          { name: "Modern .NET", level: "primary", badge: "C# / .NET 8–10" },
+          { name: "ASP.NET Core Web API", level: "primary", badge: "RESTful architecture" },
+          { name: "Entity Framework Core", level: "experience", badge: "Data access / ORM" },
+          { name: "REST APIs", level: "primary", badge: "Web services" },
+          { name: "Clean Architecture / DDD", level: "experience", badge: "Design discipline" },
+          { name: "Authentication & Authorization", level: "experience", badge: "Identity / Security" },
+          { name: "SQL Server / PostgreSQL", level: "experience", badge: "Relational persistence" }
         ]
       },
       {
@@ -546,14 +435,14 @@ export const en: TranslationContent = {
         categoryName: "Azure & Integration",
         description: "Azure integration services, secure configuration management, and monitoring.",
         skills: [
-          { name: "Azure Functions", level: "Strong focus", badge: "Serverless runtime" },
-          { name: "Azure Service Bus", level: "Strong focus", badge: "Message queues & topics" },
-          { name: "Azure API Management (APIM)", level: "Project experience", badge: "API Gateways" },
-          { name: "Logic Apps", level: "Project experience", badge: "Workflow automation" },
-          { name: "Azure Key Vault", level: "Strong focus", badge: "Secure configuration" },
-          { name: "Azure App Service", level: "Project experience", badge: "App hosting" },
-          { name: "Azure SQL", level: "Project experience", badge: "Cloud Database" },
-          { name: "Application Insights & Monitor", level: "Practical experience", badge: "Telemetry" }
+          { name: "Azure Functions", level: "primary", badge: "Serverless runtime" },
+          { name: "Azure Service Bus", level: "primary", badge: "Message queues & topics" },
+          { name: "Azure API Management (APIM)", level: "experience", badge: "API Gateways" },
+          { name: "Logic Apps", level: "experience", badge: "Workflow automation" },
+          { name: "Azure Key Vault", level: "primary", badge: "Secure configuration" },
+          { name: "Azure App Service", level: "experience", badge: "App hosting" },
+          { name: "Azure SQL", level: "experience", badge: "Cloud Database" },
+          { name: "Application Insights & Monitor", level: "experience", badge: "Telemetry" }
         ]
       },
       {
@@ -561,13 +450,13 @@ export const en: TranslationContent = {
         categoryName: "DevOps & Cloud Delivery",
         description: "CI/CD implementation, containerized workflows, and repeatable deployment practices.",
         skills: [
-          { name: "Azure DevOps Pipelines", level: "Practical experience", badge: "Build & release YAML" },
-          { name: "GitHub Actions", level: "Project experience", badge: "Continuous Integration" },
-          { name: "Docker", level: "Practical experience", badge: "Containerization" },
-          { name: "Kubernetes (AKS basics)", level: "Project experience", badge: "Container orch." },
-          { name: "Terraform", level: "Project experience", badge: "Infrastructure as Code" },
-          { name: "Bicep", level: "Project experience", badge: "Azure-native IaC" },
-          { name: "CI/CD Pipelines", level: "Practical experience", badge: "Quality & automation gates" }
+          { name: "Azure DevOps Pipelines", level: "experience", badge: "Build & release YAML" },
+          { name: "GitHub Actions", level: "experience", badge: "Continuous Integration" },
+          { name: "Docker", level: "experience", badge: "Containerization" },
+          { name: "Kubernetes (AKS basics)", level: "experience", badge: "Container orch." },
+          { name: "Terraform", level: "experience", badge: "Infrastructure as Code" },
+          { name: "Bicep", level: "experience", badge: "Azure-native IaC" },
+          { name: "CI/CD Pipelines", level: "experience", badge: "Quality & automation gates" }
         ]
       },
       {
@@ -575,14 +464,14 @@ export const en: TranslationContent = {
         categoryName: "Frontend",
         description: "Angular frontends with maintainable state management and modular architecture.",
         skills: [
-          { name: "Angular", level: "Strong focus", badge: "SPA Framework" },
-          { name: "TypeScript", level: "Strong focus", badge: "Type-safe script language" },
-          { name: "RxJS", level: "Core skill", badge: "Asynchronous streams" },
-          { name: "Nx Workspaces", level: "Project experience", badge: "Monorepo design" },
-          { name: "Angular Material", level: "Practical experience", badge: "UI components" },
-          { name: "Kendo UI", level: "Project experience", badge: "Enterprise controls" },
-          { name: "Cypress & Jest", level: "Project experience", badge: "Test suites" },
-          { name: "HTML & SCSS / Tailwind", level: "Practical experience", badge: "Responsive layout styling" }
+          { name: "Angular", level: "primary", badge: "SPA Framework" },
+          { name: "TypeScript", level: "primary", badge: "Type-safe script language" },
+          { name: "RxJS", level: "primary", badge: "Asynchronous streams" },
+          { name: "Nx Workspaces", level: "experience", badge: "Monorepo design" },
+          { name: "Angular Material", level: "experience", badge: "UI components" },
+          { name: "Kendo UI", level: "experience", badge: "Enterprise controls" },
+          { name: "Cypress & Jest", level: "experience", badge: "Test suites" },
+          { name: "HTML & SCSS / Tailwind", level: "experience", badge: "Responsive layout styling" }
         ]
       }
     ],
@@ -596,11 +485,6 @@ export const en: TranslationContent = {
         title: "Clear Communication",
         description:
           "I communicate in German and English (C1) and focus on clear trade-offs, practical options, and transparent status updates."
-      },
-      {
-        title: "Delivery habits that reduce project risk",
-        description:
-          "I focus on maintainable implementation, practical delivery, and CI/CD experience to support stable handover and operations."
       },
       {
         title: "Enterprise Collaboration",

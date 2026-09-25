@@ -1,35 +1,31 @@
-import { ProjectExperience, ServiceItem, TechCategory, ValueAddScenario } from "../../types";
-
-export interface PersonalLanguage {
-  name: string;
-  level: string;
-}
+import { ProjectExperience, ServiceItem, SkillLevel, TechCategory } from "../../types";
 
 export interface PersonalInfoContent {
   name: string;
   companyName: string;
   legalBusinessName: string;
   role: string;
-  tagline: string;
   headline: string;
+  headlineAccent: string;
   subheadline: string;
-  location: string;
   locationShort: string;
   email: string;
   phone: string;
   phoneFormatted: string;
   linkedin: string;
   github: string;
-  languages: PersonalLanguage[];
   availability: {
     status: string;
     remotePreference: string;
-    euEligible: string;
   };
-  trustFacts: string[];
 }
 
 export interface CollaborationValue {
+  title: string;
+  description: string;
+}
+
+export interface ApproachStep {
   title: string;
   description: string;
 }
@@ -64,7 +60,6 @@ export interface TranslationContent {
   ui: {
     navbar: {
       navLinks: Array<{ name: string; href: string }>;
-      companyTagline: string;
       contactCta: string;
       toggleMenuAria: string;
       officeLocationLabel: string;
@@ -73,48 +68,32 @@ export interface TranslationContent {
       languageOptionDe: string;
     };
     hero: {
-      identityCapsule: string;
       kpiYearsValue: string;
       kpiLanguageValue: string;
-      kpiRemoteValue: string;
+      kpiLocationValue: string;
       kpiYearsExp: string;
       kpiLanguageFluency: string;
-      kpiRemoteRegion: string;
+      kpiLocationLabel: string;
       kpiAvailableFrom: string;
-      profileWindowTitle: string;
-      coreCapabilitiesLabel: string;
-      coreCapabilitiesText: string;
-      whatIHelpWithLabel: string;
-      helpItems: string[];
-      projectSetupLabel: string;
-      projectSetupText: string;
       discussProjectCta: string;
+      secondaryCta: string;
     };
     services: {
       eyebrow: string;
       title: string;
       intro: string;
-      technologiesUsedLabel: string;
-      howItHelpsLabel: string;
-      calloutTag: string;
-      calloutTitle: string;
-      calloutDescription: string;
-      calloutCta: string;
-    };
-    valueAdd: {
-      eyebrow: string;
-      title: string;
-      intro: string;
-      problemLabel: string;
+      situationLabel: string;
       approachLabel: string;
       technologiesUsedLabel: string;
       howItHelpsLabel: string;
-      scenarioRisks: Record<string, string>;
-      collaboration: {
-        eyebrow: string;
-        title: string;
-        intro: string;
-      };
+    };
+    approach: {
+      eyebrow: string;
+      title: string;
+      intro: string;
+      steps: ApproachStep[];
+      collaborationTitle: string;
+      cta: string;
     };
     experience: {
       eyebrow: string;
@@ -132,18 +111,7 @@ export interface TranslationContent {
       eyebrow: string;
       title: string;
       intro: string;
-      proofIndicators: string[];
-      categoryBadges: {
-        dotnetBackend: string;
-        azureIntegration: string;
-        devopsDelivery: string;
-        frontendTech: string;
-      };
-      calloutEyebrow: string;
-      calloutTitle: string;
-      calloutDescription: string;
-      checklistTitle: string;
-      checklistItems: string[];
+      levelLabels: Record<SkillLevel, string>;
     };
     contact: {
       eyebrow: string;
@@ -177,13 +145,6 @@ export interface TranslationContent {
     footer: {
       description: string;
       portfolioIndexTitle: string;
-      links: {
-        services: string;
-        valueAdd: string;
-        projectExperience: string;
-        techFocus: string;
-      };
-      complianceTitle: string;
       legalLinks: {
         impressum: string;
         datenschutz: string;
@@ -219,7 +180,6 @@ export interface TranslationContent {
   data: {
     personalInfo: PersonalInfoContent;
     services: ServiceItem[];
-    valueAddScenarios: ValueAddScenario[];
     projects: ProjectExperience[];
     techCategories: TechCategory[];
     collaborationValues: CollaborationValue[];

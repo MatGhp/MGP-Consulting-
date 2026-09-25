@@ -2,8 +2,9 @@
 // answers /impressum and /datenschutz with HTTP 200 instead of the 404 fallback.
 import { copyFile, mkdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const dist = new URL('../dist/', import.meta.url).pathname;
+const dist = fileURLToPath(new URL('../dist/', import.meta.url));
 const routes = ['impressum', 'datenschutz'];
 
 const index = join(dist, 'index.html');

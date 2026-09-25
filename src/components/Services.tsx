@@ -49,78 +49,62 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="group relative bg-slate-50 border border-slate-200/80 p-6 rounded-xl hover:bg-white hover:border-blue-300 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+              className="bg-slate-50 border border-slate-200/80 p-6 sm:p-8 rounded-xl flex flex-col"
             >
-              <div className="space-y-4">
-                {/* Header Icon & Title */}
-                <div className="flex items-center space-x-3">
-                  <div className="p-2.5 rounded-lg bg-blue-50/80 group-hover:bg-blue-100/50 transition-colors">
-                    {getIcon(service.iconName)}
-                  </div>
-                  <h3 className="font-sans text-md font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-                    {service.title}
-                  </h3>
+              {/* Header Icon & Title */}
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="p-2.5 rounded-lg bg-blue-50/80">
+                  {getIcon(service.iconName)}
                 </div>
+                <h3 className="font-sans text-lg font-bold text-slate-900">
+                  {service.title}
+                </h3>
+              </div>
 
-                {/* Scope Description */}
-                <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                  {service.description}
+              {/* Typical situation and what I do about it */}
+              <dl className="space-y-4 text-sm leading-relaxed flex-1">
+                <div>
+                  <dt className="text-3xs font-mono uppercase text-slate-500 font-semibold tracking-wider mb-1">
+                    {t("ui.services.situationLabel")}
+                  </dt>
+                  <dd className="text-slate-600">{service.situation}</dd>
+                </div>
+                <div>
+                  <dt className="text-3xs font-mono uppercase text-blue-700 font-semibold tracking-wider mb-1">
+                    {t("ui.services.approachLabel")}
+                  </dt>
+                  <dd className="text-slate-800 font-medium">{service.approach}</dd>
+                </div>
+              </dl>
+
+              {/* Technology chips */}
+              <div className="mt-6">
+                <span className="text-3xs font-mono uppercase text-slate-500 font-semibold tracking-wider block mb-2">
+                  {t("ui.services.technologiesUsedLabel")}
+                </span>
+                <ul className="flex flex-wrap gap-1.5">
+                  {service.technologies.map((tech) => (
+                    <li
+                      key={tech}
+                      className="px-2.5 py-1 bg-white border border-slate-200 text-slate-600 rounded text-3xs font-mono font-medium"
+                    >
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Business benefit */}
+              <div className="mt-6 pt-4 border-t border-slate-200/70">
+                <span className="text-3xs font-mono uppercase text-emerald-700 font-semibold tracking-wider block mb-1">
+                  {t("ui.services.howItHelpsLabel")}
+                </span>
+                <p className="text-sm text-slate-700 leading-relaxed">
+                  {service.businessBenefit}
                 </p>
-
-                {/* Offerings list */}
-                <div className="space-y-2 pt-2">
-                  <span className="text-3xs font-mono uppercase text-slate-500 font-semibold tracking-wider block">
-                    {t("ui.services.technologiesUsedLabel")}
-                  </span>
-                  <ul className="space-y-1.5 text-xs text-slate-600">
-                    {service.keyOfferings.map((item, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="text-blue-500 font-bold mr-1.5 flex-shrink-0">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
-
-              {/* Bottom value benefit highlight card */}
-              <div className="mt-6 pt-4 border-t border-slate-200/50">
-                <div className="p-3 bg-white border border-slate-200 rounded-lg">
-                  <span className="text-3xs font-mono uppercase text-blue-600 font-semibold tracking-wider block mb-1">
-                    {t("ui.services.howItHelpsLabel")}
-                  </span>
-                  <p className="text-2xs text-slate-600 leading-normal">
-                    {service.businessBenefit}
-                  </p>
-                </div>
-              </div>
-
             </div>
           ))}
-        </div>
-
-        {/* Dynamic Modernization Callout block */}
-        <div className="mt-12 p-6 bg-slate-950 text-slate-200 rounded-xl overflow-hidden relative">
-          <div className="absolute right-0 top-0 w-1/3 h-full bg-linear-to-l from-blue-900/10 to-transparent pointer-events-none" />
-          <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-1 max-w-3xl">
-              <span className="font-mono text-3xs bg-blue-600/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded uppercase tracking-wider">
-                {t("ui.services.calloutTag")}
-              </span>
-              <h4 className="text-lg font-bold text-white pt-1">
-                {t("ui.services.calloutTitle")}
-              </h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
-                {t("ui.services.calloutDescription")}
-              </p>
-            </div>
-            <a
-              href="#contact"
-              className="inline-flex self-start md:self-auto items-center space-x-1.5 px-4.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-md text-xs font-semibold uppercase tracking-wider transition-colors shrink-0"
-            >
-              {t("ui.services.calloutCta")}
-            </a>
-          </div>
         </div>
 
       </div>
