@@ -3,39 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Briefcase, Calendar, Clock, ShieldCheck, Check } from "lucide-react";
 import { m, AnimatePresence } from "motion/react";
 import { useI18n } from "../i18n";
+import { filterProjects, PROJECT_FILTER_KEYS, type ProjectFilterKey } from "../utils/projectFilter";
 
 export default function Experience() {
   const { content, t } = useI18n();
   const projects = content.data.projects;
 
-  const filterAll = t("ui.experience.filterAll");
-  const filterDevOps = t("ui.experience.filterDevOpsPipelines");
+  const [filterKey, setFilterKey] = useState<ProjectFilterKey>("all");
 
-  // The selected filter is stored as a locale-independent key so it survives a language switch.
-  const [filterKey, setFilterKey] = useState<string>("all");
+  // Technology names stay in English in both languages; only "All" and "DevOps Pipelines" are translated.
+  const filterLabels: Record<ProjectFilterKey, string> = {
+    all: t("ui.experience.filterAll"),
+    "azure-functions": "Azure Functions",
+    "azure-service-bus": "Azure Service Bus",
+    devops: t("ui.experience.filterDevOpsPipelines"),
+    angular: "Angular",
+  };
 
-  const filterPills = useMemo(
-    () => [
-      { key: "all", label: filterAll, terms: [] as string[] },
-      { key: "azure-functions", label: "Azure Functions", terms: ["Azure Functions"] },
-      { key: "azure-service-bus", label: "Azure Service Bus", terms: ["Azure Service Bus"] },
-      { key: "devops", label: filterDevOps, terms: ["DevOps", "GitHub"] },
-      { key: "angular", label: "Angular", terms: ["Angular"] },
-    ],
-    [filterAll, filterDevOps]
-  );
-
-  const activeTerms = filterPills.find((pill) => pill.key === filterKey)?.terms ?? [];
-  const filteredProjects =
-    activeTerms.length === 0
-      ? projects
-      : projects.filter((project) =>
-          project.techStack.some((tech) => activeTerms.some((term) => tech.includes(term)))
-        );
+  const filteredProjects = filterProjects(projects, filterKey);
 
   return (
     <section id="experience" className="py-20 bg-white border-b border-slate-100">
@@ -67,17 +56,17 @@ export default function Experience() {
 
         {/* Filter Pills */}
         <div className="flex flex-wrap gap-2 mb-10 pb-2 border-b border-slate-100 select-none">
-          {filterPills.map((pill) => (
+          {PROJECT_FILTER_KEYS.map((key) => (
             <button
-              key={pill.key}
-              onClick={() => setFilterKey(pill.key)}
+              key={key}
+              onClick={() => setFilterKey(key)}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold font-mono tracking-wide uppercase transition-all border cursor-pointer ${
-                filterKey === pill.key
+                filterKey === key
                   ? "bg-slate-950 text-white border-slate-950"
                   : "bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100 hover:text-slate-700"
               }`}
             >
-              {pill.label}
+              {filterLabels[key]}
             </button>
           ))}
         </div>
