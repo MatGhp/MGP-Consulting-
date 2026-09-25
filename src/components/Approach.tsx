@@ -16,7 +16,9 @@ export default function Approach({ onContactClick }: ApproachProps) {
   const collaborationValues = content.data.collaborationValues;
 
   return (
-    <section id="approach" className="py-20 bg-slate-950 text-white">
+    <section id="approach" className="relative py-20 bg-slate-950 text-white">
+      {/* Legacy anchor: this section replaced #value-add, so old links and bookmarks still land here. */}
+      <span id="value-add" className="absolute top-0" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -32,11 +34,11 @@ export default function Approach({ onContactClick }: ApproachProps) {
           </p>
         </div>
 
-        {/* Numbered steps */}
-        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Numbered steps. role="list" keeps list semantics in Safari/VoiceOver, which drops them for unstyled lists. */}
+        <ol role="list" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((step, idx) => (
             <li key={idx} className="rounded-xl border border-white/10 bg-white/5 p-6">
-              <span className="font-mono text-2xl font-semibold text-blue-400" aria-hidden="true">
+              <span className="font-mono text-2xl font-semibold text-blue-400">
                 {String(idx + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 text-base font-bold text-white">

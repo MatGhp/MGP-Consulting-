@@ -37,10 +37,10 @@ export const de: TranslationContent = {
     hero: {
       kpiYearsValue: "20+",
       kpiLanguageValue: "C1",
-      kpiRemoteValue: "Frankfurt",
+      kpiLocationValue: "Frankfurt",
       kpiYearsExp: "Jahre Erfahrung",
       kpiLanguageFluency: "Deutsch & Englisch",
-      kpiRemoteRegion: "Remote-first, DE & EU",
+      kpiLocationLabel: "Remote-first, DE & EU",
       kpiAvailableFrom: "Verfügbar ab",
       discussProjectCta: "Projekt besprechen",
       secondaryCta: "Projekterfahrung ansehen"
@@ -56,7 +56,7 @@ export const de: TranslationContent = {
       howItHelpsLabel: "Ihr Nutzen"
     },
     approach: {
-      eyebrow: "So arbeite ich",
+      eyebrow: "Vorgehen",
       title: "Von der ersten Analyse bis zur sauberen Übergabe",
       intro: "Jedes System ist anders, die Reihenfolge der Arbeit ist aber meist dieselbe.",
       steps: [
@@ -225,30 +225,21 @@ export const de: TranslationContent = {
       name: "Mojtaba Ghanaat Pisheh",
       companyName: "MGP Consulting",
       legalBusinessName: "IT Consulting - Mojtaba Ghanaat Pisheh",
-      role: "Freiberuflicher Senior .NET & Azure Entwickler mit Fokus auf Integration und Legacy-Modernisierung",
-      roleLine: "Freiberuflicher Senior .NET- & Azure-Entwickler",
-      tagline: "Legacy .NET Modernisierung | Azure Integration | pragmatische Delivery",
+      role: "Freiberuflicher Senior .NET- & Azure-Entwickler",
       // Non-breaking space keeps the dash on the same line as "modernisieren".
       headline: "Legacy-.NET-Systeme und Azure-Integrationen modernisieren –",
       headlineAccent: "ohne riskante Neuentwicklung.",
       subheadline:
         "Ich arbeite in Ihrem Team an bestehenden .NET-Anwendungen, Azure-Integrationen und Angular-Frontends – damit sie leichter änderbar, sicherer auszuliefern und im Betrieb zuverlässig sind.",
-      location: "Standort Frankfurt am Main, Deutschland • Remote-first in Deutschland und der EU",
       locationShort: "Frankfurt am Main, Deutschland",
       email: "mojtaba@mgp-consulting.de",
       phone: "+4917643674802",
       phoneFormatted: "+49 176 4367 4802",
       linkedin: "https://www.linkedin.com/in/mojtabaghp/",
       github: "https://github.com/MatGhp",
-      languages: [
-        { name: "Deutsch", level: "C1 (flüssige Projektkommunikation)" },
-        { name: "Englisch", level: "C1 (flüssige Projektkommunikation)" },
-        { name: "Persisch", level: "Muttersprache" }
-      ],
       availability: {
         status: "Verfügbar",
-        remotePreference: "Remote-first in Deutschland und der EU",
-        euEligible: "Verfügbar für Projekte in Deutschland und der EU"
+        remotePreference: "Remote-first in Deutschland und der EU"
       }
     },
     services: [

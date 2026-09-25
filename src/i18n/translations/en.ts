@@ -37,10 +37,10 @@ export const en: TranslationContent = {
     hero: {
       kpiYearsValue: "20+",
       kpiLanguageValue: "C1",
-      kpiRemoteValue: "Frankfurt",
+      kpiLocationValue: "Frankfurt",
       kpiYearsExp: "Years of experience",
       kpiLanguageFluency: "German & English",
-      kpiRemoteRegion: "Remote-first, DE & EU",
+      kpiLocationLabel: "Remote-first, DE & EU",
       kpiAvailableFrom: "Available from",
       discussProjectCta: "Discuss Project",
       secondaryCta: "View project experience"
@@ -56,7 +56,7 @@ export const en: TranslationContent = {
       howItHelpsLabel: "How it helps"
     },
     approach: {
-      eyebrow: "How I work",
+      eyebrow: "Approach",
       title: "From first review to clean handover",
       intro: "Every system is different, but the order of the work is usually the same.",
       steps: [
@@ -226,29 +226,20 @@ export const en: TranslationContent = {
       name: "Mojtaba Ghanaat Pisheh",
       companyName: "MGP Consulting",
       legalBusinessName: "IT Consulting - Mojtaba Ghanaat Pisheh",
-      role: "Freelance Senior .NET & Azure Developer focused on integration and legacy modernization",
-      roleLine: "Freelance Senior .NET & Azure Developer",
-      tagline: "Legacy .NET modernization | Azure integration | practical delivery",
+      role: "Freelance Senior .NET & Azure Developer",
       headline: "Modernizing legacy .NET systems and Azure integrations",
       headlineAccent: "without risky rewrites.",
       subheadline:
         "I work inside your team on existing .NET applications, Azure integrations and Angular frontends – making them easier to change, safer to release and reliable in production.",
-      location: "Based in Frankfurt am Main, Germany • Remote-first across Germany and the EU",
       locationShort: "Frankfurt am Main, Germany",
       email: "mojtaba@mgp-consulting.de",
       phone: "+4917643674802",
       phoneFormatted: "+49 176 4367 4802",
       linkedin: "https://www.linkedin.com/in/mojtabaghp/",
       github: "https://github.com/MatGhp",
-      languages: [
-        { name: "German", level: "C1 (Fluent Project Communication)" },
-        { name: "English", level: "C1 (Fluent Project Communication)" },
-        { name: "Persian", level: "Native" }
-      ],
       availability: {
         status: "Available",
-        remotePreference: "Remote-first across Germany and the EU",
-        euEligible: "Available for assignments in Germany and the EU"
+        remotePreference: "Remote-first across Germany and the EU"
       }
     },
     services: [

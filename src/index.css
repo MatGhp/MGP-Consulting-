@@ -32,7 +32,7 @@
 
 html {
   scroll-behavior: smooth;
-  /* Keeps plain #anchor links clear of the fixed navbar; matches the 80px offset used in App/Navbar. */
+  /* Offset for the fixed navbar, used by #anchor links and by scrollToSection() in src/utils/scroll.ts. */
   scroll-padding-top: 5rem;
   font-family: var(--font-sans);
 }

@@ -37,7 +37,7 @@ export default function Hero({ onContactClick, onExperienceClick }: HeroProps) {
   const kpis = [
     { value: t("ui.hero.kpiYearsValue"), label: t("ui.hero.kpiYearsExp") },
     { value: t("ui.hero.kpiLanguageValue"), label: t("ui.hero.kpiLanguageFluency") },
-    { value: t("ui.hero.kpiRemoteValue"), label: t("ui.hero.kpiRemoteRegion") },
+    { value: t("ui.hero.kpiLocationValue"), label: t("ui.hero.kpiLocationLabel") },
     { value: getAvailabilityShortMonthYear(locale), label: t("ui.hero.kpiAvailableFrom") },
   ];
 
@@ -49,7 +49,7 @@ export default function Hero({ onContactClick, onExperienceClick }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden grid-bg bg-slate-950 text-white"
+      className="relative pt-24 pb-14 md:pt-36 md:pb-24 overflow-hidden grid-bg bg-slate-950 text-white"
     >
       {/* Soft ambient glow, CSS only */}
       <div className="absolute -top-32 right-0 w-[36rem] h-[36rem] rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
@@ -59,22 +59,22 @@ export default function Hero({ onContactClick, onExperienceClick }: HeroProps) {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-3xl flex flex-col space-y-6"
+          className="max-w-3xl flex flex-col space-y-5 sm:space-y-6"
         >
           {/* Name, role and headline */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <m.p
               variants={itemVariants}
               className="font-mono text-sm text-slate-300"
             >
               <span className="font-semibold text-white">{personalInfo.name}</span>
               <span className="text-slate-400" aria-hidden="true"> · </span>
-              <span>{personalInfo.roleLine}</span>
+              <span>{personalInfo.role}</span>
             </m.p>
 
             <m.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white text-balance"
+              className="text-[2rem] leading-[1.15] sm:text-5xl sm:leading-[1.1] lg:text-6xl font-bold tracking-tight text-white text-balance"
             >
               {personalInfo.headline}{" "}
               <span className="text-blue-400">{personalInfo.headlineAccent}</span>
@@ -84,7 +84,7 @@ export default function Hero({ onContactClick, onExperienceClick }: HeroProps) {
           {/* Value Proposition Subhead */}
           <m.p
             variants={itemVariants}
-            className="text-lg text-slate-300 leading-relaxed max-w-2xl"
+            className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl"
           >
             {personalInfo.subheadline}
           </m.p>
@@ -92,7 +92,7 @@ export default function Hero({ onContactClick, onExperienceClick }: HeroProps) {
           {/* Core Action Callouts */}
           <m.div
             variants={itemVariants}
-            className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2"
+            className="flex flex-wrap items-center gap-x-6 gap-y-3 sm:pt-2"
           >
             <button
               id="btn-hero-contact"

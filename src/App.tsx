@@ -14,6 +14,7 @@ import TechStack from "./components/TechStack";
 import AvailabilityAndContact from "./components/AvailabilityAndContact";
 import Footer from "./components/Footer";
 import { useI18n } from "./i18n";
+import { scrollToSection } from "./utils/scroll";
 import { applyPageSeo } from "./utils/seo";
 
 export default function App() {
@@ -23,16 +24,8 @@ export default function App() {
     applyPageSeo(locale, content.seo.home.title, content.seo.home.description);
   }, [locale, content.seo.home.title, content.seo.home.description]);
 
-  const handleScrollToSection = (selector: string) => {
-    const element = document.querySelector(selector);
-    if (element) {
-      const topOffset = element.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: topOffset, behavior: "smooth" });
-    }
-  };
-
   const triggerDirectInquiry = () => {
-    handleScrollToSection("#contact");
+    scrollToSection("#contact");
   };
 
   return (
@@ -44,7 +37,7 @@ export default function App() {
         {/* Hero Section */}
         <Hero
           onContactClick={triggerDirectInquiry}
-          onExperienceClick={() => handleScrollToSection("#experience")}
+          onExperienceClick={() => scrollToSection("#experience")}
         />
 
         {/* Services Section */}

@@ -1,32 +1,22 @@
 import { ProjectExperience, ServiceItem, SkillLevel, TechCategory } from "../../types";
 
-export interface PersonalLanguage {
-  name: string;
-  level: string;
-}
-
 export interface PersonalInfoContent {
   name: string;
   companyName: string;
   legalBusinessName: string;
   role: string;
-  roleLine: string;
-  tagline: string;
   headline: string;
   headlineAccent: string;
   subheadline: string;
-  location: string;
   locationShort: string;
   email: string;
   phone: string;
   phoneFormatted: string;
   linkedin: string;
   github: string;
-  languages: PersonalLanguage[];
   availability: {
     status: string;
     remotePreference: string;
-    euEligible: string;
   };
 }
 
@@ -80,10 +70,10 @@ export interface TranslationContent {
     hero: {
       kpiYearsValue: string;
       kpiLanguageValue: string;
-      kpiRemoteValue: string;
+      kpiLocationValue: string;
       kpiYearsExp: string;
       kpiLanguageFluency: string;
-      kpiRemoteRegion: string;
+      kpiLocationLabel: string;
       kpiAvailableFrom: string;
       discussProjectCta: string;
       secondaryCta: string;

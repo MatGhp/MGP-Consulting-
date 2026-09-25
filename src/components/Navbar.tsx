@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { Menu, X, Mail, MapPin } from "lucide-react";
 import { m, AnimatePresence } from "motion/react";
 import { getAvailabilityBadgeText } from "../utils/availability";
+import { scrollToSection, scrollToTop } from "../utils/scroll";
 import { useI18n } from "../i18n";
 
 interface NavbarProps {
@@ -55,11 +56,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      const topOffset = element.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: topOffset, behavior: "smooth" });
-    }
+    scrollToSection(href);
   };
 
   return (
@@ -75,10 +72,10 @@ export default function Navbar({ onContactClick }: NavbarProps) {
             className="flex flex-col group min-w-0"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              scrollToTop();
             }}
           >
-            <span className="font-sans text-lg font-semibold text-white tracking-tight leading-tight">
+            <span className="font-sans text-lg font-semibold text-white tracking-tight leading-tight whitespace-nowrap">
               {personalInfo.companyName}
             </span>
             <span className="font-mono text-3xs text-slate-400 uppercase tracking-widest leading-none mt-0.5 truncate">
@@ -93,7 +90,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="px-3.5 py-2 rounded-md text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all"
+                className="px-3.5 py-2 rounded-md text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap"
               >
                 {link.name}
               </a>
@@ -101,14 +98,15 @@ export default function Navbar({ onContactClick }: NavbarProps) {
           </div>
 
           {/* Availability Status & Main CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4 shrink-0">
             {languageSwitcher}
-            <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30">
+            {/* Between `lg` and `xl` there is no room for the badge; the hero shows the availability date instead. */}
+            <div className="hidden xl:flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/30">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping motion-reduce:animate-none absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
               </span>
-              <span className="font-mono text-xs font-semibold text-emerald-300 uppercase tracking-wide">
+              <span className="font-mono text-xs font-semibold text-emerald-300 uppercase tracking-wide whitespace-nowrap">
                 {availabilityBadgeText}
               </span>
             </div>
@@ -116,7 +114,7 @@ export default function Navbar({ onContactClick }: NavbarProps) {
             <button
               id="nav-cta-contact"
               onClick={onContactClick}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors shadow-xs"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors shadow-xs whitespace-nowrap"
             >
               {t("ui.navbar.contactCta")}
             </button>
